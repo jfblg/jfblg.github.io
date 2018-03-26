@@ -6,10 +6,20 @@
     <description>Recent content on jfblg.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Mar 2018 16:19:17 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 25 Mar 2018 19:11:06 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CV</title>
+      <link>/cv/</link>
+      <pubDate>Sun, 25 Mar 2018 19:11:06 +0200</pubDate>
+      
+      <guid>/cv/</guid>
+      <description>Frantisek Janus Skilled system engineer, developer and administrator.
+Work experience September 2017 - March 2018 System DevOps engineer at Securosys SA in Zürich, Switzerland  Development of infrastructure for HSM as a service Infrastructure design, implementation, operation and setup of monitoring tools Work mainly with FOSS tools (Debian Linux):w  September 2014 - August 2017 Network manager at Bühler group in Uzwil, Switzerland  Change and incident management in network infrastructure consisiting of more than 3k active network devices Experience with vendors like Cisco, Riverbed, Microsoft Development of custom scripts (in Python) and utilization of configuration management tools (Ansible) Implementation of CI/CD pipeline for proxy auto configuration files utilized by more than 10k clients  July 2011 - June 2014 Implementation project manager at HP Enterprise services in Bratislava, Slovakia  Responsible for implementation of various technical changes for enterprise customers Work mainly on Cisco, HP and Checkpoint devices  May 2009 - June 2011 Network support specialist at Soitron for EU commission secure network sTesta in Bratislava, Slovakia  Firewall management (Juniper ISG &amp;amp; SSG) BGP implementation engineer Network issue troubleshooter  March 2008 - May 2009 Network support agent at Soitron for EU commission secure network sTesta in Bratislava, Slovakia  1st line support  Skills  Understanding and experience with desing, implementation and maintenance of highly available and scalable services and computer networks Analytical thinker Programming IT security conscious Good communication skills in written and spoken form Languages: English (fluent), German (fluent), Swiss German (good comprehension), Slovak (native)  Technologies Programing and scripting languages  Python - experienced Bash - experienced go - basics  Databases  noSQL (MongoDB) - experienced SQL - basics  Version control  Git  Environment  GNU/Linux - experienced.</description>
+    </item>
     
     <item>
       <title>Notes</title>
@@ -17,7 +27,9 @@
       <pubDate>Thu, 22 Mar 2018 16:19:17 +0100</pubDate>
       
       <guid>/notes/</guid>
-      <description> Public notebook </description>
+      <description>This section shows you my various notes about technical topics. I started to take notes some time ago when I could not memorize the stuff. In my case, it really helps and provides me a good reference. I how you find it usefull too.
+Please note, that this is a evolving page. Notes here may not be well structured and/or formulated.
+GNU/Linux administration commands and concepts To cancel shutdown shutdown -ci or pkill shutdown</description>
     </item>
     
     <item>
@@ -39,7 +51,7 @@ My key can be downloaded from the keyserver-pool or from the local copy.</descri
       <pubDate>Wed, 21 Mar 2018 14:58:48 +0100</pubDate>
       
       <guid>/about/</guid>
-      <description>This is a personal page of Frantisek Janus. I am IT professional living in Zürich area. The content of this page is focused on technical topics, mainly from my work or about topics which interests me.
+      <description>This is a personal page of Frantisek Janus. I&amp;rsquo;m IT professional living in Zürich area. The content of this page is focused on technical topics, mainly from my work or about topics which interests me.
 You can find 2 main content sections here: 1. Notes - intended to be one long structured document with my notes. 2. Blog - posts where I would like to go a little deeper or to be more verbose</description>
     </item>
     
