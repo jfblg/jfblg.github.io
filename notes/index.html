@@ -192,10 +192,11 @@ lsof /var/log/syslog</code></pre></div></p></li>
 
 <h3 id="search">Search</h3>
 
-<p>Varous search commands</p>
-
+<ul>
+<li>Varous search commands
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get list of files and line number, where the PATTERN is found in all files contained under the PATH
-</span><span style="color:#75715e"></span>grep -rnw <span style="color:#e6db74">&#39;PATH&#39;</span> -e <span style="color:#e6db74">&#39;PATTERN &#39;</span></code></pre></div>
+</span><span style="color:#75715e"></span>grep -rnw <span style="color:#e6db74">&#39;PATH&#39;</span> -e <span style="color:#e6db74">&#39;PATTERN &#39;</span></code></pre></div></li>
+</ul>
 
 <h3 id="startup-configuration-files">Startup configuration files</h3>
 
@@ -244,8 +245,8 @@ lsof /var/log/syslog</code></pre></div></p></li>
 
 <h3 id="shutdown-and-restart">Shutdown and restart</h3>
 
-<p>Run as root:</p>
-
+<ul>
+<li>run the following commands as root
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SHUTDOWN
 </span><span style="color:#75715e"></span>shutdown -h now
 halt
@@ -255,7 +256,8 @@ init <span style="color:#ae81ff">0</span>
 <span style="color:#75715e"># REBOOT
 </span><span style="color:#75715e"></span>reboot
 shutdown -r now
-init <span style="color:#ae81ff">6</span></code></pre></div>
+init <span style="color:#ae81ff">6</span></code></pre></div></li>
+</ul>
 
 <h3 id="useful-tools">Useful tools</h3>
 
@@ -324,6 +326,61 @@ gunzip file.gz</code></pre></div></p></li>
 
 <li><p>Follow path name until terminal point is found
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">namei -l &lt;path-to-file&gt;</code></pre></div></p></li>
+
+<li><p>get file access control list <strong>getfacl</strong></p></li>
+
+<li><p>gather ssh public keys
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keyscan hostname</code></pre></div></p></li>
+
+<li><p>curl will generate 4 files, each for each auto-expanded URL
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -OOOO http://ludwig.server.de/ss<span style="color:#f92672">{</span>l,h<span style="color:#f92672">}</span>_fingerprints.txt<span style="color:#f92672">{</span>,.gpg<span style="color:#f92672">}</span></code></pre></div></p></li>
+
+<li><p>List SSH Keys on a server. Example:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub</code></pre></div></p></li>
+
+<li><p>SSH verify MD5 fingerprint
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -o fingerprinthash<span style="color:#f92672">=</span>md5 user@server.example</code></pre></div></p></li>
+
+<li><p>list latest modified fiels <strong>ls -ltr</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -ltr</code></pre></div></p></li>
+
+<li><p>How to unbind USB device on Debian
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># lsusb to list connected devices
+</span><span style="color:#75715e"></span>cd /sys/bus/usb
+grep . devices/*/idProduct
+
+<span style="color:#75715e"># find the ID which correcsponds to the output of lsusb
+</span><span style="color:#75715e"># deactivate the usb device:
+</span><span style="color:#75715e"></span>echo ID &gt; drivers/usb/unbind <span style="color:#75715e"># (ID for example: 1-10.3)
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#activathe the usb device:
+</span><span style="color:#75715e"></span>echo ID &gt; drivers/usb/bind</code></pre></div></p></li>
+
+<li><p>How to generate file with size of 50MB
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>output.dat bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>
+truncate -s 50m output.dat
+fallocate -l 50M output.dat</code></pre></div></p></li>
+
+<li><p>Redirect STDOUT and STDERR to syslog
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec <span style="color:#ae81ff">1</span>&gt; &gt;<span style="color:#f92672">(</span>logger <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
+exec <span style="color:#ae81ff">1</span>&gt; &gt;<span style="color:#f92672">(</span>logger -s -t <span style="color:#66d9ef">$(</span>basename $0<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
+exec <span style="color:#ae81ff">2</span>&gt; &gt;<span style="color:#f92672">(</span>logger -s -t <span style="color:#66d9ef">$(</span>basename $0<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
+
+echo <span style="color:#e6db74">&#34;writing to stdout&#34;</span>
+echo <span style="color:#e6db74">&#34;writing to stderr&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span></code></pre></div></p></li>
+
+<li><p>Send messages to syslog - use command: <strong>logger</strong></p></li>
+
+<li><p><strong>$XDG_CONFIG_HOME</strong> - You don&rsquo;t have to define if it&rsquo;s not set. Defaults to $HOME/.config. But, if you do want to change the default in a Debian/Ubuntu system, the best place is:</p>
+
+<ul>
+<li>For a system-wide change, affecting all users: /etc/profile</li>
+<li>For your user only: ~/.profilekk</li>
+</ul></li>
+
+<li><p><strong>NMAP</strong> commands tp scan an IP range
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -sn <span style="color:#ae81ff">10</span>.0.0.0/24
+nmap -sn <span style="color:#ae81ff">10</span>.0.0.1-15</code></pre></div></p></li>
 </ul>
 
 <h3 id="luks">LUKS</h3>
@@ -380,10 +437,44 @@ gunzip file.gz</code></pre></div></p></li>
 
 <h2 id="openpgp-commands">OpenPGP commands:</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-add -L
-gpgconf --kill gpg-agent</code></pre></div>
-
 <ul>
+<li><p>List of most common gpg commands
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># BASICS
+</span><span style="color:#75715e"></span>gpg -k
+gpg -K
+gpg --card-status
+gpg --edit-key KEY_HASH
+gpg --verify
+gpg --refresh-keys
+gpg --send-keys &lt;optional: key-id&gt;
+gpg --verify
+gpg --import &lt;file&gt;
+gpg -a --export KEY_ID &gt; &lt;file&gt;.asc
+gpg -a --export-secret-keys KEY_ID
+gpg -a --export-secret-subkeys KEY_ID
+gpg --delete-secret-keys KEY_ID
+gpg --delete-secret-and-public-keys KEYID</code></pre></div></p></li>
+
+<li><p>when using gpg also with <strong>ssh-agent</strong>, this may be useful
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># .bashrc should contain
+</span><span style="color:#75715e"></span>GPG_TTY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span>
+export GPG_TTY
+
+<span style="color:#75715e"># to kill gpg-agent
+</span><span style="color:#75715e"></span>gpgconf --kill gpg-agent
+
+<span style="color:#75715e"># the gpg-agent is automatically started on demand by gpg, gpgsm, gpgconf or gpg-connect-agent
+</span><span style="color:#75715e"></span>gpg -K  <span style="color:#75715e"># or
+</span><span style="color:#75715e"></span>gpg --card-status
+
+
+<span style="color:#75715e"># to add private key identities to the authentication agent
+</span><span style="color:#75715e"></span>ssh-add
+<span style="color:#75715e"># to list fingerprints of all identies currently repesented by the ssh agent
+</span><span style="color:#75715e"></span>ssh-add -l
+<span style="color:#75715e"># to list public keys of all identities currently represented by the ssh agent
+</span><span style="color:#75715e"></span>ssh-add -L</code></pre></div></p></li>
+
 <li><p>If you encounter following issue when refreshing gpg keys:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fero@server:~$ gpg --refresh-keys                                         
 gpg: refreshing <span style="color:#ae81ff">13</span> keys from hkps://hkps.pool.sks-keyservers.net
@@ -394,10 +485,10 @@ gpg: keyserver refresh failed: No keyserver available
 fero@server:~$ gpg --refresh-keys                                                                                     
 gpg: refreshing <span style="color:#ae81ff">13</span> keys from hkps://hkps.pool.sks-keyservers.net
 gpg: WARNING: Tor is not properly configured
-gpg: WARNING: Tor is not properly configured</code></pre></div></p></li>
+gpg: WARNING: Tor is not properly configured
 
-<li><p>Then execture the following:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpgconf --kill gpg-agent
+<span style="color:#75715e"># Then execture the following:
+</span><span style="color:#75715e"></span>gpgconf --kill gpg-agent
 sudo /etc/init.d/tor restart
 sudo killall dirmngr
 
@@ -453,12 +544,6 @@ vagrant mutate bento/ubuntu-14.04 libvirt</code></pre></div></p>
 <p>To make the libvirt the default provider for the current user
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;export VAGRANT_DEFAULT_PROVIDER=libvirt&#39;</span> &gt;&gt; ~/.bashrc</code></pre></div></p>
 
-<h2 id="nmap-commands">NMAP commands</h2>
-
-<p>Scan IP range on IP addresses
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -sn <span style="color:#ae81ff">10</span>.0.0.0/24
-nmap -sn <span style="color:#ae81ff">10</span>.0.0.1-15</code></pre></div></p>
-
 <h2 id="iptables-command-examples">IPTABLES command examples</h2>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LIST existing rules
@@ -498,70 +583,6 @@ iptables -A OUTPUT -p tcp -d <span style="color:#ae81ff">69</span>.171.224.0/19 
 iptables -A OUTPUT -p tcp -d www.facebook.com -j DROP
 iptables -A OUTPUT -p tcp -d facebook.com -j DROP</code></pre></div>
 
-<h2 id="bash-commands">BASH COMMANDS</h2>
-
-<ul>
-<li><p>get file access control list <strong>getfacl</strong></p></li>
-
-<li><p>gather ssh public keys</p></li>
-</ul>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keyscan hostname</code></pre></div>
-
-<ul>
-<li>curl will generate 4 files, each for each auto-expanded URL</li>
-</ul>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -OOOO http://leonardo.netwichtig.de/ss<span style="color:#f92672">{</span>l,h<span style="color:#f92672">}</span>_fingerprints.txt<span style="color:#f92672">{</span>,.gpg<span style="color:#f92672">}</span></code></pre></div>
-
-<ul>
-<li>List SSH Keys on a server. Example:</li>
-</ul>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub</code></pre></div>
-
-<ul>
-<li>SSH verify MD5 fingerprint</li>
-</ul>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -o fingerprinthash<span style="color:#f92672">=</span>md5 user@server.example</code></pre></div>
-
-<ul>
-<li>list latest modified fiels <strong>ls -ltr</strong></li>
-</ul>
-
-<h2 id="how-to-unbind-usb-device-in-debian">How to unbind USB device in Debian</h2>
-
-<ul>
-<li>lsusb to list connected devices</li>
-<li>cd /sys/bus/usb</li>
-<li>grep . devices/*/idProduct</li>
-<li>find the ID which correcsponds to the output of lsusb</li>
-<li>deactivate the usb device: &ldquo;echo ID &gt; drivers/usb/unbind&rdquo; (ID for example: 1-10.3)</li>
-<li>activathe the usb device: &ldquo;echo ID &gt; drivers/usb/bind&rdquo;</li>
-</ul>
-
-<h2 id="how-to-generate-file-with-size-of-50mb">How to generate file with size of 50MB</h2>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>output.dat bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>
-truncate -s 50m output.dat
-fallocate -l 50M output.dat</code></pre></div>
-
-<h2 id="redirect-stdout-and-stderr-to-syslog">Redirect STDOUT and STDERR to syslog</h2>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec <span style="color:#ae81ff">1</span>&gt; &gt;<span style="color:#f92672">(</span>logger <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
-exec <span style="color:#ae81ff">1</span>&gt; &gt;<span style="color:#f92672">(</span>logger -s -t <span style="color:#66d9ef">$(</span>basename $0<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
-exec <span style="color:#ae81ff">2</span>&gt; &gt;<span style="color:#f92672">(</span>logger -s -t <span style="color:#66d9ef">$(</span>basename $0<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
-
-echo <span style="color:#e6db74">&#34;writing to stdout&#34;</span>
-echo <span style="color:#e6db74">&#34;writing to stderr&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span></code></pre></div>
-
-<h2 id="send-messages-to-syslog">Send messages to syslog</h2>
-
-<ul>
-<li>command: <strong>logger</strong></li>
-</ul>
-
 <h2 id="tmux-plugins">Tmux plugins</h2>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/tmux-plugins
@@ -593,11 +614,43 @@ mr offline
 mr online
 mr remember</code></pre></div></p>
 
-<h2 id="git-commands">Git commands</h2>
+<h2 id="git-version-contol-system">Git - version contol system</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you do a typo, git will autocorrect the typo (if possible) and issue the command again in 15 seconds
-</span><span style="color:#75715e"># To disable that, set value to 0
-</span><span style="color:#75715e"></span>git config --global help.autocorrect <span style="color:#ae81ff">15</span></code></pre></div>
+<ul>
+<li>If you do a typo, git will autocorrect the typo (if possible) and issue the command again in 15 seconds. To disable that, set value to 0
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global help.autocorrect <span style="color:#ae81ff">15</span></code></pre></div></li>
+</ul>
+
+<h3 id="submodules">Submodules</h3>
+
+<p>Allows to keep a Git repository as a subdirectory of another Git repository.
+This allows to clone another repository into your own repository and keep the
+commits separate.</p>
+
+<p><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Submodule documentation</a></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add submodule (another git repository to your project)
+</span><span style="color:#75715e"></span>git submodule add URL LOCAL_FOLDER
+
+<span style="color:#75715e"># .gitmodules file will be added to you repository
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># when you clone your main repository, execute the following
+</span><span style="color:#75715e"># to load also linked submodules
+</span><span style="color:#75715e"></span>git submodule init
+git submodule update
+
+<span style="color:#75715e"># OR you can run the following
+</span><span style="color:#75715e"></span>git clone --recurse-submodules URL LOCAL_FOLDER 
+
+<span style="color:#75715e"># To update a submodule, go to its folder and run
+</span><span style="color:#75715e"></span>git fetch
+git merge
+
+<span style="color:#75715e"># To see the changes in a submodule go to a main repository folder and run
+</span><span style="color:#75715e"></span>git diff --submodule
+
+<span style="color:#75715e"># OR you can run
+</span><span style="color:#75715e"></span>git submodule update --remote SUBMODULE_NAME</code></pre></div>
 
 <h3 id="git-hooks">Git hooks</h3>
 
@@ -612,13 +665,6 @@ chmod a+x ~/.git-templates/hooks/post-commit
 
 <span style="color:#75715e"># then execute following in your repository to include global hooks
 </span><span style="color:#75715e"></span>git init</code></pre></div>
-
-<h2 id="xdg-config-home">$XDG_CONFIG_HOME</h2>
-
-<p>You don&rsquo;t have to define it it&rsquo;s not set. Defaults to $HOME/.config
-But, if you do want to change the default in a Debian/Ubuntu system, the best place is:
-- For a system-wide change, affecting all users: /etc/profile
-- For your user only: ~/.profilekk</p>
 
 <h2 id="neo-vi-m-editor">(neo)VI(M) editor</h2>
 
@@ -663,40 +709,12 @@ But, if you do want to change the default in a Debian/Ubuntu system, the best pl
 
 <h2 id="cups">CUPS</h2>
 
-<p><a href="http://localhost:631">http://localhost:631</a></p>
-
-<h2 id="git">GIT</h2>
-
-<h3 id="submodules">Submodules</h3>
-
-<p>Allows to keep a Git repository as a subdirectory of another Git repository.
-This allows to clone another repository into your own repository and keep the
-commits separate.</p>
-
-<p><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Submodule documentation</a></p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add submodule (another git repository to your project)
-</span><span style="color:#75715e"></span>git submodule add URL LOCAL_FOLDER
-
-<span style="color:#75715e"># .gitmodules file will be added to you repository
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e"># when you clone your main repository, execute the following
-</span><span style="color:#75715e"># to load also linked submodules
-</span><span style="color:#75715e"></span>git submodule init
-git submodule update
-
-<span style="color:#75715e"># OR you can run the following
-</span><span style="color:#75715e"></span>git clone --recurse-submodules URL LOCAL_FOLDER 
-
-<span style="color:#75715e"># To update a submodule, go to its folder and run
-</span><span style="color:#75715e"></span>git fetch
-git merge
-
-<span style="color:#75715e"># To see the changes in a submodule go to a main repository folder and run
-</span><span style="color:#75715e"></span>git diff --submodule
-
-<span style="color:#75715e"># OR you can run
-</span><span style="color:#75715e"></span>git submodule update --remote SUBMODULE_NAME</code></pre></div>
+<ul>
+<li>Common Unix Printing System - modular printing system for unix-like computers. A computer running CUPS is host that can accept print jobs from client computers, process them and send them to the printer.</li>
+<li>Maintained by apple</li>
+<li>CUPS service is running on the TCP port 631.</li>
+<li>it can be access also via http directly on the server. <a href="http://localhost:631">http://localhost:631</a></li>
+</ul>
 
         </div>
         
