@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/cv/</loc>
+    <loc>/cv/curriculum-vitae/</loc>
     <lastmod>2018-03-25T19:11:06+02:00</lastmod>
   </url>
   
@@ -24,6 +24,12 @@
   
   <url>
     <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/cv/</loc>
+    <lastmod>2018-03-25T19:11:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
