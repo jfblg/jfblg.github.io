@@ -150,10 +150,8 @@ In my case, it really helps and provides me a good reference. I how you find it 
 
 <ul>
 <li><p>i<strong>lspci</strong> - get hardware stack details (no USB HW is shown)
-{{&lt; highlight bash &gt;}}
-lspci -nnk | grep VGA -A1
-lspci -v | grep -A7 -i &lsquo;audio&rsquo;
-{{&lt;/ highlight &gt;}}</p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lspci -nnk | grep VGA -A1
+lspci -v | grep -A7 -i <span style="color:#e6db74">&#39;audio&#39;</span></code></pre></div></p></li>
 
 <li><p><strong>lsusb</strong></p></li>
 </ul>
@@ -162,18 +160,12 @@ lspci -v | grep -A7 -i &lsquo;audio&rsquo;
 
 <ul>
 <li><p><strong>lsof</strong> - list open files. Usefull in cases when you want to find out to which files a program writes to or by which program is written to a particular file
-{{&lt; highlight bash &gt;}}
-lsof -p PID
-lsof /var/log/syslog
-{{&lt;/ highlight &gt;}}</p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsof -p PID
+lsof /var/log/syslog</code></pre></div></p></li>
 
 <li><p><strong>ddi</strong> - convert and copy a file. Can be also used to write an image to a USB stick or to test disk speed
-{{&lt; highlight bash &gt;}}
-dd if=/dev/zero of=~/testfile bs=1G count=1 oflag=direct</p>
-
-<h1 id="oflag-direct-uses-direct-i-o-avoinding-the-buffer-cache-it-speeds-up-the-process">oflag=direct &ndash; uses direct I/O, avoinding the buffer cache =&gt; it speeds up the process</h1>
-
-<p>{{&lt;/ highlight &gt;}}</p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>~/testfile bs<span style="color:#f92672">=</span>1G count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> oflag<span style="color:#f92672">=</span>direct
+# oflag<span style="color:#f92672">=</span>direct -- uses direct I/O, avoinding the buffer cache <span style="color:#f92672">=</span>&gt; it speeds up the process</code></pre></div></p></li>
 </ul>
 
 <h3 id="permisions">Permisions</h3>
@@ -192,26 +184,18 @@ dd if=/dev/zero of=~/testfile bs=1G count=1 oflag=direct</p>
 
 <ul>
 <li><p>to match a file with at least 2 characters and and extension .mp3 or .mp4 use:
-{{&lt; highlight bash &gt;}}
-??*.mp[34]
-{{&lt;/ highlight &gt;}}</p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">??*.mp<span style="color:#f92672">[</span><span style="color:#ae81ff">34</span><span style="color:#f92672">]</span> </code></pre></div></p></li>
 
 <li><p>to execute an arbitrary command on every file the file command finds. See more details in man page, section -exec. Example:
-{{&lt; highlight bash &gt;}}
-find . -iname &ldquo;.txt&rdquo; -size +500M -exec ls -lh {} \;
-{{&lt;/ highlight &gt;}}</p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -iname <span style="color:#e6db74">&#34;.txt&#34;</span> -size +500M -exec ls -lh <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p></li>
 </ul>
 
 <h3 id="search">Search</h3>
 
 <ul>
-<li><p>Varous search commands
-{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="get-list-of-files-and-line-number-where-the-pattern-is-found-in-all-files-contained-under-the-path">Get list of files and line number, where the PATTERN is found in all files contained under the PATH</h1>
-
-<p>grep -rnw &lsquo;PATH&rsquo; -e &lsquo;PATTERN &lsquo;
-{{&lt;/ highlight &gt;}}</p></li>
+<li>Varous search commands
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get list of files and line number, where the PATTERN is found in all files contained under the PATH
+</span><span style="color:#75715e"></span>grep -rnw <span style="color:#e6db74">&#39;PATH&#39;</span> -e <span style="color:#e6db74">&#39;PATTERN &#39;</span></code></pre></div></li>
 </ul>
 
 <h3 id="startup-configuration-files">Startup configuration files</h3>
@@ -226,809 +210,574 @@ find . -iname &ldquo;.txt&rdquo; -size +500M -exec ls -lh {} \;
 <h3 id="package-management">Package management</h3>
 
 <ul>
-<li><p>Get list of package selections, and write it to stdout. Without any other argument, all installed packages will be shown.
-{{&lt; highlight bash &gt;}}</p>
+<li>Get list of package selections, and write it to stdout. Without any other argument, all installed packages will be shown.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># list of all installed packages on Debian/Ubuntu
+</span><span style="color:#75715e"></span>sudo dpkg --get-selections
 
-<h1 id="list-of-all-installed-packages-on-debian-ubuntu">list of all installed packages on Debian/Ubuntu</h1>
+<span style="color:#75715e"># list of all installed packages on RHEL based linux
+</span><span style="color:#75715e"></span>&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;yum list installed&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>sudo dpkg &ndash;get-selections</p></li>
-</ul>
+- Aptitude filter to show packages installed by user **~i!~M**
 
-<h1 id="list-of-all-installed-packages-on-rhel-based-linux">list of all installed packages on RHEL based linux</h1>
+- Bundle the current aptitude state i.e. also all by user installed packages: **aptitude-create-state-bundle**
 
-<p>yum list installed
-{{&lt;/ highlight &gt;}}</p>
+- Package verification: **dpkg --list &lt;package&gt;**
+    - The first column in the output of the command consist of max <span style="color:#ae81ff">3</span> latters, which desribe status of the package. 
+        - First - desired state <span style="color:#f92672">(</span>i, u, r, p , h<span style="color:#f92672">)</span>
+        - Second - actual status <span style="color:#f92672">(</span>i, n, c, u, f, h, w, t<span style="color:#f92672">)</span>
+        - Third - only option is <span style="color:#e6db74">&#39;r&#39;</span> - reinstall required
 
-<ul>
-<li><p>Aptitude filter to show packages installed by user <strong>~i!~M</strong></p></li>
+- Package installation
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;sudo dpkg -i DEB_PACKAGE&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>Bundle the current aptitude state i.e. also all by user installed packages: <strong>aptitude-create-state-bundle</strong></p></li>
+- There may be a problem with dependency though, which can be fixed with:
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;sudo apt-get install -f&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>Package verification: <strong>dpkg &ndash;list <package></strong></p>
+- Package removal
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;sudo dpkg -r PACKAGE_NAME&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<ul>
-<li>The first column in the output of the command consist of max 3 latters, which desribe status of the package.
 
-<ul>
-<li>First - desired state (i, u, r, p , h)</li>
-<li>Second - actual status (i, n, c, u, f, h, w, t)</li>
-<li>Third - only option is &lsquo;r&rsquo; - reinstall required</li>
-</ul></li>
-</ul></li>
-
-<li><p>Package installation
-{{&lt; highlight bash &gt;}}
-sudo dpkg -i DEB_PACKAGE
-{{&lt;/ highlight &gt;}}</p></li>
-
-<li><p>There may be a problem with dependency though, which can be fixed with:
-{{&lt; highlight bash &gt;}}
-sudo apt-get install -f
-{{&lt;/ highlight &gt;}}</p></li>
-
-<li><p>Package removal
-{{&lt; highlight bash &gt;}}
-sudo dpkg -r PACKAGE_NAME
-{{&lt;/ highlight &gt;}}</p></li>
-</ul>
-
-<h3 id="shutdown-and-restart">Shutdown and restart</h3>
-
-<ul>
-<li><p>run the following commands as root
-{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="shutdown">SHUTDOWN</h1>
-
-<p>shutdown -h now
+<span style="color:#75715e">### Shutdown and restart
+</span><span style="color:#75715e"></span>
+- run the following commands as root
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# SHUTDOWN
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;shutdown -h now
 halt
 poweroff
-init 0</p></li>
-</ul>
+init &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;0&lt;/span&gt;
 
-<h1 id="reboot">REBOOT</h1>
-
-<p>reboot
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# REBOOT
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;reboot
 shutdown -r now
-init 6
-{{&lt;/ highlight &gt;}}</p>
+init &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;6&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h3 id="useful-tools">Useful tools</h3>
+<span style="color:#75715e">### Useful tools
+</span><span style="color:#75715e"></span>Mostly available as a debian packages
 
-<p>Mostly available as a debian packages</p>
+<span style="color:#75715e">#### Network
+</span><span style="color:#75715e"></span>
+- bandwidth monitoring tools
+    - **iftop** - displays network interfaces bandwidth usage
+    - **bmon** - portable bandwidth monitor and rate estimator
+    - **slurm** - network load monitor that can display colored graphs
+    - **tcptrack** - reveals how much bandwidth a protocol is using, src and dst ip addresses and ports
+    - **vnstat** - keeps track of network traffic <span style="color:#66d9ef">for</span> selected interfaces. works without root permissions.
+- **ethtool** - query or control network driver and hardware settings
+- **mii-tool** - view, manipulate media-independent interface status
+- **ferm** - fron-end <span style="color:#66d9ef">for</span> iptables on linux
 
-<h4 id="network">Network</h4>
+<span style="color:#75715e">#### Server administration
+</span><span style="color:#75715e"></span>
+- **logchecki** - regular check of logs - you filter out which are not interesting to you
+- **logwatch** - log reporting tool
+- **dmesq** - print or control the kernel ring buffer
 
-<ul>
-<li>bandwidth monitoring tools
+<span style="color:#75715e">#### Others
+</span><span style="color:#75715e"></span>- **gitg** and **gitk** - GUI git tools
+- **pastebinit** - command-line pastebin client
+- **hunspell-* ** - spell check packages <span style="color:#66d9ef">for</span> clawsmail
 
-<ul>
-<li><strong>iftop</strong> - displays network interfaces bandwidth usage</li>
-<li><strong>bmon</strong> - portable bandwidth monitor and rate estimator</li>
-<li><strong>slurm</strong> - network load monitor that can display colored graphs</li>
-<li><strong>tcptrack</strong> - reveals how much bandwidth a protocol is using, src and dst ip addresses and ports</li>
-<li><strong>vnstat</strong> - keeps track of network traffic for selected interfaces. works without root permissions.</li>
-</ul></li>
-<li><strong>ethtool</strong> - query or control network driver and hardware settings</li>
-<li><strong>mii-tool</strong> - view, manipulate media-independent interface status</li>
-<li><strong>ferm</strong> - fron-end for iptables on linux</li>
-</ul>
+<span style="color:#75715e">### Miscalanious
+</span><span style="color:#75715e"></span>
+- display line numbers of a text file
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;cat -n      &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# display line number <span style="color:#66d9ef">for</span> each line <span style="color:#f92672">(</span>also <span style="color:#66d9ef">for</span> an empty one<span style="color:#f92672">)</span>
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;            &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# alternative nl -ba
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;nl          <span style="color:#75715e"># display line number only &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; non-empty line&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</span><span style="color:#75715e"></span>
+- disk usage with **du**
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;du &amp;lt;folder&amp;gt;
+du -sh &amp;lt;folder&amp;gt; &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# summary size in human readable format
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;du -ah &amp;lt;folder&amp;gt; &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# size of each file in human readable format
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;du -h &amp;lt;folder&amp;gt; | sort -rh | head -3 <span style="color:#75715e"># to find the largest &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; files in the folder&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</span><span style="color:#75715e"></span>
+- to extract an tar archive to a directory use: **tar -xf &lt;file.tar&gt; -C /target/directory**
 
-<h4 id="server-administration">Server administration</h4>
+- pause process and run other in the background
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;CTRL+z  &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# pauses an application
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;fg  &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# returns to the most recent application
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;bg  &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# sends a paused process to run in the background
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;jobs    &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# list stopped processes
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;jobs -l &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# list stopped process als with their PIDs
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;kill &amp;lt;PID&amp;gt;  <span style="color:#75715e"># kill the process&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</span><span style="color:#75715e"></span>
+- delete all files except some
+    - activate **extglob** <span style="color:#f92672">(</span>Extended Pattern Matching<span style="color:#f92672">)</span>: **shopt -s extglob**
+    - use rm command: **rm !<span style="color:#f92672">(</span>file1|file2<span style="color:#f92672">)</span>**
 
-<ul>
-<li><strong>logchecki</strong> - regular check of logs - you filter out which are not interesting to you</li>
-<li><strong>logwatch</strong> - log reporting tool</li>
-<li><strong>dmesq</strong> - print or control the kernel ring buffer</li>
-</ul>
+- command logging
+    - temporarily disable command logging in the terminal
+    &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;    set +o history
+    &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# OR
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;    shopt -uo history
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    
+    - to enable command logging in the terminal 
+    &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;    set -o history
+    &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# OR
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;    shopt -so history
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h4 id="others">Others</h4>
+- to seatch your bash history use **CTRL+r**
+    - to cancel the search **CTRL-g**
+    - to accept the found command and place the cursor in the beginning: **CTRL+a** ,** CTRL+i**, **CTRL+j**
+    - to accept the found command and place cursor in the end **CTRL+e**
 
-<ul>
-<li><strong>gitg</strong> and <strong>gitk</strong> - GUI git tools</li>
-<li><strong>pastebinit</strong> - command-line pastebin client</li>
-<li><strong>hunspell-</strong>* - spell check packages for clawsmail</li>
-</ul>
+- **$!** - substitute with last argument of previous command
+- <span style="color:#66d9ef">for</span> more than <span style="color:#ae81ff">1</span> arguments use <span style="color:#66d9ef">for</span> example: **!:1-2** or **!:2** <span style="color:#f92672">(</span>examples are selfexplanatory<span style="color:#f92672">)</span>
+- Alt + .  - to enter the argument used before the last command <span style="color:#f92672">(</span>press more times <span style="color:#66d9ef">for</span> latest history<span style="color:#f92672">)</span>
+- **xags** - build and execute command lines from stdin. It can replace otherwise necessary <span style="color:#66d9ef">for</span> loops in the commands. Examples
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Determine file type of the files with .bak extension. Note - no &amp;<span style="color:#75715e">#39;for loop&amp;#39; needed
+</span><span style="color:#75715e"></span>&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;find . -iname &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#34;*.bak&amp;#34;&lt;/span&gt; | xargs file
+</span><span style="color:#75715e"></span>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# To place the argument more <span style="color:#66d9ef">then</span> once use <span style="color:#f92672">{}</span>
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;find . -iname &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#34;*.bak&amp;#34;&lt;/span&gt; -print0 | xargs -0 -I &lt;span style=&#34;color:#f92672&#34;&gt;{}&lt;/span&gt; mv &lt;span style=&#34;color:#f92672&#34;&gt;{}&lt;/span&gt; ~/old.files&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</span><span style="color:#75715e"></span>
+- Detect your distibution
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;lsb_release -i
+lsb_release -a&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h3 id="miscalanious">Miscalanious</h3>
+- Uptime
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# shows only the uptime
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;uptime -p
 
-<ul>
-<li><p>display line numbers of a text file
-{{&lt;/ highlight bash &gt;}}
-cat -n      # display line number for each line (also for an empty one)
-        # alternative nl -ba
-nl          # display line number only for non-empty line
-{{&lt;/ highlight &gt;}}</p></li>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# show date of last restart
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;uptime -s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>disk usage with <strong>du</strong>
-{{&lt;/ highlight bash &gt;}}
-du <folder>
-du -sh <folder> # summary size in human readable format
-du -ah <folder> # size of each file in human readable format
-du -h <folder> | sort -rh | head -3 # to find the largest 3 files in the folder
-{{&lt;/ highlight &gt;}}</p></li>
+- Gunzip - .gz files
+See man page <span style="color:#66d9ef">for</span> more details
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to decompress
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gzip -d file.gz
 
-<li><p>to extract an tar archive to a directory use: <strong>tar -xf <file.tar> -C /target/directory</strong></p></li>
+gunzip file.gz&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>pause process and run other in the background
-{{&lt;/ highlight bash &gt;}}
-CTRL+z  # pauses an application
-fg  # returns to the most recent application
-bg  # sends a paused process to run in the background
-jobs    # list stopped processes
-jobs -l # list stopped process als with their PIDs
-kill <PID>  # kill the process
-{{&lt;/ highlight &gt;}}</p></li>
+- Follow path name <span style="color:#66d9ef">until</span> terminal point is found
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;namei -l &amp;lt;path-to-file&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>delete all files except some</p>
+- get file access control list **getfacl**
 
-<ul>
-<li>activate <strong>extglob</strong> (Extended Pattern Matching): <strong>shopt -s extglob</strong></li>
-<li>use rm command: <strong>rm !(file1|file2)</strong></li>
-</ul></li>
+- gather ssh public keys
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;ssh-keyscan hostname&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>command logging</p>
+- curl will generate <span style="color:#ae81ff">4</span> files, each <span style="color:#66d9ef">for</span> each auto-expanded URL
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;curl -OOOO http://ludwig.server.de/ss&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">{</span>&lt;/span&gt;l,h&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">}</span>&lt;/span&gt;_fingerprints.txt&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">{</span>&lt;/span&gt;,.gpg&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">}</span>&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; 
 
-<ul>
-<li><p>temporarily disable command logging in the terminal
-{{&lt; highlight bash &gt;}}
-set +o history</p>
+- List SSH Keys on a server. Example:
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h1 id="or">OR</h1>
+- SSH verify MD5 fingerprint
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;ssh -o fingerprinthash&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">=</span>&lt;/span&gt;md5 user@server.example&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>shopt -uo history
-{{&lt;/ highlight &gt;}}</p></li>
+- list latest modified fiels **ls -ltr**
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;ls -ltr&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>to enable command logging in the terminal
-{{&lt; highlight bash &gt;}}
-set -o history</p>
 
-<h1 id="or-1">OR</h1>
+- How to unbind USB device on Debian
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# lsusb to list connected devices
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;cd /sys/bus/usb
+grep . devices/*/idProduct
 
-<p>shopt -so history
-{{&lt;/ highlight &gt;}}</p></li>
-</ul></li>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# find the ID which correcsponds to the output of lsusb
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# deactivate the usb device:
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;echo ID &amp;gt; drivers/usb/unbind &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# <span style="color:#f92672">(</span>ID <span style="color:#66d9ef">for</span> example: <span style="color:#ae81ff">1</span>-10.3<span style="color:#f92672">)</span>
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;#activathe the usb device:
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;echo ID &amp;gt; drivers/usb/bind&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>to seatch your bash history use <strong>CTRL+r</strong></p>
-
-<ul>
-<li>to cancel the search <strong>CTRL-g</strong></li>
-<li>to accept the found command and place the cursor in the beginning: <strong>CTRL+a</strong> ,** CTRL+i**, <strong>CTRL+j</strong></li>
-<li>to accept the found command and place cursor in the end <strong>CTRL+e</strong></li>
-</ul></li>
-
-<li><p><strong>$!</strong> - substitute with last argument of previous command</p></li>
-
-<li><p>for more than 1 arguments use for example: <strong>!:1-2</strong> or <strong>!:2</strong> (examples are selfexplanatory)</p></li>
-
-<li><p>Alt + .  - to enter the argument used before the last command (press more times for latest history)</p></li>
-
-<li><p><strong>xags</strong> - build and execute command lines from stdin. It can replace otherwise necessary for loops in the commands. Examples
-{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="determine-file-type-of-the-files-with-bak-extension-note-no-for-loop-needed">Determine file type of the files with .bak extension. Note - no &lsquo;for loop&rsquo; needed</h1>
-
-<p>find . -iname &ldquo;*.bak&rdquo; | xargs file</p></li>
-</ul>
-
-<h1 id="to-place-the-argument-more-then-once-use">To place the argument more then once use {}</h1>
-
-<p>find . -iname &ldquo;*.bak&rdquo; -print0 | xargs -0 -I {} mv {} ~/old.files
-{{&lt;/ highlight &gt;}}</p>
-
-<ul>
-<li><p>Detect your distibution
-{{&lt; highlight bash &gt;}}
-lsb_release -i
-lsb_release -a
-{{&lt;/ highlight &gt;}}</p></li>
-
-<li><p>Uptime
-{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="shows-only-the-uptime">shows only the uptime</h1>
-
-<p>uptime -p</p></li>
-</ul>
-
-<h1 id="show-date-of-last-restart">show date of last restart</h1>
-
-<p>uptime -s
-{{&lt;/ highlight &gt;}}</p>
-
-<ul>
-<li><p>Gunzip - .gz files
-See man page for more details
-{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="to-decompress">to decompress</h1>
-
-<p>gzip -d file.gz</p></li>
-</ul>
-
-<p>gunzip file.gz
-{{&lt;/ highlight &gt;}}</p>
-
-<ul>
-<li><p>Follow path name until terminal point is found
-{{&lt; highlight bash &gt;}}
-namei -l <path-to-file>
-{{&lt;/ highlight &gt;}}</p></li>
-
-<li><p>get file access control list <strong>getfacl</strong></p></li>
-
-<li><p>gather ssh public keys
-{{&lt; highlight bash &gt;}}
-ssh-keyscan hostname
-{{&lt;/ highlight &gt;}}</p></li>
-
-<li><p>curl will generate 4 files, each for each auto-expanded URL
-{{&lt; highlight bash &gt;}}
-curl -OOOO <a href="http://ludwig.server.de/ss{l,h}_fingerprints.txt{,.gpg">http://ludwig.server.de/ss{l,h}_fingerprints.txt{,.gpg</a>}
-{{&lt;/ highlight &gt;}}</p></li>
-
-<li><p>List SSH Keys on a server. Example:
-{{&lt; highlight bash &gt;}}
-ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub
-{{&lt;/ highlight &gt;}}</p></li>
-
-<li><p>SSH verify MD5 fingerprint
-{{&lt; highlight bash &gt;}}
-ssh -o fingerprinthash=md5 user@server.example
-{{&lt;/ highlight &gt;}}</p></li>
-
-<li><p>list latest modified fiels <strong>ls -ltr</strong>
-{{&lt; highlight bash &gt;}}
-ls -ltr
-{{&lt;/ highlight &gt;}}</p></li>
-
-<li><p>How to unbind USB device on Debian
-{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="lsusb-to-list-connected-devices">lsusb to list connected devices</h1>
-
-<p>cd /sys/bus/usb
-grep . devices/*/idProduct</p></li>
-</ul>
-
-<h1 id="find-the-id-which-correcsponds-to-the-output-of-lsusb">find the ID which correcsponds to the output of lsusb</h1>
-
-<h1 id="deactivate-the-usb-device">deactivate the usb device:</h1>
-
-<p>echo ID &gt; drivers/usb/unbind # (ID for example: 1-10.3)</p>
-
-<p>#activathe the usb device:
-echo ID &gt; drivers/usb/bind
-{{&lt;/ highlight &gt;}}</p>
-
-<ul>
-<li><p>How to generate file with size of 50MB
-{{&lt; highlight bash &gt;}}
-dd if=/dev/zero of=output.dat bs=1M count=50
+- How to generate file with size of 50MB
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;dd &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#66d9ef&#34;</span>&gt;if&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">=</span>&lt;/span&gt;/dev/zero of&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">=</span>&lt;/span&gt;output.dat bs&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">=</span>&lt;/span&gt;1M count&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">=</span>&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;50&lt;/span&gt;
 truncate -s 50m output.dat
-fallocate -l 50M output.dat
-{{&lt;/ highlight &gt;}}</p></li>
+fallocate -l 50M output.dat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>Redirect STDOUT and STDERR to syslog
-{{&lt; highlight bash &gt;}}
-exec 1&gt; &gt;(logger 2&gt;&amp;1)
-exec 1&gt; &gt;(logger -s -t $(basename $0) 2&gt;&amp;1)
-exec 2&gt; &gt;(logger -s -t $(basename $0))</p></li>
-</ul>
+-  Redirect STDOUT and STDERR to syslog
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;exec &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1&lt;/span&gt;&amp;gt; &amp;gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">(</span>&lt;/span&gt;logger &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;2&lt;/span&gt;&amp;gt;&amp;amp;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">)</span>&lt;/span&gt;
+exec &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1&lt;/span&gt;&amp;gt; &amp;gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">(</span>&lt;/span&gt;logger -s -t &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#66d9ef&#34;</span>&gt;<span style="color:#66d9ef">$(</span>&lt;/span&gt;basename $0&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#66d9ef&#34;</span>&gt;<span style="color:#66d9ef">)</span>&lt;/span&gt; &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;2&lt;/span&gt;&amp;gt;&amp;amp;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">)</span>&lt;/span&gt;
+exec &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;2&lt;/span&gt;&amp;gt; &amp;gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">(</span>&lt;/span&gt;logger -s -t &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#66d9ef&#34;</span>&gt;<span style="color:#66d9ef">$(</span>&lt;/span&gt;basename $0&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#66d9ef&#34;</span>&gt;<span style="color:#66d9ef">)</span>&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">)</span>&lt;/span&gt;
 
-<p>echo &ldquo;writing to stdout&rdquo;
-echo &ldquo;writing to stderr&rdquo; &gt;&amp;2</p>
+echo &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#34;writing to stdout&amp;#34;&lt;/span&gt;
+</span><span style="color:#75715e"></span>echo &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#34;writing to stderr&amp;#34;&lt;/span&gt; &amp;gt;&amp;amp;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</span><span style="color:#75715e"></span>
+- Send messages to syslog - use command: **logger**
 
-<p>{{&lt;/ highlight &gt;}}</p>
+- **$XDG_CONFIG_HOME** - You don<span style="color:#e6db74">&#39;t have to define if it&#39;</span>s not set. Defaults to $HOME/.config. But, <span style="color:#66d9ef">if</span> you <span style="color:#66d9ef">do</span> want to change the default in a Debian/Ubuntu system, the best place is:
+    - For a system-wide change, affecting all users: /etc/profile
+    - For your user only: ~/.profilekk
 
-<ul>
-<li><p>Send messages to syslog - use command: <strong>logger</strong></p></li>
+- **NMAP** commands tp scan an IP range
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;nmap -sn &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;10&lt;/span&gt;.0.0.0/24
+nmap -sn &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;10&lt;/span&gt;.0.0.1-15&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p><strong>$XDG_CONFIG_HOME</strong> - You don&rsquo;t have to define if it&rsquo;s not set. Defaults to $HOME/.config. But, if you do want to change the default in a Debian/Ubuntu system, the best place is:</p>
 
-<ul>
-<li>For a system-wide change, affecting all users: /etc/profile</li>
-<li>For your user only: ~/.profilekk</li>
-</ul></li>
+<span style="color:#75715e">### LUKS
+</span><span style="color:#75715e"></span>Linux Unified Key Setup - the standard <span style="color:#66d9ef">for</span> linux HDD encryption.
 
-<li><p><strong>NMAP</strong> commands tp scan an IP range
-{{&lt; highlight bash &gt;}}
-nmap -sn 10.0.0.0/24
-nmap -sn 10.0.0.1-15
-{{&lt;/ highlight &gt;}}</p></li>
-</ul>
+Note: device /dev/sda5 is used as example. The actual value may vary depending on which device repesents a LUKS encrypted volume
 
-<h3 id="luks">LUKS</h3>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to list LUKS devices
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;lsblk -fs
 
-<p>Linux Unified Key Setup - the standard for linux HDD encryption.</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to verify <span style="color:#66d9ef">if</span> it is a LUKS device
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;cryptsetup isLuks /dev/sda5 -v
 
-<p>Note: device /dev/sda5 is used as example. The actual value may vary depending on which device repesents a LUKS encrypted volume</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to get LUKS device UUID
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;cryptsetup luksUUID /dev/sda5
 
-<p>{{&lt; highlight bash &gt;}}</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to get Information about LUKS partition
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;cryptsetup luksDump /dev/sda5
 
-<h1 id="to-list-luks-devices">to list LUKS devices</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Add a new passphrase
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;cryptsetup luksAddKey --key-slot &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1&lt;/span&gt;
 
-<p>lsblk -fs</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Remove a passphrase
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;cryptsetup luksRemoveKey
 
-<h1 id="to-verify-if-it-is-a-luks-device">to verify if it is a LUKS device</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Test a new passphrase
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;cryptsetup open /dev/sda5 --test-passphrase
 
-<p>cryptsetup isLuks /dev/sda5 -v</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Serial number of HDD
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;udevadm info --query&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">=</span>&lt;/span&gt;all --name&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">=</span>&lt;/span&gt;/dev/sda | grep ID_SERIAL&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h1 id="to-get-luks-device-uuid">to get LUKS device UUID</h1>
+<span style="color:#75715e">## sed - Stream editor
+</span><span style="color:#75715e"></span>
+Some basic commands:
 
-<p>cryptsetup luksUUID /dev/sda5</p>
-
-<h1 id="to-get-information-about-luks-partition">to get Information about LUKS partition</h1>
-
-<p>cryptsetup luksDump /dev/sda5</p>
-
-<h1 id="add-a-new-passphrase">Add a new passphrase</h1>
-
-<p>cryptsetup luksAddKey &ndash;key-slot 1</p>
-
-<h1 id="remove-a-passphrase">Remove a passphrase</h1>
-
-<p>cryptsetup luksRemoveKey</p>
-
-<h1 id="test-a-new-passphrase">Test a new passphrase</h1>
-
-<p>cryptsetup open /dev/sda5 &ndash;test-passphrase</p>
-
-<h1 id="serial-number-of-hdd">Serial number of HDD</h1>
-
-<p>udevadm info &ndash;query=all &ndash;name=/dev/sda | grep ID_SERIAL
-{{&lt;/ highlight &gt;}}</p>
-
-<h2 id="sed-stream-editor">sed - Stream editor</h2>
-
-<p>Some basic commands:</p>
-
-<p>{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="replace-1st-occurance-in-each-line-of-foo-for-bar">replace 1st occurance in each line of foo for bar</h1>
-
-<p>sed &rsquo;s/foo/bar/&rsquo; old-file &gt; new-file</p>
-
-<h1 id="replaces-first-5-occurances-in-each-line-of-foo-for-bar">replaces first 5 occurances in each line of foo for bar</h1>
-
-<p>sed &rsquo;s/foo/bar/5&rsquo; old-file &gt; new-file</p>
-
-<h1 id="replace-all-occurances-of-foo-for-bar">replace all occurances of foo for bar</h1>
-
-<p>sed &rsquo;s/foo/bar/g&rsquo; old-file &gt; new-file</p>
-
-<h1 id="repalce-foo-for-bar-only-if-line-contains-dragon">repalce foo for bar only if line contains dragon</h1>
-
-<p>sed &lsquo;/dragon/s/foo/bar/g&rsquo; old-file &gt; new-file</p>
-
-<h1 id="replace-foo-for-bar-except-for-lines-wich-contain-dragon">replace foo for bar except for lines wich contain dragon</h1>
-
-<p>sed &lsquo;/dragon/!s/foo/bar/g&rsquo; old-file &gt; new-file</p>
-
-<h1 id="delete-blank-lines">delete blank lines</h1>
-
-<p>sed &lsquo;/^$/d&rsquo; old-file &gt; new-file
-{{&lt;/ highlight &gt;}}</p>
-
-<h2 id="openpgp-commands">OpenPGP commands:</h2>
-
-<ul>
-<li><p>List of most common gpg commands
-{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="basics">BASICS</h1>
-
-<p>gpg -k
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# replace 1st occurance in each line of foo <span style="color:#66d9ef">for</span> bar
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;sed &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#39;s/foo/bar/&amp;#39;&lt;/span&gt; old-file &amp;gt; new-file
+</span><span style="color:#75715e"></span>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# replaces first <span style="color:#ae81ff">5</span> occurances in each line of foo <span style="color:#66d9ef">for</span> bar
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;sed &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#39;s/foo/bar/5&amp;#39;&lt;/span&gt; old-file &amp;gt; new-file
+</span><span style="color:#75715e"></span>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# replace all occurances of foo <span style="color:#66d9ef">for</span> bar
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;sed &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#39;s/foo/bar/g&amp;#39;&lt;/span&gt; old-file &amp;gt; new-file
+</span><span style="color:#75715e"></span>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# repalce foo <span style="color:#66d9ef">for</span> bar only <span style="color:#66d9ef">if</span> line contains dragon
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;sed &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#39;/dragon/s/foo/bar/g&amp;#39;&lt;/span&gt; old-file &amp;gt; new-file
+</span><span style="color:#75715e"></span>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# replace foo <span style="color:#66d9ef">for</span> bar except <span style="color:#66d9ef">for</span> lines wich contain dragon
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;sed &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#39;/dragon/!s/foo/bar/g&amp;#39;&lt;/span&gt; old-file &amp;gt; new-file
+</span><span style="color:#75715e"></span>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# delete blank lines
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;sed &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#39;/^$/d&amp;#39;&lt;/span&gt; old-file &amp;gt; new-file&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">## OpenPGP commands:
+</span><span style="color:#75715e"></span>
+- List of most common gpg commands
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# BASICS
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gpg -k
 gpg -K
-gpg &ndash;card-status
-gpg &ndash;edit-key KEY_HASH
-gpg &ndash;verify
-gpg &ndash;refresh-keys
-gpg &ndash;send-keys <optional: key-id>
-gpg &ndash;verify
-gpg &ndash;import <file>
-gpg -a &ndash;export KEY_ID &gt; <file>.asc
-gpg -a &ndash;export-secret-keys KEY_ID
-gpg -a &ndash;export-secret-subkeys KEY_ID
-gpg &ndash;delete-secret-keys KEY_ID
-gpg &ndash;delete-secret-and-public-keys KEYID
-{{&lt;/ highlight &gt;}}</p></li>
+gpg --card-status
+gpg --edit-key KEY_HASH
+gpg --verify
+gpg --refresh-keys
+gpg --send-keys &amp;lt;optional: key-id&amp;gt;
+gpg --verify
+gpg --import &amp;lt;file&amp;gt;
+gpg -a --export KEY_ID &amp;gt; &amp;lt;file&amp;gt;.asc
+gpg -a --export-secret-keys KEY_ID
+gpg -a --export-secret-subkeys KEY_ID
+gpg --delete-secret-keys KEY_ID
+gpg --delete-secret-and-public-keys KEYID&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<li><p>when using gpg also with <strong>ssh-agent</strong>, this may be useful
-{{&lt; highlight bash &gt;}}</p>
+- when using gpg also with **ssh-agent**, this may be useful
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# .bashrc should contain
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;GPG_TTY&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">=</span>&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#66d9ef&#34;</span>&gt;<span style="color:#66d9ef">$(</span>&lt;/span&gt;tty&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#66d9ef&#34;</span>&gt;<span style="color:#66d9ef">)</span>&lt;/span&gt;
+export GPG_TTY
 
-<h1 id="bashrc-should-contain">.bashrc should contain</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to kill gpg-agent
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gpgconf --kill gpg-agent
 
-<p>GPG_TTY=$(tty)
-export GPG_TTY</p></li>
-</ul>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# the gpg-agent is automatically started on demand by gpg, gpgsm, gpgconf or gpg-connect-agent
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gpg -K  &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# or
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gpg --card-status
 
-<h1 id="to-kill-gpg-agent">to kill gpg-agent</h1>
 
-<p>gpgconf &ndash;kill gpg-agent</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to add private key identities to the authentication agent
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;ssh-add
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to list fingerprints of all identies currently repesented by the ssh agent
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;ssh-add -l
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to list public keys of all identities currently represented by the ssh agent
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;ssh-add -L&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h1 id="the-gpg-agent-is-automatically-started-on-demand-by-gpg-gpgsm-gpgconf-or-gpg-connect-agent">the gpg-agent is automatically started on demand by gpg, gpgsm, gpgconf or gpg-connect-agent</h1>
+- If you encounter following issue when refreshing gpg keys:
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;fero@server:~$ gpg --refresh-keys                                         
+gpg: refreshing &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;13&lt;/span&gt; keys from hkps://hkps.pool.sks-keyservers.net
+gpg: keyserver refresh failed: No keyserver available  
 
-<p>gpg -K  # or
-gpg &ndash;card-status</p>
-
-<h1 id="to-add-private-key-identities-to-the-authentication-agent">to add private key identities to the authentication agent</h1>
-
-<p>ssh-add</p>
-
-<h1 id="to-list-fingerprints-of-all-identies-currently-repesented-by-the-ssh-agent">to list fingerprints of all identies currently repesented by the ssh agent</h1>
-
-<p>ssh-add -l</p>
-
-<h1 id="to-list-public-keys-of-all-identities-currently-represented-by-the-ssh-agent">to list public keys of all identities currently represented by the ssh agent</h1>
-
-<p>ssh-add -L</p>
-
-<p>{{&lt;/ highlight &gt;}}</p>
-
-<ul>
-<li>If you encounter following issue when refreshing gpg keys:
-{{&lt; highlight bash &gt;}}
-fero@server:~$ gpg &ndash;refresh-keys<br />
-gpg: refreshing 13 keys from hkps://hkps.pool.sks-keyservers.net
-gpg: keyserver refresh failed: No keyserver available<br /></li>
-</ul>
-
-<h1 id="or-2">OR</h1>
-
-<p>fero@server:~$ gpg &ndash;refresh-keys<br />
-gpg: refreshing 13 keys from hkps://hkps.pool.sks-keyservers.net
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# OR
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;
+fero@server:~$ gpg --refresh-keys                                                                                     
+gpg: refreshing &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;13&lt;/span&gt; keys from hkps://hkps.pool.sks-keyservers.net
 gpg: WARNING: Tor is not properly configured
-gpg: WARNING: Tor is not properly configured</p>
+gpg: WARNING: Tor is not properly configured
 
-<h1 id="then-execture-the-following">Then execture the following:</h1>
-
-<p>gpgconf &ndash;kill gpg-agent
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Then execture the following:
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gpgconf --kill gpg-agent
 sudo /etc/init.d/tor restart
-sudo killall dirmngr</p>
+sudo killall dirmngr
 
-<h1 id="then-start-the-gpg-agent">then start the gpg agent</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# <span style="color:#66d9ef">then</span> start the gpg agent
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gpg --card-status
 
-<p>gpg &ndash;card-status</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# <span style="color:#66d9ef">then</span> refresh the keys
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gpg --refresh-keys&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h1 id="then-refresh-the-keys">then refresh the keys</h1>
+- To verify signature of a GPG key<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# The key signature isn&amp;<span style="color:#75715e">#39;t reported as correct unless the _sig_ designator
+</span><span style="color:#75715e"></span>&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# is immediatelly followed by an ! exclamation mark
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gpg --check-signatures
 
-<p>gpg &ndash;refresh-keys
-{{&lt;/ highlight &gt;}}</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# note gpg --list-sig does not show ! exclamation mark
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;gpg --list-sig&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<ul>
-<li><p>To verify signature of a GPG key(s)
-{{&lt; highlight bash &gt;}}</p>
+<span style="color:#75715e">## Libvirt, Qemu, KVM basics
+</span><span style="color:#75715e"></span>
+Nice article: http://rabexc.org/posts/how-to-get-started-with-libvirt-on/
 
-<h1 id="the-key-signature-isn-t-reported-as-correct-unless-the-sig-designator">The key signature isn&rsquo;t reported as correct unless the <em>sig</em> designator</h1>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;virsh list --all
+virsh --connect qemu+ssh://root@example.com/system&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h1 id="is-immediatelly-followed-by-an-exclamation-mark">is immediatelly followed by an ! exclamation mark</h1>
-
-<p>gpg &ndash;check-signatures</p></li>
-</ul>
-
-<h1 id="note-gpg-list-sig-does-not-show-exclamation-mark">note gpg &ndash;list-sig does not show ! exclamation mark</h1>
-
-<p>gpg &ndash;list-sig
-{{&lt;/ highlight &gt;}}</p>
-
-<h2 id="libvirt-qemu-kvm-basics">Libvirt, Qemu, KVM basics</h2>
-
-<p>Nice article: <a href="http://rabexc.org/posts/how-to-get-started-with-libvirt-on/">http://rabexc.org/posts/how-to-get-started-with-libvirt-on/</a></p>
-
-<p>{{&lt; highlight bash &gt;}}
-virsh list &ndash;all
-virsh &ndash;connect qemu+ssh://root@example.com/system</p>
-
-<p>{{&lt;/ highlight &gt;}}</p>
-
-<h2 id="vagrant-setup-libvirt-provider">Vagrant setup - libvirt Provider</h2>
-
-<p>Dependencies needed:
-{{&lt; highlight bash &gt;}}
-sudo apt-get update
+<span style="color:#75715e">## Vagrant setup - libvirt Provider
+</span><span style="color:#75715e"></span>
+Dependencies needed:
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;sudo apt-get update
 sudo apt-get install -y vagrant vagrant-libvirt libvirt-daemon-system qemu-kvm
 sudo apt-get install -y nfs-common nfs-kernel-server ebtables dnsmasq
 sudo apt-get install -y ansible rsync
-vagrant plugin install vagrant-libvirt
-{{&lt;/ highlight &gt;}}</p>
+vagrant plugin install vagrant-libvirt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>Group settings (debian is your user)
-{{&lt; highlight bash &gt;}}
-sudo usermod -a -G libvirt debian
+Group settings <span style="color:#f92672">(</span>debian is your user<span style="color:#f92672">)</span>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;sudo usermod -a -G libvirt debian
 newgrp libvirt
-/etc/init.d libvirtd restart
-{{&lt;/ highlight &gt;}}</p>
+/etc/init.d libvirtd restart&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>The current user (debian) must belong to some groups to get permission to run accelerated (assuming intel) kernel virtualization:
-{{&lt; highlight bash &gt;}}
-sudo usermod -a -G kvm debian
+The current user <span style="color:#f92672">(</span>debian<span style="color:#f92672">)</span> must belong to some groups to get permission to run accelerated <span style="color:#f92672">(</span>assuming intel<span style="color:#f92672">)</span> kernel virtualization:
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;sudo usermod -a -G kvm debian
 newgrp kvm
 sudo rmmod kvm_intel
 sudo rmmod kvm
 sudo modprobe kvm
-sudo modprobe kvm_intel
-{{&lt;/ highlight &gt;}}</p>
+sudo modprobe kvm_intel&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>To convert a virtualbox image so it can be used by libvirt
-{{&lt; highlight bash &gt;}}
-sudo apt-get install -y vagrant-mutate
-vagrant box add &ndash;provider virtualbox bento/ubuntu-14.04
-vagrant mutate bento/ubuntu-14.04 libvirt
-{{&lt;/ highlight &gt;}}</p>
+To convert a virtualbox image so it can be used by libvirt
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;sudo apt-get install -y vagrant-mutate
+vagrant box add --provider virtualbox bento/ubuntu-14.04
+vagrant mutate bento/ubuntu-14.04 libvirt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>To make the libvirt the default provider for the current user
-{{&lt; highlight bash &gt;}}
-echo &lsquo;export VAGRANT_DEFAULT_PROVIDER=libvirt&rsquo; &gt;&gt; ~/.bashrc
-{{&lt;/ highlight &gt;}}</p>
+To make the libvirt the default provider <span style="color:#66d9ef">for</span> the current user
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;echo &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#39;export VAGRANT_DEFAULT_PROVIDER=libvirt&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</span><span style="color:#75715e"></span>
 
-<h2 id="iptables-command-examples">IPTABLES command examples</h2>
 
-<p>{{&lt; highlight bash &gt;}}</p>
+<span style="color:#75715e">## IPTABLES command examples
+</span><span style="color:#75715e"></span>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# LIST existing rules
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;iptables -L -n -v
+iptables -n -L -v --line-numbers
+iptables -L OUTPUT -n -v --line-numbers
 
-<h1 id="list-existing-rules">LIST existing rules</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# FIND and DELETE by the index number
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;iptables -L INPUT -n --line-numbers
+iptables -D INPUT &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;4&lt;/span&gt;
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">(</span>&lt;/span&gt;-D : Delete one or more rules from the selected chain&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">)</span>&lt;/span&gt;
 
-<p>iptables -L -n -v
-iptables -n -L -v &ndash;line-numbers
-iptables -L OUTPUT -n -v &ndash;line-numbers</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# INSERT
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;iptables -I INPUT &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;2&lt;/span&gt; -s &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;202&lt;/span&gt;.54.1.2 -j DROP
 
-<h1 id="find-and-delete-by-the-index-number">FIND and DELETE by the index number</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Set the Default Firewall Policies
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;iptables -P INPUT DROP
 
-<p>iptables -L INPUT -n &ndash;line-numbers
-iptables -D INPUT 4
-(-D : Delete one or more rules from the selected chain)</p>
-
-<h1 id="insert">INSERT</h1>
-
-<p>iptables -I INPUT 2 -s 202.54.1.2 -j DROP</p>
-
-<h1 id="set-the-default-firewall-policies">Set the Default Firewall Policies</h1>
-
-<p>iptables -P INPUT DROP</p>
-
-<h1 id="only-drop-incomming-traffic">Only drop incomming traffic</h1>
-
-<p>iptables -P INPUT DROP
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Only drop incomming traffic
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;iptables -P INPUT DROP
 iptables -P FORWARD DROP
 iptables -P OUTPUT ACCEPT
-iptables -A INPUT -m state &ndash;state NEW,ESTABLISHED -j ACCEPT
-iptables -L -v -n</p>
+iptables -A INPUT -m state --state NEW,ESTABLISHED -j ACCEPT
+iptables -L -v -n
 
-<h1 id="drop-private-network-address-on-public-interface">Drop Private Network Address On Public Interface</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Drop Private Network Address On Public Interface
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;iptables -A INPUT -i eth1 -s &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;192&lt;/span&gt;.168.0.0/24 -j DROP
+iptables -A INPUT -i eth1 -s &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;10&lt;/span&gt;.0.0.0/8 -j DROP
 
-<p>iptables -A INPUT -i eth1 -s 192.168.0.0/24 -j DROP
-iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP</p>
+iptables -A INPUT -p tcp --dport &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;80&lt;/span&gt; -j DROP
+iptables -A INPUT -i eth1 -p tcp --dport &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;80&lt;/span&gt; -j DRO
 
-<p>iptables -A INPUT -p tcp &ndash;dport 80 -j DROP
-iptables -A INPUT -i eth1 -p tcp &ndash;dport 80 -j DRO</p>
+iptables -A INPUT -p tcp -s &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1&lt;/span&gt;.2.3.4 --dport &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;80&lt;/span&gt; -j DROP
+iptables -A INPUT -i eth1 -p tcp -s &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;192&lt;/span&gt;.168.1.0/24 --dport &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;80&lt;/span&gt; -j DROP
 
-<p>iptables -A INPUT -p tcp -s 1.2.3.4 &ndash;dport 80 -j DROP
-iptables -A INPUT -i eth1 -p tcp -s 192.168.1.0/24 &ndash;dport 80 -j DROP</p>
-
-<p>iptables -A OUTPUT -p tcp -d 69.171.224.0/19 -j DROP
+iptables -A OUTPUT -p tcp -d &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;69&lt;/span&gt;.171.224.0/19 -j DROP
 iptables -A OUTPUT -p tcp -d www.facebook.com -j DROP
-iptables -A OUTPUT -p tcp -d facebook.com -j DROP
-{{&lt;/ highlight &gt;}}</p>
+iptables -A OUTPUT -p tcp -d facebook.com -j DROP&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h2 id="tmux-plugins">Tmux plugins</h2>
 
-<p>{{&lt; highlight bash &gt;}}
-<a href="https://github.com/tmux-plugins">https://github.com/tmux-plugins</a>
-<a href="https://github.com/tmux-plugins/tpm">https://github.com/tmux-plugins/tpm</a>
-{{&lt;/ highlight &gt;}}</p>
+<span style="color:#75715e">## Tmux plugins
+</span><span style="color:#75715e"></span>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;https://github.com/tmux-plugins
+https://github.com/tmux-plugins/tpm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>Interesting to me:
+Interesting to me:
 - tpm
 - tmux-sensible
 - tmux-cpu
-- tmux-yank</p>
+- tmux-yank
 
-<h2 id="myrepos-man-mr">MYREPOS (man mr)</h2>
+<span style="color:#75715e">## MYREPOS (man mr)
+</span><span style="color:#75715e"></span>
+configuration stored in ~/.mrconfig and can be referenced to other other .mrconfig files located in the the repository folders
 
-<p>configuration stored in ~/.mrconfig and can be referenced to other other .mrconfig files located in the the repository folders</p>
+Some Commands:
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;mr register
 
-<p>Some Commands:
-{{&lt; highlight bash &gt;}}
-mr register</p>
-
-<p>mr record (git add + git commit)
-mr commit (git commit + git push)
+mr record &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">(</span>&lt;/span&gt;git add + git commit&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">)</span>&lt;/span&gt;
+mr commit &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">(</span>&lt;/span&gt;git commit + git push&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">)</span>&lt;/span&gt;
 mr update
 mr fetch
-mr list</p>
+mr list
 
-<p>mr clean
-mr clean -f</p>
+mr clean
+mr clean -f 
 
-<p>mr offline
+mr offline
 mr online
-mr remember
-{{&lt;/ highlight &gt;}}</p>
+mr remember&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h2 id="git-version-contol-system">Git - version contol system</h2>
+<span style="color:#75715e">## Git - version contol system
+</span><span style="color:#75715e"></span>
+- If you <span style="color:#66d9ef">do</span> a typo, git will autocorrect the typo <span style="color:#f92672">(</span><span style="color:#66d9ef">if</span> possible<span style="color:#f92672">)</span> and issue the command again in <span style="color:#ae81ff">15</span> seconds. To disable that, set value to <span style="color:#ae81ff">0</span>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;git config --global help.autocorrect &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;15&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<ul>
-<li>If you do a typo, git will autocorrect the typo (if possible) and issue the command again in 15 seconds. To disable that, set value to 0
-{{&lt; highlight bash &gt;}}
-git config &ndash;global help.autocorrect 15
-{{&lt;/ highlight &gt;}}</li>
-</ul>
+<span style="color:#75715e">### Submodules
+</span><span style="color:#75715e"></span>
+Allows to keep a Git repository as a subdirectory of another Git repository.
+This allows to clone another repository into your own repository and keep the 
+commits separate.
 
-<h3 id="submodules">Submodules</h3>
+<span style="color:#f92672">[</span>Submodule documentation<span style="color:#f92672">](</span>https://git-scm.com/book/en/v2/Git-Tools-Submodules<span style="color:#f92672">)</span>
 
-<p>Allows to keep a Git repository as a subdirectory of another Git repository.
-This allows to clone another repository into your own repository and keep the
-commits separate.</p>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# Add submodule <span style="color:#f92672">(</span>another git repository to your project<span style="color:#f92672">)</span>
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;git submodule add URL LOCAL_FOLDER
 
-<p><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Submodule documentation</a></p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# .gitmodules file will be added to you repository
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# when you clone your main repository, execute the following
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to load also linked submodules
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;git submodule init
+git submodule update
 
-<p>{{&lt; highlight bash &gt;}}</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# OR you can run the following
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;git clone --recurse-submodules URL LOCAL_FOLDER 
 
-<h1 id="add-submodule-another-git-repository-to-your-project">Add submodule (another git repository to your project)</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# To update a submodule, go to its folder and run
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;git fetch
+git merge
 
-<p>git submodule add URL LOCAL_FOLDER</p>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# To see the changes in a submodule go to a main repository folder and run
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;git diff --submodule
 
-<h1 id="gitmodules-file-will-be-added-to-you-repository">.gitmodules file will be added to you repository</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# OR you can run
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;git submodule update --remote SUBMODULE_NAME&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<h1 id="when-you-clone-your-main-repository-execute-the-following">when you clone your main repository, execute the following</h1>
+<span style="color:#75715e">### Git hooks
+</span><span style="color:#75715e"></span>
+Hook is a custom script that automatically fires when a certain action occurs.
+See some exampls under .git/hooks
 
-<h1 id="to-load-also-linked-submodules">to load also linked submodules</h1>
+Global template hooks can be created as follows:
 
-<p>git submodule init
-git submodule update</p>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;git config --global init.templatedir &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;<span style="color:#75715e">#39;~/.git-tamplates&amp;#39;&lt;/span&gt;
+</span><span style="color:#75715e"></span>mkdir -p ~/.git-tamplates/hooks
+chmod a+x ~/.git-templates/hooks/post-commit
 
-<h1 id="or-you-can-run-the-following">OR you can run the following</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# <span style="color:#66d9ef">then</span> execute following in your repository to include global hooks
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;git init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>git clone &ndash;recurse-submodules URL LOCAL_FOLDER</p>
 
-<h1 id="to-update-a-submodule-go-to-its-folder-and-run">To update a submodule, go to its folder and run</h1>
 
-<p>git fetch
-git merge</p>
+<span style="color:#75715e">## (neo)VI(M) editor
+</span><span style="color:#75715e"></span>
+This section contains tricks in the vi editor, which I learned or used and find it useful
 
-<h1 id="to-see-the-changes-in-a-submodule-go-to-a-main-repository-folder-and-run">To see the changes in a submodule go to a main repository folder and run</h1>
+<span style="color:#75715e">### Search
+</span><span style="color:#75715e"></span>
+- <span style="color:#e6db74">&#39;/&#39;</span> to enter text, <span style="color:#e6db74">&#39;n&#39;</span> <span style="color:#66d9ef">for</span> next found, <span style="color:#e6db74">&#39;p&#39;</span> <span style="color:#66d9ef">for</span> previously found word
+- <span style="color:#e6db74">&#39;/\C&lt;text&gt;&#39;</span> <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">case</span> sensitive search
+- <span style="color:#e6db74">&#39;/\c&lt;text&gt;&#39;</span> <span style="color:#66d9ef">for</span> incase sensitive search
 
-<p>git diff &ndash;submodule</p>
+<span style="color:#75715e">### Buffers
+</span><span style="color:#75715e"></span>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# switch to next buffer
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;:bn 
 
-<h1 id="or-you-can-run">OR you can run</h1>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# switch to previous bufffer
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;:bp&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>git submodule update &ndash;remote SUBMODULE_NAME</p>
+<span style="color:#75715e">### Macro (record and play a set of actions)
+</span><span style="color:#75715e"></span>
+- start recording press <span style="color:#e6db74">&#39;q&#39;</span> followed by a small character which indicates <span style="color:#e6db74">&#39;register name&#39;</span>
+- <span style="color:#66d9ef">do</span> the action
+- stop recording - press <span style="color:#e6db74">&#39;q&#39;</span> again
+- play the macro - press <span style="color:#e6db74">&#39;@&#39;</span> followed by the name of register. e.g. <span style="color:#e6db74">&#39;a&#39;</span>. To play the macro multiple times e.g. <span style="color:#ae81ff">10</span>, press <span style="color:#e6db74">&#39;10@a&#39;</span>
 
-<p>{{&lt;/ highlight &gt;}}</p>
+<span style="color:#75715e">### Saving a file
+</span><span style="color:#75715e"></span>
+&lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# write old-file.txt content to new-file.txt <span style="color:#66d9ef">while</span> keeping old-file.txt as opened buffer in VIM
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;:w new-file.txt
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# <span style="color:#66d9ef">then</span> you can press CTRL-6 to swith to buffer with a new file
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# write old-file.yxy content to new-file.txt, close buffer of old-file.txt, open buffer with the new-file.txt
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;:sav new-file.txt
 
-<h3 id="git-hooks">Git hooks</h3>
+&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;# to save the new file in the same directory as old one, you can use:
+&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#75715e&#34;</span>&gt;&lt;/span&gt;:w %:h/new-file.txt
+:sav %:h/new-file.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-<p>Hook is a custom script that automatically fires when a certain action occurs.
-See some exampls under .git/hooks</p>
+<span style="color:#75715e">### Plugins
+</span><span style="color:#75715e"></span>
+- Plugin manager <span style="color:#e6db74">&#34;Plug&#34;</span> managed via vim commands e.g. <span style="color:#e6db74">&#34;:PlugStatus&#34;</span>
+- to start vim without any plugins execute **vim -u NONE <span style="color:#f92672">[</span>file<span style="color:#f92672">]</span>**
 
-<p>Global template hooks can be created as follows:</p>
 
-<p>{{&lt; highlight bash &gt;}}
-git config &ndash;global init.templatedir &lsquo;~/.git-tamplates&rsquo;
-mkdir -p ~/.git-tamplates/hooks
-chmod a+x ~/.git-templates/hooks/post-commit</p>
+<span style="color:#75715e">## CUPS
+</span><span style="color:#75715e"></span>- Common Unix Printing System - modular printing system <span style="color:#66d9ef">for</span> unix-like computers. A computer running CUPS is host that can accept print jobs from client computers, process them and send them to the printer.
+- Maintained by apple
+- CUPS service is running on the TCP port <span style="color:#ae81ff">631</span>.
+- it can be access also via http directly on the server. http://localhost:631
 
-<h1 id="then-execute-following-in-your-repository-to-include-global-hooks">then execute following in your repository to include global hooks</h1>
+<span style="color:#75715e">## DNS 
+</span><span style="color:#75715e"></span>General notes, or notes related to **unbound** nand **BIND**
 
-<p>git init
-{{&lt;/ highlight &gt;}}</p>
-
-<h2 id="neo-vi-m-editor">(neo)VI(M) editor</h2>
-
-<p>This section contains tricks in the vi editor, which I learned or used and find it useful</p>
-
-<h3 id="search-1">Search</h3>
-
-<ul>
-<li>&rsquo;/&rsquo; to enter text, &lsquo;n&rsquo; for next found, &lsquo;p&rsquo; for previously found word</li>
-<li>&rsquo;/\C<text>&rsquo; for case sensitive search</li>
-<li>&rsquo;/\c<text>&rsquo; for incase sensitive search</li>
-</ul>
-
-<h3 id="buffers">Buffers</h3>
-
-<p>{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="switch-to-next-buffer">switch to next buffer</h1>
-
-<p>:bn</p>
-
-<h1 id="switch-to-previous-bufffer">switch to previous bufffer</h1>
-
-<p>:bp
-{{&lt;/ highlight &gt;}}</p>
-
-<h3 id="macro-record-and-play-a-set-of-actions">Macro (record and play a set of actions)</h3>
-
-<ul>
-<li>start recording press &lsquo;q&rsquo; followed by a small character which indicates &lsquo;register name&rsquo;</li>
-<li>do the action</li>
-<li>stop recording - press &lsquo;q&rsquo; again</li>
-<li>play the macro - press &lsquo;@&rsquo; followed by the name of register. e.g. &lsquo;a&rsquo;. To play the macro multiple times e.g. 10, press &lsquo;10@a&rsquo;</li>
-</ul>
-
-<h3 id="saving-a-file">Saving a file</h3>
-
-<p>{{&lt; highlight bash &gt;}}</p>
-
-<h1 id="write-old-file-txt-content-to-new-file-txt-while-keeping-old-file-txt-as-opened-buffer-in-vim">write old-file.txt content to new-file.txt while keeping old-file.txt as opened buffer in VIM</h1>
-
-<p>:w new-file.txt</p>
-
-<h1 id="then-you-can-press-ctrl-6-to-swith-to-buffer-with-a-new-file">then you can press CTRL-6 to swith to buffer with a new file</h1>
-
-<h1 id="write-old-file-yxy-content-to-new-file-txt-close-buffer-of-old-file-txt-open-buffer-with-the-new-file-txt">write old-file.yxy content to new-file.txt, close buffer of old-file.txt, open buffer with the new-file.txt</h1>
-
-<p>:sav new-file.txt</p>
-
-<h1 id="to-save-the-new-file-in-the-same-directory-as-old-one-you-can-use">to save the new file in the same directory as old one, you can use:</h1>
-
-<p>:w %:h/new-file.txt
-:sav %:h/new-file.txt</p>
-
-<p>{{&lt;/ highlight &gt;}}</p>
-
-<h3 id="plugins">Plugins</h3>
-
-<ul>
-<li>Plugin manager &ldquo;Plug&rdquo; managed via vim commands e.g. &ldquo;:PlugStatus&rdquo;</li>
-<li>to start vim without any plugins execute <strong>vim -u NONE [file]</strong></li>
-</ul>
-
-<h2 id="cups">CUPS</h2>
-
-<ul>
-<li>Common Unix Printing System - modular printing system for unix-like computers. A computer running CUPS is host that can accept print jobs from client computers, process them and send them to the printer.</li>
-<li>Maintained by apple</li>
-<li>CUPS service is running on the TCP port 631.</li>
-<li>it can be access also via http directly on the server. <a href="http://localhost:631">http://localhost:631</a></li>
-</ul>
-
-<h2 id="dns">DNS</h2>
-
-<p>General notes, or notes related to <strong>unbound</strong> nand <strong>BIND</strong></p>
-
-<ul>
-<li><p><strong>hint file</strong> -contains information about the root servers</p>
-
-<ul>
-<li>to check what root servers are used:
-{{&lt; highlight bash &gt;}}
-my@computer:~$ dig . ns
-<br /></li>
-</ul>
-
-<p>; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Debian &lt;&lt;&gt;&gt; . ns
-;; global options: +cmd
-;; Got answer:
-;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 1575
-;; flags: qr rd ra ad; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 1</p>
-
-<p>;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 4096
-;; QUESTION SECTION:
-;.                              IN      NS</p>
-
-<p>;; ANSWER SECTION:
-.                       518384  IN      NS      h.root-servers.net.
-.                       518384  IN      NS      e.root-servers.net.
-.                       518384  IN      NS      j.root-servers.net.
-.                       518384  IN      NS      f.root-servers.net.
-.                       518384  IN      NS      i.root-servers.net.
-.                       518384  IN      NS      g.root-servers.net.
-.                       518384  IN      NS      a.root-servers.net.
-.                       518384  IN      NS      c.root-servers.net.
-.                       518384  IN      NS      b.root-servers.net.
-.                       518384  IN      NS      d.root-servers.net.
-.                       518384  IN      NS      k.root-servers.net.
-.                       518384  IN      NS      l.root-servers.net.
-.                       518384  IN      NS      m.root-servers.net.</p>
-
-<p>;; Query time: 1 msec
-;; SERVER: 10.18.21.1#53(10.18.21.1)
-;; WHEN: Thu Mar 29 11:12:09 CEST 2018
-;; MSG SIZE  rcvd: 239
-{{&lt;/ highlight &gt;}}</p></li>
+- **hint file** -contains information about the root servers
+    - to check what root servers are used:
+    &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;&lt;pre style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;</span>&gt;&lt;code class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-bash&#34;</span> data-lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;    my@computer:~$ dig . ns
+    
+    ; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;9&lt;/span&gt;.10.3-P4-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; . ns
+    ;; global options: +cmd
+    ;; Got answer:
+    ;; -&amp;gt;&amp;gt;HEADER&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&amp;lt;&amp;lt;- opco&lt;/span&gt;de: QUERY, status: NOERROR, id: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1575&lt;/span&gt;
+    ;; flags: qr rd ra ad; QUERY: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1&lt;/span&gt;, ANSWER: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;13&lt;/span&gt;, AUTHORITY: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;0&lt;/span&gt;, ADDITIONAL: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1&lt;/span&gt;
+    
+    ;; OPT PSEUDOSECTION:
+    ; EDNS: version: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;0&lt;/span&gt;, flags:; udp: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;4096&lt;/span&gt;
+    ;; QUESTION SECTION:
+    ;.                              IN      NS
+    
+    ;; ANSWER SECTION:
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      h.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      e.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      j.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      f.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      i.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      g.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      a.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      c.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      b.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      d.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      k.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      l.root-servers.net.
+    .                       &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;518384&lt;/span&gt;  IN      NS      m.root-servers.net.
+    
+    ;; Query time: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;1&lt;/span&gt; msec
+    ;; SERVER: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;10&lt;/span&gt;.18.21.1#53&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">(</span>&lt;/span&gt;&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;10&lt;/span&gt;.18.21.1&lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f92672&#34;</span>&gt;<span style="color:#f92672">)</span>&lt;/span&gt;
+    ;; WHEN: Thu Mar &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;29&lt;/span&gt; &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;11&lt;/span&gt;:12:09 CEST &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;2018&lt;/span&gt;
+    ;; MSG SIZE  rcvd: &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#ae81ff&#34;</span>&gt;239&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</code></pre></div></li>
 </ul>
 
         </div>
