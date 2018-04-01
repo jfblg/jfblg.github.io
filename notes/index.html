@@ -283,7 +283,7 @@ init <span style="color:#ae81ff">6</span></code></pre></div></li>
 <h4 id="server-administration">Server administration</h4>
 
 <ul>
-<li><strong>logchecki</strong> - regular check of logs - you filter out which are not interesting to you</li>
+<li><strong>logcheck</strong> - regular check of logs - you filter out which are not interesting to you</li>
 <li><strong>logwatch</strong> - log reporting tool</li>
 <li><strong>dmesq</strong> - print or control the kernel ring buffer</li>
 </ul>
@@ -673,6 +673,32 @@ mr online
 mr remember</code></pre></div></p>
 
 <h2 id="git-version-contol-system">Git - version contol system</h2>
+
+<h3 id="git-log">Git log</h3>
+
+<p>To see more options, go to <strong>man git log</strong>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log
+<span style="color:#75715e"># --oneline - show just hash and commit message
+</span><span style="color:#75715e"></span>git log --oneline
+<span style="color:#75715e"># --decorate - print also ref names
+</span><span style="color:#75715e"></span>git log --oneline --decorate
+<span style="color:#75715e"># --graph
+</span><span style="color:#75715e"></span>git log --graph
+git log --oneline --decorate --graph
+<span style="color:#75715e"># --simplify-by-decoration - to see only significat changes in the project.
+</span><span style="color:#75715e"># remove any commit, that wasn&#39;t tagged or branched
+</span><span style="color:#75715e"></span>git log --oneline --decorate --graph --simplify-by-decoration
+<span style="color:#75715e"># --stat - get more details about the files commited
+</span><span style="color:#75715e"></span>git log --oneline --graph --decorate --stat
+<span style="color:#75715e"># -G &lt;regexp&gt; - search for all commits and files and return ones which match the pattern
+</span><span style="color:#75715e"></span>git log -G <span style="color:#e6db74">&#39;Add .*&#39;</span> --oneline --graph --stat</code></pre></div>
+
+<ul>
+<li>to see a specific commit, use <strong>git show COMMIT_ID</strong></li>
+</ul>
+
+<h3 id="git-configuration">Git configuration</h3>
 
 <ul>
 <li>If you do a typo, git will autocorrect the typo (if possible) and issue the command again in 15 seconds. To disable that, set value to 0
