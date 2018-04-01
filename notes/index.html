@@ -674,6 +674,21 @@ mr remember</code></pre></div></p>
 
 <h2 id="git-version-contol-system">Git - version contol system</h2>
 
+<h3 id="git-rebase">Git rebase</h3>
+
+<p><strong>Never use git rebase on public branches!</strong> Because it rewrites the commits in the past and causes conflicts if other refers to them.</p>
+
+<p>Simple workflow how to integrate an approved feature brach (Feature-1) and clean up the commits in the Feature-1.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout Feature-1
+git checkout -b Temp-Feature-1
+git rebase -i master
+<span style="color:#75715e"># now clean up the history
+</span><span style="color:#75715e"></span>git checkout master
+git merge Temp-Feature-1
+<span style="color:#75715e"># then you can delete the intergrated branches
+</span><span style="color:#75715e"></span>git branch -d Temp-Feature-1
+git branch -D Feature-1</code></pre></div></p>
+
 <h3 id="git-log">Git log</h3>
 
 <p>To see more options, go to <strong>man git log</strong>.</p>
