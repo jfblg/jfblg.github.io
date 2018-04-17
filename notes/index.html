@@ -784,7 +784,7 @@ chmod a+x ~/.git-templates/hooks/post-commit
 
 <h2 id="neo-vi-m-editor">(neo)VI(M) editor</h2>
 
-<p>This section contains tricks in the vi editor, which I learned or used and find it useful</p>
+<p>This section contains tricks in the vi editor, which I learned or used and find it useful. I don&rsquo;t decribe things which I consider to be basics.</p>
 
 <h3 id="search-1">Search</h3>
 
@@ -794,13 +794,47 @@ chmod a+x ~/.git-templates/hooks/post-commit
 <li>&rsquo;/\c<text>&rsquo; for incase sensitive search</li>
 </ul>
 
+<h3 id="editing">Editing</h3>
+
+<ul>
+<li><strong>CTRL-u</strong> in the INSERT mode - remove all characters between the cursor and beginning of the line</li>
+</ul>
+
+<h3 id="moving-with-the-cursor">Moving with the cursor</h3>
+
+<ul>
+<li><strong>CTRL-e</strong> - move the screen up without moving the cursor</li>
+<li><strong>CTRL-y</strong> - move the screen down without moving the cursor</li>
+<li><strong>zt</strong> - move the current line to the top of the screen</li>
+<li><strong>zz</strong> - move the current line to the center of the screen</li>
+<li><strong>zb</strong> - move the current line to the bottom of the sceen</li>
+</ul>
+
 <h3 id="buffers">Buffers</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># switch to next buffer
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># list all opened buffers
+</span><span style="color:#75715e"></span>:ls
+:buffers
+:files
+
+<span style="color:#75715e"># open a new buffer
+</span><span style="color:#75715e"></span>:e &lt;filename&gt;
+
+<span style="color:#75715e"># open existing buffer
+</span><span style="color:#75715e"></span>:b <span style="color:#f92672">[</span>N<span style="color:#f92672">]</span>
+:b &lt;tab completion&gt;
+
+<span style="color:#75715e"># switch to next buffer
 </span><span style="color:#75715e"></span>:bn 
 
 <span style="color:#75715e"># switch to previous bufffer
-</span><span style="color:#75715e"></span>:bp</code></pre></div>
+</span><span style="color:#75715e"></span>:bp
+
+<span style="color:#75715e"># unload current buffer. you can still use CTRL-6 to open it again
+</span><span style="color:#75715e"></span>:bd
+
+<span style="color:#75715e"># close (wipeout) the current buffer. Its entries in jumplist are deleted.
+</span><span style="color:#75715e"></span>:bw</code></pre></div>
 
 <h3 id="macro-record-and-play-a-set-of-actions">Macro (record and play a set of actions)</h3>
 
@@ -813,7 +847,7 @@ chmod a+x ~/.git-templates/hooks/post-commit
 
 <h3 id="saving-a-file">Saving a file</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># write old-file.txt content to new-file.txt while keeping old-file.txt as opened buffer in VIM
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># write old-file.txt content to new-file.txt while keeping old-file.txt as opened buffer
 </span><span style="color:#75715e"></span>:w new-file.txt
 <span style="color:#75715e"># then you can press CTRL-6 to swith to buffer with a new file
 </span><span style="color:#75715e"></span>
