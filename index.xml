@@ -6,10 +6,20 @@
     <description>Recent content on jfblg.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Mar 2018 19:11:06 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 21 Apr 2018 12:56:24 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Go</title>
+      <link>/blog/learning-go/</link>
+      <pubDate>Sat, 21 Apr 2018 12:56:24 +0200</pubDate>
+      
+      <guid>/blog/learning-go/</guid>
+      <description>Learning Go - Notes Notes which I took during my learning. It&amp;rsquo;d be great if they would also help you.
+Go workspace and basics  MUST READ DOCUMENT  Syntax Variable declaration  if you define a variable within the if statement(condition) it is valid only there. You will not get an error for double declaration in the following example: for x := len(y); y &amp;gt; 1 { //... } for x := len(z); y &amp;gt; 1 { //.</description>
+    </item>
     
     <item>
       <title>CV</title>
