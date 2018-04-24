@@ -510,6 +510,63 @@ nmap -sn <span style="color:#ae81ff">10</span>.0.0.1-15</code></pre></div></p></
 <span style="color:#75715e"># delete blank lines
 </span><span style="color:#75715e"></span>sed <span style="color:#e6db74">&#39;/^$/d&#39;</span> old-file &gt; new-file</code></pre></div>
 
+<h2 id="bash-scripting">BASH Scripting</h2>
+
+<ul>
+<li>basic operations with arrays in BASH
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># declaration 1
+</span><span style="color:#75715e"></span>unix<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
+unix<span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;Red Hat&#34;</span>
+
+<span style="color:#75715e"># declaration 2
+</span><span style="color:#75715e"></span>declare -a auto<span style="color:#f92672">=(</span>toyota skoda bmw vw fiat<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># print out the array
+</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#75715e"># deals with the list as multiple variables
+</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${</span>auto[*]<span style="color:#e6db74">}</span> <span style="color:#75715e"># deals with the list as 1 variable
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># length of an array
+</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${#</span>auto[@]<span style="color:#e6db74">}</span>
+
+<span style="color:#75715e"># length of an element in an array
+</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${#</span>atuo[1]<span style="color:#e6db74">}</span>
+
+<span style="color:#75715e"># slicing :start_possition:offset
+</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${</span>auto[@]:3:2<span style="color:#e6db74">}</span>
+
+<span style="color:#75715e"># search and replace in an array
+</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${</span>auto[@]/fiat/srot<span style="color:#e6db74">}</span>
+
+<span style="color:#75715e"># only the remaining i.e. not matched elements are stored to the result var
+</span><span style="color:#75715e"># globing is used, not regex
+</span><span style="color:#75715e"></span>declare -a result<span style="color:#f92672">=(</span> <span style="color:#e6db74">${</span>countries[@]/*a*/<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># add an element to an existing array
+</span><span style="color:#75715e"></span>auto<span style="color:#f92672">=(</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;tatra&#34;</span> <span style="color:#e6db74">&#34;trabant&#34;</span><span style="color:#f92672">)</span>
+echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span>
+
+<span style="color:#75715e"># remove an element form array
+</span><span style="color:#75715e"></span>unset auto<span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">]</span>
+echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span>
+
+<span style="color:#75715e"># copy an array
+</span><span style="color:#75715e"></span>car<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+echo <span style="color:#e6db74">${</span>car[@]<span style="color:#e6db74">}</span>
+
+<span style="color:#75715e"># delete an entire array
+</span><span style="color:#75715e"></span>unset car
+echo <span style="color:#e6db74">${</span>car[@]<span style="color:#e6db74">}</span>
+
+<span style="color:#75715e">#load content of an file input-array into an array
+</span><span style="color:#75715e"></span>filecontent<span style="color:#f92672">=(</span> <span style="color:#e6db74">`</span>cat input-array<span style="color:#e6db74">`</span> <span style="color:#f92672">)</span>
+echo <span style="color:#e6db74">${</span>filecontent[@]<span style="color:#e6db74">}</span>
+echo <span style="color:#e6db74">${</span>filecontent[1]<span style="color:#e6db74">}</span>
+
+<span style="color:#66d9ef">for</span> line in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>filecontent[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+    echo <span style="color:#e6db74">&#34;Line: &#34;</span>$line<span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#66d9ef">done</span></code></pre></div></li>
+</ul>
+
 <h2 id="openpgp-commands">OpenPGP commands:</h2>
 
 <ul>

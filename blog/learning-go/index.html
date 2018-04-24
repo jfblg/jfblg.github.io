@@ -101,7 +101,7 @@ crossorigin="anonymous"></script>
         <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/learning-go/">Learning Go</a></h2>
             <div class="post-data">
                 21 Apr 2018 |
-                9 minutes read
+                10 minutes read
             </div>
 
             
@@ -172,6 +172,15 @@ crossorigin="anonymous"></script>
 }{<span style="color:#e6db74">&#34;Toyota&#34;</span>, <span style="color:#ae81ff">2018</span>}</code></pre></div></p></li>
 </ul>
 
+<h3 id="named-methods">Named methods</h3>
+
+<ul>
+<li>when the method is treated as value. See example:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">method</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">mypackage</span>.<span style="color:#a6e22e">NewInstance</span>
+<span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">method</span>()</code></pre></div></li>
+<li>this approach may be useful in case you have handles of functions which may be long. With named methods you can hide those long handles.</li>
+</ul>
+
 <h3 id="for-loop">for loop</h3>
 
 <ul>
@@ -201,10 +210,19 @@ crossorigin="anonymous"></script>
 <li>array has a fixed size</li>
 <li>when you pass an array to a function, the array is coppied</li>
 <li>because of a fixed size of an array, it is more practical to use slices</li>
+</ul>
+
+<h3 id="slices">Slices</h3>
+
+<ul>
+<li>slice consits of a pointer into some underlying array, length (number of elements that are in that slice, capacity (max ammount of space that could be used to add to the slice)</li>
 <li>slice is a window to an array. It is like an offset from the beginning and number of elements of an array.</li>
 <li>slices are passed into an function by a reference!</li>
 <li>slice can be sliced</li>
 <li>slice can not be compared.</li>
+<li>if you want to remove something from the middle of slice, you have to essentially create a new one and copy values to it. Example
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myslice</span> = []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>}
+<span style="color:#a6e22e">myslice</span> = append(<span style="color:#a6e22e">myslice</span>[:<span style="color:#ae81ff">2</span>], <span style="color:#a6e22e">myslice</span>[<span style="color:#ae81ff">3</span>:]<span style="color:#f92672">...</span>)</code></pre></div></li>
 </ul>
 
 <h3 id="maps">Maps</h3>
@@ -271,6 +289,12 @@ crossorigin="anonymous"></script>
 <li>definition: <em>interface{}</em></li>
 <li>avoid using empty interfaces if you can or do a type assertion</li>
 </ul></li>
+
+<li><p>To verify if certain type implements some interface you can insert the following test code:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// verification if type myType implements fmt.Stringer interface
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Stringer</span> = <span style="color:#a6e22e">myType</span></code></pre></div></p></li>
+
+<li><p>interfaces may be also useful for mocking types in a test suite</p></li>
 </ul>
 
 <h2 id="type-assertion-and-type-switch">Type assertion and type switch</h2>
@@ -336,6 +360,12 @@ crossorigin="anonymous"></script>
 <h2 id="standard-library-packages">Standard library packages</h2>
 
 <p>Each standard library package is well documented. Recommended to read the documentation. Each package provides certain set of functions.</p>
+
+<h3 id="bytes-package">bytes package</h3>
+
+<ul>
+<li>Package bytes implements functions for the manipulation of byte slices. It is analogous to the facilities of the strings package.</li>
+</ul>
 
 <h3 id="fmt-format-package">fmt - Format package</h3>
 
@@ -553,6 +583,8 @@ crossorigin="anonymous"></script>
 <li><p>interfaces can be compared too</p></li>
 
 <li><p>comparison is not defined on slices</p></li>
+
+<li><p>in Go it is possible to have a &ldquo;method values&rdquo; i.e. pass the whole method as a value</p></li>
 </ul>
 
     </div>
