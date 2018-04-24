@@ -101,7 +101,7 @@ crossorigin="anonymous"></script>
         <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/learning-go/">Learning Go</a></h2>
             <div class="post-data">
                 21 Apr 2018 |
-                10 minutes read
+                11 minutes read
             </div>
 
             
@@ -243,8 +243,10 @@ crossorigin="anonymous"></script>
 <h3 id="errors">Errors</h3>
 
 <ul>
+<li>there are no exceptions in Go (e.g. compared to Python)</li>
 <li>by convention, errors are returned from the function and the calling function has to handle the error</li>
-<li>panic and recover are used rarely, this practise is not recommended as it introduces</li>
+<li>when writing a function, always return an error value. Do not return just nil of some other type to indicate that error occured.</li>
+<li>panic and recover are used rarely, this practise is not recommended as it introduces non idiomatic go fashion</li>
 <li>custom errors can be created with following packages: format, errors
 
 <ul>
@@ -282,19 +284,32 @@ crossorigin="anonymous"></script>
 
 <ul>
 <li>Interfaces define behavior without defining types itself</li>
-<li>Interface forces a type to have specific methods defined in order to use a functions of the interface</li>
-<li>Also <strong>empty interface</strong> may exist. It does not have any method and it satisfy everything. It provides an uknown type that is determined at runtime. Because go is a statically written language, the empty interface may be used to overcome the situation when you don&rsquo;t care about the type.
+<li>Interface forces a type to have specific methods defined in order to use functions of the interface</li>
+<li>Also <strong>empty interface</strong> may exist. It does not have any method and it satisfies everything. It provides an unknown type that is determined at runtime. Because Go is a statically written language, the empty interface may be used to overcome the situation when you don&rsquo;t care about the type.
 
 <ul>
 <li>definition: <em>interface{}</em></li>
 <li>avoid using empty interfaces if you can or do a type assertion</li>
 </ul></li>
-
-<li><p>To verify if certain type implements some interface you can insert the following test code:
+<li>To verify if certain type implements some interface you can insert the following test code:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// verification if type myType implements fmt.Stringer interface
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Stringer</span> = <span style="color:#a6e22e">myType</span></code></pre></div></p></li>
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Stringer</span> = <span style="color:#a6e22e">myType</span></code></pre></div></li>
+<li>interfaces may be also useful for mocking types in a test suite</li>
 
-<li><p>interfaces may be also useful for mocking types in a test suite</p></li>
+<li><p>some common interfaces used in Go:</p>
+
+<ul>
+<li>Stringer interface
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Stringer</span> <span style="color:#66d9ef">interface</span> {
+            <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span>
+    }
+    </code></pre></div>
+<br /></li>
+</ul></li>
+
+<li><p>in you define your own type struct, it may be useful to create also methods which satisfies some common interfaces</p></li>
+
+<li><p>interface names can be used instead of argument types in function signature</p></li>
 </ul>
 
 <h2 id="type-assertion-and-type-switch">Type assertion and type switch</h2>
@@ -316,6 +331,19 @@ crossorigin="anonymous"></script>
 <li>go run</li>
 <li>go vet - checks from a runtime errors e.g. wrong type in fmt.Printf function</li>
 <li>go test - for unit testing</li>
+<li>golint - linter for go - checks the code againts style e.g. also if the comments are included where they are expected to be.</li>
+<li>go list - lists the facts about the code it is run against. See &lsquo;go help list&rsquo; for more details. Few examples:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// list imports
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">f</span> <span style="color:#e6db74">&#34;{{ .Imports }}&#34;</span> <span style="color:#a6e22e">yourpackage</span>
+
+<span style="color:#75715e">// list dependencies
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">f</span> <span style="color:#e6db74">&#34;{{ .Deps }}&#34;</span> <span style="color:#a6e22e">yourpackage</span>
+
+<span style="color:#75715e">// path to the package
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">f</span> <span style="color:#e6db74">&#34;{{ .Dir }}&#34;</span> <span style="color:#a6e22e">yourpackage</span>
+
+<span style="color:#75715e">// what files the package consits of
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">f</span> <span style="color:#e6db74">&#34;{{ .GoFiles }}&#34;</span> <span style="color:#a6e22e">yourpackage</span></code></pre></div></li>
 </ul>
 
 <h2 id="unit-testing">Unit testing</h2>
@@ -488,6 +516,7 @@ crossorigin="anonymous"></script>
 <li>time.Since(time.Now())</li>
 <li>func (t Time) Format(layout string) string</li>
 <li>func Parse(layout, value string) (Time, error) - parses string to a time.Time</li>
+<li>use defined duration constants from the time package e.g. &lsquo;var out = 1 * time.Second&rsquo;</li>
 </ul>
 
 <h3 id="regexp-package">regexp package</h3>
@@ -585,6 +614,8 @@ crossorigin="anonymous"></script>
 <li><p>comparison is not defined on slices</p></li>
 
 <li><p>in Go it is possible to have a &ldquo;method values&rdquo; i.e. pass the whole method as a value</p></li>
+
+<li><p>in Go it is idiomatic if you use low level of indentation. Do not use embended if statements. Also, if it&rsquo;s possible, use the &lsquo;switch&rsquo; statement instead of &lsquo;if-else&rsquo;.</p></li>
 </ul>
 
     </div>
