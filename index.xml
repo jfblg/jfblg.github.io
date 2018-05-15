@@ -18,7 +18,8 @@
       
       <guid>/blog/learning-go/</guid>
       <description>Learning Go - Notes Notes which I took during my learning. It&amp;rsquo;d be great if they would also help you.
-Go workspace and basics  MUST READ DOCUMENT  Syntax Variable declaration  if you define a variable within the if statement(condition) it is valid only there. You will not get an error for double declaration in the following example: for x := len(y); y &amp;gt; 1 { //... } for x := len(z); y &amp;gt; 1 { //.</description>
+Go is statically written (type of every variable must be defined), pass by value (whenever you pass an argument into a function, Go creates a copy of each argument, and these copies are used inside of the function) programming language.
+Go workspace and basics  MUST READ DOCUMENT  Syntax Variable declaration  if you define a variable within the if statement(condition) it is valid only there.</description>
     </item>
     
     <item>

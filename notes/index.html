@@ -126,6 +126,31 @@ In my case, it really helps and provides me a good reference. I how you find it 
 <li>the most used onces are: System V Init (old), systemd (newer but controversial)</li>
 </ul>
 
+<h3 id="virtual-address-space">Virtual address space</h3>
+
+<ul>
+<li>On Linux a virtual address space consists of code, data, heap and stack</li>
+</ul>
+
+<h4 id="heap">Heap</h4>
+
+<ul>
+<li>is memory set aside for dynamic allocation</li>
+<li>an application is given a separate heap memory and it allocates the momory on need basis</li>
+<li>free heap can be allocated anytime</li>
+<li>user shoud however take care of deallocation of the heap memory if it&rsquo;s not needed</li>
+<li>to get heap memory in user space the &ldquo;malloc&rdquo; and &ldquo;calloc&rdquo; calls are used, in kernel space &ldquo;kmalloc&rdquo;, &ldquo;vmalloc&rdquo;</li>
+</ul>
+
+<h4 id="stack">Stack</h4>
+
+<ul>
+<li>memory area used by the thread of execution</li>
+<li>when the function is called, the local variable and the return addresses are store in stack</li>
+<li>the stack memory space becomes availble, when the function exits</li>
+<li>the memory allocation and deallocation is done automatically, user doesn&rsquo;t have to take of it.</li>
+</ul>
+
 <h3 id="shell-builtins">Shell-builtins</h3>
 
 <ul>

@@ -101,7 +101,7 @@ crossorigin="anonymous"></script>
         <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/learning-go/">Learning Go</a></h2>
             <div class="post-data">
                 21 Apr 2018 |
-                11 minutes read
+                14 minutes read
             </div>
 
             
@@ -140,6 +140,8 @@ crossorigin="anonymous"></script>
 <h1 id="learning-go-notes">Learning Go - Notes</h1>
 
 <p>Notes which I took during my learning. It&rsquo;d be great if they would also help you.</p>
+
+<p>Go is statically written (type of every variable must be defined), pass by value (whenever you pass an argument into a function, Go creates a copy of each argument, and these copies are used inside of the function) programming language.</p>
 
 <h2 id="go-workspace-and-basics">Go workspace and basics</h2>
 
@@ -195,11 +197,28 @@ crossorigin="anonymous"></script>
 }</code></pre></div></li>
 </ul>
 
-<h3 id="switch-statement">switch statement</h3>
+<h3 id="switch-statement">Switch statement</h3>
 
 <ul>
 <li>switch statement can be also labeled - similar to the for loop</li>
 <li><strong>fallthrough</strong> - if used, the matched case section does not end the switch. It continues to the next case.</li>
+</ul>
+
+<h3 id="variadic-arguments">Variadic arguments &ldquo;&hellip;&rdquo;</h3>
+
+<ul>
+<li>In a function defintion it pass arguments that you pass a function into one slice of that type. This way, you can pass as many arguments as you want.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// A parameter
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">interface</span>{}
+<span style="color:#75715e">// is for a function equivalent to
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> []<span style="color:#66d9ef">interface</span>{}
+
+<span style="color:#75715e">// the DIFFERENCE is how you pass the arguments to a function:
+</span><span style="color:#75715e">// 1. Give each elemement of a slice separately
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;x&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>, <span style="color:#e6db74">&#34;z&#34;</span>)
+<span style="color:#75715e">// 2. or as a single slice, in which case you will hato to suffix the slice value with three dots
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">interface</span>{<span style="color:#e6db74">&#34;x&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>, <span style="color:#e6db74">&#34;z&#34;</span>}
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">...</span>)</code></pre></div></li>
 </ul>
 
 <h2 id="build-in-types">Build-in Types</h2>
@@ -234,6 +253,45 @@ crossorigin="anonymous"></script>
 <li>it is safe to delete an item from a map that is actually not there. golang runtime will not complain about that</li>
 </ul>
 
+<h3 id="structs">Structs</h3>
+
+<ul>
+<li><p>A used defined type which represents a collection of fields. It may be used to group the data into a single unit.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Address</span> <span style="color:#66d9ef">struct</span> {  
+    <span style="color:#a6e22e">street</span>, <span style="color:#a6e22e">town</span>    <span style="color:#66d9ef">string</span>
+    <span style="color:#a6e22e">streetnum</span>       <span style="color:#66d9ef">int</span>
+}</code></pre></div></p></li>
+
+<li><p>Anymous structures}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Address</span> <span style="color:#66d9ef">struct</span> {  
+    <span style="color:#a6e22e">street</span>, <span style="color:#a6e22e">town</span>    <span style="color:#66d9ef">string</span>
+    <span style="color:#a6e22e">streetnum</span>       <span style="color:#66d9ef">int</span>
+}</code></pre></div></p></li>
+</ul>
+
+<h3 id="maps-vs-struct-comparison">MAPS vs. STRUCT comparison</h3>
+
+<h4 id="map-properties">Map properties</h4>
+
+<ul>
+<li>all keys must be the same type</li>
+<li>all values must be the same type</li>
+<li>keys are indexed - we can iterate over them</li>
+<li>used to represent a collection of related properties</li>
+<li>don&rsquo;t need to know all the keys at the compile time</li>
+<li>reference type</li>
+</ul>
+
+<h4 id="struct-properties">Struct properties</h4>
+
+<ul>
+<li>values can be of different types</li>
+<li>keys don&rsquo;t support indexing</li>
+<li>compiler needs to know all the different fields at the compile time</li>
+<li>used to represent something with a lot of different properties</li>
+<li>value type</li>
+</ul>
+
 <h3 id="bytes">Bytes</h3>
 
 <ul>
@@ -254,27 +312,50 @@ crossorigin="anonymous"></script>
 </ul></li>
 </ul>
 
-<h2 id="goroutines">Goroutines</h2>
+<h3 id="value-types-vs-reference-types">Value types vs. Reference types</h3>
+
+<p>It is crutial to understand the difference between those 2 types. For an example, let&rsquo;s take a slice which belongs to the group of reference types.
+When we crete a slice, Go will automatically create 2 data structures: 1. an array 2. a structure that records the length of the slice, the capacity of the slice and a reference to the underlying array. With &lsquo;reference types&rsquo; in Go, we don&rsquo;t have to worry about pointer if we pass a value of a reference type to a function and modify the original vlaue inside the function, because &ldquo;the copy of a pointer&rdquo; to the same underlying (value type) data structure is passed. Remember, Go is a &ldquo;pass by value&rdquo; language.</p>
+
+<p><strong>Value types</strong> - use pointers to change these things in a function</p>
 
 <ul>
-<li>function which is executed concurently with the rest of the programm</li>
-<li>concurency is not necessary simultaneously</li>
-<li>Channel - fundental communication mechanism between goroutines
-
-<ul>
-<li>A key mechanism a go operates is to pass messages between the goroutines using channels</li>
-</ul></li>
-<li><strong>go</strong> keyword starts a goroutine</li>
-<li><strong>select</strong> keyword is used to listen on multiple channels and take actions when something is received from some channel. Syntactically similar to <strong>switch</strong> statement.</li>
-<li>channels can be buffered &ldquo;ch := make(chan int, <strong>100</strong>)&rdquo; - this example allocates a channel with capacity of 100 ints.</li>
-<li>buffered channels can be used to control the concurency (like a semafor)</li>
-<li>it is recommended to use unbuffered channels, for a better comprehention of the program function</li>
+<li>int</li>
+<li>float</li>
+<li>string</li>
+<li>bool</li>
+<li>struct</li>
 </ul>
 
-<h2 id="use-defined-types">Use defined types</h2>
+<p><strong>Reference types</strong> - don&rsquo;t worry about pointer with these</p>
 
 <ul>
-<li>methonds (functions) can be attached to a type - it is close to OOP</li>
+<li>slices</li>
+<li>maps</li>
+<li>channels</li>
+<li>pointers</li>
+<li>functions</li>
+</ul>
+
+<h3 id="pointers">Pointers</h3>
+
+<ul>
+<li>holds the memory address of some value</li>
+<li>some basic operations:
+
+<ul>
+<li>&amp; - turn a value into a pointer</li>
+<li>* - turn a pointer into a value</li>
+</ul></li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">variable</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;some text&#34;</span>
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">*&amp;</span><span style="color:#a6e22e">variable</span>) <span style="color:#f92672">//</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">variable</span>)</code></pre></div>
+
+<h2 id="user-defined-types">User defined types</h2>
+
+<ul>
+<li>methods (functions) can be attached to a type - it is close to OOP</li>
 <li>a method contain a section called <strong>receiver</strong> in its declaration ((r MyType) in the next example):
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#a6e22e">MyType</span>) <span style="color:#a6e22e">Do</span>() {
 }</code></pre></div></li>
@@ -560,7 +641,7 @@ crossorigin="anonymous"></script>
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">name</span> = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">sting</span>)
 <span style="color:#75715e">//...
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">Lock</span>()
-<span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">Unlokc</span>()</code></pre></div></p></li>
+<span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">Unlock</span>()</code></pre></div></p></li>
 
 <li><p>Should &ldquo;sync&rdquo; package or goroutines with channels be used for access to a protected resource?</p>
 
@@ -617,6 +698,40 @@ crossorigin="anonymous"></script>
 
 <li><p>in Go it is idiomatic if you use low level of indentation. Do not use embended if statements. Also, if it&rsquo;s possible, use the &lsquo;switch&rsquo; statement instead of &lsquo;if-else&rsquo;.</p></li>
 </ul>
+
+<h2 id="concurency">Concurency</h2>
+
+<p>Data race - two concurrent processes are attempting to access the same area of memory and the way they are accessing the memory is not atomic.</p>
+
+<p>Critical selection - section of code that needs exlusive access to a shared resource.</p>
+
+<p>Deadlock - situation when in a program all concurent process are waiting on one another. The program will never recover without outside intervention.</p>
+
+<p>Livelocks - programs that are actively performing concurrent operations, but these operations do nothing to move the state of the program forward.</p>
+
+<p>Starvation - any situation where a concurent process cannot get all the resources it needs to perform the work.</p>
+
+<p>Concurency is a property of the code; parallelism is a property of the running program.</p>
+
+<p>CSP - Communicating Sequential Processes.</p>
+
+<h3 id="goroutines">Goroutines</h3>
+
+<p>Go has added another abstraction layer below OS threads - the <strong>goroutine</strong>. In addtion it introduces a primitive <strong>channel</strong> which allow communication between the goroutines.
+- goroutines are lightweight and we normally don&rsquo;t have to worry about creating one.
+- goroutine is one of the most basic units of organization in a Go program
+- every Go program has at least on goroutine - the main goroutine
+- <strong>go</strong> keyword starts a goroutine
+- Channel - fundental communication mechanism between goroutines
+- channels are inherently composable with other channels
+- channels can be buffered &ldquo;ch := make(chan int, <strong>100</strong>)&rdquo; - this example allocates a channel with capacity of 100 ints.
+- <strong>select</strong> keyword is used to listen on multiple channels and take actions when something is received from some channel. Syntactically similar to <strong>switch</strong> statement.</p>
+
+<p>Go&rsquo;s runtime observes the runtime behavior of the goroutine and automatically suspends them when they block and resumes them when they become unblocked.</p>
+
+<p>Join points are what guarantee our program&rsquo;s correctness and remove the race condition. In order to create a join point you have to synchronize the main goroutine and the other goroutine.- this can be achieved with e.g. sync.WaitGroup</p>
+
+<p>Offtopic: Closures close around the lexical scope they are created in, thereby capturing variables.</p>
 
     </div>
 
