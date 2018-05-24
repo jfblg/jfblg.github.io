@@ -441,8 +441,26 @@ gunzip file.gz</code></pre></div></p></li>
 <li><p>SSH verify MD5 fingerprint
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -o fingerprinthash<span style="color:#f92672">=</span>md5 user@server.example</code></pre></div></p></li>
 
-<li><p>list latest modified fiels <strong>ls -ltr</strong>
+<li><p>List latest modified fiels <strong>ls -ltr</strong>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -ltr</code></pre></div></p></li>
+
+<li><p>How to format an SD-Card (or other block device) to a FAT32
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Note, there are also other ways how to achieve this
+</span><span style="color:#75715e"># Used commmands: lsblk, parted, mkfs.vfat
+</span><span style="color:#75715e"># root privileges required
+</span><span style="color:#75715e"></span>lsblk
+<span style="color:#75715e"># choose the correct device, e.g. /dev/sdb
+</span><span style="color:#75715e"></span>parted /dev/sdb
+<span style="color:#75715e"># create a new partiotion table
+</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> mklabel msdos
+<span style="color:#75715e"># create a new partition on the drive
+</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> mkpart primary fat32 1MiB <span style="color:#ae81ff">100</span>%
+<span style="color:#75715e"># set the boot flag on it
+</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> set <span style="color:#ae81ff">1</span> boot on
+<span style="color:#75715e"># quit parted
+</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> quit
+<span style="color:#75715e"># format the created partion on the drive. not the drive itself!
+</span><span style="color:#75715e"></span>mkfs.vfat /dev/sdb1</code></pre></div></p></li>
 
 <li><p>How to unbind USB device on Debian
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># lsusb to list connected devices
