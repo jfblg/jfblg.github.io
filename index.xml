@@ -49,7 +49,7 @@ GNU/Linux administration commands and concepts To cancel shutdown shutdown -ci o
       
       <guid>/contact/</guid>
       <description>I prefer GPG encrypted emails.
-f.janus@gmail.com
+inbox@fjanus.eu inbox@jfblg.com
 My GPG key fingerprint
 1E28 8B33 06B0 9DC4 33F4 1507 5F7B 978E A457 58B0
 My key can be downloaded from the keyserver-pool or from the local copy.</description>
@@ -63,6 +63,17 @@ My key can be downloaded from the keyserver-pool or from the local copy.</descri
       <guid>/about/</guid>
       <description>This is a personal page of Frantisek Janus. I&amp;rsquo;m IT professional living in Zürich area. The content of this page is focused on technical topics, mainly from my work or about topics which interests me.
 You can find 2 main content sections here: 1. Notes - intended to be one long structured document with my notes. 2. Blog - posts where I would like to go a little deeper or to be more verbose</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/blog/linux-filesystem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/linux-filesystem/</guid>
+      <description>Draft Linux filesystem notes Most filesystem implementations define 7 types of files: - Regular files - Directories - Character device files - Block device file - Local domain socket - Named pipes (FIFOs) - Symbolic links
+Use file command to determine a file type.
+mount - maps a directory withing the existing file tree, called the mount point, to the root of newly attached filesystem umount - to detach a filesystem.</description>
     </item>
     
   </channel>
