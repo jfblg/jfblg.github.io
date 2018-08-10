@@ -49,7 +49,8 @@ GNU/Linux administration commands and concepts To cancel shutdown shutdown -ci o
       
       <guid>/contact/</guid>
       <description>I prefer GPG encrypted emails.
-inbox@fjanus.eu inbox@jfblg.com
+inbox@fjanus.eu
+inbox@jfblg.com
 My GPG key fingerprint
 1E28 8B33 06B0 9DC4 33F4 1507 5F7B 978E A457 58B0
 My key can be downloaded from the keyserver-pool or from the local copy.</description>
