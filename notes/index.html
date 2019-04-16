@@ -190,7 +190,7 @@ lsof /var/log/syslog</code></pre></div></p></li>
 
 <li><p><strong>ddi</strong> - convert and copy a file. Can be also used to write an image to a USB stick or to test disk speed
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>~/testfile bs<span style="color:#f92672">=</span>1G count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> oflag<span style="color:#f92672">=</span>direct
-# oflag<span style="color:#f92672">=</span>direct -- uses direct I/O, avoinding the buffer cache <span style="color:#f92672">=</span>&gt; it speeds up the process</code></pre></div></p></li>
+<span style="color:#75715e"># oflag=direct -- uses direct I/O, avoinding the buffer cache =&gt; it speeds up the process</span></code></pre></div></p></li>
 </ul>
 
 <h3 id="permisions">Permisions</h3>
@@ -219,8 +219,8 @@ lsof /var/log/syslog</code></pre></div></p></li>
 
 <ul>
 <li>Varous search commands
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get list of files and line number, where the PATTERN is found in all files contained under the PATH
-</span><span style="color:#75715e"></span>grep -rnw <span style="color:#e6db74">&#39;PATH&#39;</span> -e <span style="color:#e6db74">&#39;PATTERN &#39;</span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get list of files and line number, where the PATTERN is found in all files contained under the PATH</span>
+grep -rnw <span style="color:#e6db74">&#39;PATH&#39;</span> -e <span style="color:#e6db74">&#39;PATTERN &#39;</span></code></pre></div></li>
 </ul>
 
 <h3 id="startup-configuration-files">Startup configuration files</h3>
@@ -236,11 +236,11 @@ lsof /var/log/syslog</code></pre></div></p></li>
 
 <ul>
 <li><p>Get list of package selections, and write it to stdout. Without any other argument, all installed packages will be shown.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># list of all installed packages on Debian/Ubuntu
-</span><span style="color:#75715e"></span>sudo dpkg --get-selections
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># list of all installed packages on Debian/Ubuntu</span>
+sudo dpkg --get-selections
 
-<span style="color:#75715e"># list of all installed packages on RHEL based linux
-</span><span style="color:#75715e"></span>yum list installed</code></pre></div></p></li>
+<span style="color:#75715e"># list of all installed packages on RHEL based linux</span>
+yum list installed</code></pre></div></p></li>
 
 <li><p>Aptitude filter to show packages installed by user <strong>~i!~M</strong></p></li>
 
@@ -272,14 +272,14 @@ lsof /var/log/syslog</code></pre></div></p></li>
 
 <ul>
 <li>run the following commands as root
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SHUTDOWN
-</span><span style="color:#75715e"></span>shutdown -h now
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SHUTDOWN</span>
+shutdown -h now
 halt
 poweroff
 init <span style="color:#ae81ff">0</span>
 
-<span style="color:#75715e"># REBOOT
-</span><span style="color:#75715e"></span>reboot
+<span style="color:#75715e"># REBOOT</span>
+reboot
 shutdown -r now
 init <span style="color:#ae81ff">6</span></code></pre></div></li>
 </ul>
@@ -325,25 +325,25 @@ init <span style="color:#ae81ff">6</span></code></pre></div></li>
 
 <ul>
 <li><p>display line numbers of a text file
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat -n      <span style="color:#75715e"># display line number for each line (also for an empty one)
-</span><span style="color:#75715e"></span>            <span style="color:#75715e"># alternative nl -ba
-</span><span style="color:#75715e"></span>nl          # display line number only <span style="color:#66d9ef">for</span> non-empty line</code></pre></div></p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat -n      <span style="color:#75715e"># display line number for each line (also for an empty one)</span>
+            <span style="color:#75715e"># alternative nl -ba</span>
+nl          <span style="color:#75715e"># display line number only for non-empty line</span></code></pre></div></p></li>
 
 <li><p>disk usage with <strong>du</strong>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du &lt;folder&gt;
-du -sh &lt;folder&gt; <span style="color:#75715e"># summary size in human readable format
-</span><span style="color:#75715e"></span>du -ah &lt;folder&gt; <span style="color:#75715e"># size of each file in human readable format
-</span><span style="color:#75715e"></span>du -h &lt;folder&gt; | sort -rh | head -3 # to find the largest <span style="color:#ae81ff">3</span> files in the folder</code></pre></div></p></li>
+du -sh &lt;folder&gt; <span style="color:#75715e"># summary size in human readable format</span>
+du -ah &lt;folder&gt; <span style="color:#75715e"># size of each file in human readable format</span>
+du -h &lt;folder&gt; | sort -rh | head -3 <span style="color:#75715e"># to find the largest 3 files in the folder</span></code></pre></div></p></li>
 
 <li><p>to extract an tar archive to a directory use: <strong>tar -xf <file.tar> -C /target/directory</strong></p></li>
 
 <li><p>pause process and run other in the background
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CTRL+z  <span style="color:#75715e"># pauses an application
-</span><span style="color:#75715e"></span>fg  <span style="color:#75715e"># returns to the most recent application
-</span><span style="color:#75715e"></span>bg  <span style="color:#75715e"># sends a paused process to run in the background
-</span><span style="color:#75715e"></span>jobs    <span style="color:#75715e"># list stopped processes
-</span><span style="color:#75715e"></span>jobs -l <span style="color:#75715e"># list stopped process als with their PIDs
-</span><span style="color:#75715e"></span>kill &lt;PID&gt;  # kill the process</code></pre></div></p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CTRL+z  <span style="color:#75715e"># pauses an application</span>
+fg  <span style="color:#75715e"># returns to the most recent application</span>
+bg  <span style="color:#75715e"># sends a paused process to run in the background</span>
+jobs    <span style="color:#75715e"># list stopped processes</span>
+jobs -l <span style="color:#75715e"># list stopped process als with their PIDs</span>
+kill &lt;PID&gt;  <span style="color:#75715e"># kill the process</span></code></pre></div></p></li>
 
 <li><p>delete all files except some</p>
 
@@ -359,14 +359,14 @@ du -sh &lt;folder&gt; <span style="color:#75715e"># summary size in human readab
 
 <li><p>temporarily disable command logging in the terminal
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    set +o history
-    <span style="color:#75715e"># OR
-</span><span style="color:#75715e"></span>    shopt -uo history
+    <span style="color:#75715e"># OR</span>
+    shopt -uo history
     </code></pre></div></p></li>
 
 <li><p>to enable command logging in the terminal
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    set -o history
-    <span style="color:#75715e"># OR
-</span><span style="color:#75715e"></span>    shopt -so history
+    <span style="color:#75715e"># OR</span>
+    shopt -so history
     </code></pre></div></p></li>
 </ul></li>
 
@@ -400,27 +400,27 @@ du -sh &lt;folder&gt; <span style="color:#75715e"># summary size in human readab
 <li><p><strong>fold</strong> - command to break down text at a specified width (defaul is 80)</p></li>
 
 <li><p><strong>xags</strong> - build and execute command lines from stdin. It can replace otherwise necessary for loops in the commands. Examples
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Determine file type of the files with .bak extension. Note - no &#39;for loop&#39; needed
-</span><span style="color:#75715e"></span>find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> | xargs file
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Determine file type of the files with .bak extension. Note - no &#39;for loop&#39; needed</span>
+find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> | xargs file
 
-<span style="color:#75715e"># To place the argument more then once use {}
-</span><span style="color:#75715e"></span>find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> -print0 | xargs -0 -I <span style="color:#f92672">{}</span> mv <span style="color:#f92672">{}</span> ~/old.files</code></pre></div></p></li>
+<span style="color:#75715e"># To place the argument more then once use {}</span>
+find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> -print0 | xargs -0 -I <span style="color:#f92672">{}</span> mv <span style="color:#f92672">{}</span> ~/old.files</code></pre></div></p></li>
 
 <li><p>Detect your distibution
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsb_release -i
 lsb_release -a</code></pre></div></p></li>
 
 <li><p>Uptime
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># shows only the uptime
-</span><span style="color:#75715e"></span>uptime -p
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># shows only the uptime</span>
+uptime -p
 
-<span style="color:#75715e"># show date of last restart
-</span><span style="color:#75715e"></span>uptime -s</code></pre></div></p></li>
+<span style="color:#75715e"># show date of last restart</span>
+uptime -s</code></pre></div></p></li>
 
 <li><p>Gunzip - .gz files
 See man page for more details
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># to decompress
-</span><span style="color:#75715e"></span>gzip -d file.gz
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># to decompress</span>
+gzip -d file.gz
 
 gunzip file.gz</code></pre></div></p></li>
 
@@ -445,34 +445,34 @@ gunzip file.gz</code></pre></div></p></li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -ltr</code></pre></div></p></li>
 
 <li><p>How to format an SD-Card (or other block device) to a FAT32
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Note, there are also other ways how to achieve this
-</span><span style="color:#75715e"># Used commmands: lsblk, parted, mkfs.vfat
-</span><span style="color:#75715e"># root privileges required
-</span><span style="color:#75715e"></span>lsblk
-<span style="color:#75715e"># choose the correct device, e.g. /dev/sdb
-</span><span style="color:#75715e"></span>parted /dev/sdb
-<span style="color:#75715e"># create a new partiotion table
-</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> mklabel msdos
-<span style="color:#75715e"># create a new partition on the drive
-</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> mkpart primary fat32 1MiB <span style="color:#ae81ff">100</span>%
-<span style="color:#75715e"># set the boot flag on it
-</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> set <span style="color:#ae81ff">1</span> boot on
-<span style="color:#75715e"># quit parted
-</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> quit
-<span style="color:#75715e"># format the created partion on the drive. not the drive itself!
-</span><span style="color:#75715e"></span>mkfs.vfat /dev/sdb1</code></pre></div></p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Note, there are also other ways how to achieve this</span>
+<span style="color:#75715e"># Used commmands: lsblk, parted, mkfs.vfat</span>
+<span style="color:#75715e"># root privileges required</span>
+lsblk
+<span style="color:#75715e"># choose the correct device, e.g. /dev/sdb</span>
+parted /dev/sdb
+<span style="color:#75715e"># create a new partiotion table</span>
+<span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> mklabel msdos
+<span style="color:#75715e"># create a new partition on the drive</span>
+<span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> mkpart primary fat32 1MiB <span style="color:#ae81ff">100</span>%
+<span style="color:#75715e"># set the boot flag on it</span>
+<span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> set <span style="color:#ae81ff">1</span> boot on
+<span style="color:#75715e"># quit parted</span>
+<span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> quit
+<span style="color:#75715e"># format the created partion on the drive. not the drive itself!</span>
+mkfs.vfat /dev/sdb1</code></pre></div></p></li>
 
 <li><p>How to unbind USB device on Debian
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># lsusb to list connected devices
-</span><span style="color:#75715e"></span>cd /sys/bus/usb
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># lsusb to list connected devices</span>
+cd /sys/bus/usb
 grep . devices/*/idProduct
 
-<span style="color:#75715e"># find the ID which correcsponds to the output of lsusb
-</span><span style="color:#75715e"># deactivate the usb device:
-</span><span style="color:#75715e"></span>echo ID &gt; drivers/usb/unbind <span style="color:#75715e"># (ID for example: 1-10.3)
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#activathe the usb device:
-</span><span style="color:#75715e"></span>echo ID &gt; drivers/usb/bind</code></pre></div></p></li>
+<span style="color:#75715e"># find the ID which correcsponds to the output of lsusb</span>
+<span style="color:#75715e"># deactivate the usb device:</span>
+echo ID &gt; drivers/usb/unbind <span style="color:#75715e"># (ID for example: 1-10.3)</span>
+
+<span style="color:#75715e">#activathe the usb device:</span>
+echo ID &gt; drivers/usb/bind</code></pre></div></p></li>
 
 <li><p>How to generate file with size of 50MB
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>output.dat bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>
@@ -507,101 +507,101 @@ nmap -sn <span style="color:#ae81ff">10</span>.0.0.1-15</code></pre></div></p></
 
 <p>Note: device /dev/sda5 is used as example. The actual value may vary depending on which device repesents a LUKS encrypted volume</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># to list LUKS devices
-</span><span style="color:#75715e"></span>lsblk -fs
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># to list LUKS devices</span>
+lsblk -fs
 
-<span style="color:#75715e"># to verify if it is a LUKS device
-</span><span style="color:#75715e"></span>cryptsetup isLuks /dev/sda5 -v
+<span style="color:#75715e"># to verify if it is a LUKS device</span>
+cryptsetup isLuks /dev/sda5 -v
 
-<span style="color:#75715e"># to get LUKS device UUID
-</span><span style="color:#75715e"></span>cryptsetup luksUUID /dev/sda5
+<span style="color:#75715e"># to get LUKS device UUID</span>
+cryptsetup luksUUID /dev/sda5
 
-<span style="color:#75715e"># to get Information about LUKS partition
-</span><span style="color:#75715e"></span>cryptsetup luksDump /dev/sda5
+<span style="color:#75715e"># to get Information about LUKS partition</span>
+cryptsetup luksDump /dev/sda5
 
-<span style="color:#75715e"># Add a new passphrase
-</span><span style="color:#75715e"></span>cryptsetup luksAddKey --key-slot <span style="color:#ae81ff">1</span>
+<span style="color:#75715e"># Add a new passphrase</span>
+cryptsetup luksAddKey --key-slot <span style="color:#ae81ff">1</span>
 
-<span style="color:#75715e"># Remove a passphrase
-</span><span style="color:#75715e"></span>cryptsetup luksRemoveKey
+<span style="color:#75715e"># Remove a passphrase</span>
+cryptsetup luksRemoveKey
 
-<span style="color:#75715e"># Test a new passphrase
-</span><span style="color:#75715e"></span>cryptsetup open /dev/sda5 --test-passphrase
+<span style="color:#75715e"># Test a new passphrase</span>
+cryptsetup open /dev/sda5 --test-passphrase
 
-<span style="color:#75715e"># Serial number of HDD
-</span><span style="color:#75715e"></span>udevadm info --query<span style="color:#f92672">=</span>all --name<span style="color:#f92672">=</span>/dev/sda | grep ID_SERIAL</code></pre></div>
+<span style="color:#75715e"># Serial number of HDD</span>
+udevadm info --query<span style="color:#f92672">=</span>all --name<span style="color:#f92672">=</span>/dev/sda | grep ID_SERIAL</code></pre></div>
 
 <h2 id="sed-stream-editor">sed - Stream editor</h2>
 
 <p>Some basic commands:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># replace 1st occurance in each line of foo for bar
-</span><span style="color:#75715e"></span>sed <span style="color:#e6db74">&#39;s/foo/bar/&#39;</span> old-file &gt; new-file
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># replace 1st occurance in each line of foo for bar</span>
+sed <span style="color:#e6db74">&#39;s/foo/bar/&#39;</span> old-file &gt; new-file
 
-<span style="color:#75715e"># replaces first 5 occurances in each line of foo for bar
-</span><span style="color:#75715e"></span>sed <span style="color:#e6db74">&#39;s/foo/bar/5&#39;</span> old-file &gt; new-file
+<span style="color:#75715e"># replaces first 5 occurances in each line of foo for bar</span>
+sed <span style="color:#e6db74">&#39;s/foo/bar/5&#39;</span> old-file &gt; new-file
 
-<span style="color:#75715e"># replace all occurances of foo for bar
-</span><span style="color:#75715e"></span>sed <span style="color:#e6db74">&#39;s/foo/bar/g&#39;</span> old-file &gt; new-file
+<span style="color:#75715e"># replace all occurances of foo for bar</span>
+sed <span style="color:#e6db74">&#39;s/foo/bar/g&#39;</span> old-file &gt; new-file
 
-<span style="color:#75715e"># repalce foo for bar only if line contains dragon
-</span><span style="color:#75715e"></span>sed <span style="color:#e6db74">&#39;/dragon/s/foo/bar/g&#39;</span> old-file &gt; new-file
+<span style="color:#75715e"># repalce foo for bar only if line contains dragon</span>
+sed <span style="color:#e6db74">&#39;/dragon/s/foo/bar/g&#39;</span> old-file &gt; new-file
 
-<span style="color:#75715e"># replace foo for bar except for lines wich contain dragon
-</span><span style="color:#75715e"></span>sed <span style="color:#e6db74">&#39;/dragon/!s/foo/bar/g&#39;</span> old-file &gt; new-file
+<span style="color:#75715e"># replace foo for bar except for lines wich contain dragon</span>
+sed <span style="color:#e6db74">&#39;/dragon/!s/foo/bar/g&#39;</span> old-file &gt; new-file
 
-<span style="color:#75715e"># delete blank lines
-</span><span style="color:#75715e"></span>sed <span style="color:#e6db74">&#39;/^$/d&#39;</span> old-file &gt; new-file</code></pre></div>
+<span style="color:#75715e"># delete blank lines</span>
+sed <span style="color:#e6db74">&#39;/^$/d&#39;</span> old-file &gt; new-file</code></pre></div>
 
 <h2 id="bash-scripting">BASH Scripting</h2>
 
 <ul>
 <li>basic operations with arrays in BASH
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># declaration 1
-</span><span style="color:#75715e"></span>unix<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># declaration 1</span>
+unix<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
 unix<span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;Red Hat&#34;</span>
 
-<span style="color:#75715e"># declaration 2
-</span><span style="color:#75715e"></span>declare -a auto<span style="color:#f92672">=(</span>toyota skoda bmw vw fiat<span style="color:#f92672">)</span>
+<span style="color:#75715e"># declaration 2</span>
+declare -a auto<span style="color:#f92672">=(</span>toyota skoda bmw vw fiat<span style="color:#f92672">)</span>
 
-<span style="color:#75715e"># print out the array
-</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#75715e"># deals with the list as multiple variables
-</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${</span>auto[*]<span style="color:#e6db74">}</span> <span style="color:#75715e"># deals with the list as 1 variable
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e"># length of an array
-</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${#</span>auto[@]<span style="color:#e6db74">}</span>
+<span style="color:#75715e"># print out the array</span>
+echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#75715e"># deals with the list as multiple variables</span>
+echo <span style="color:#e6db74">${</span>auto[*]<span style="color:#e6db74">}</span> <span style="color:#75715e"># deals with the list as 1 variable</span>
 
-<span style="color:#75715e"># length of an element in an array
-</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${#</span>atuo[1]<span style="color:#e6db74">}</span>
+<span style="color:#75715e"># length of an array</span>
+echo <span style="color:#e6db74">${#</span>auto[@]<span style="color:#e6db74">}</span>
 
-<span style="color:#75715e"># slicing :start_possition:offset
-</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${</span>auto[@]:3:2<span style="color:#e6db74">}</span>
+<span style="color:#75715e"># length of an element in an array</span>
+echo <span style="color:#e6db74">${#</span>atuo[1]<span style="color:#e6db74">}</span>
 
-<span style="color:#75715e"># search and replace in an array
-</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">${</span>auto[@]/fiat/srot<span style="color:#e6db74">}</span>
+<span style="color:#75715e"># slicing :start_possition:offset</span>
+echo <span style="color:#e6db74">${</span>auto[@]:3:2<span style="color:#e6db74">}</span>
 
-<span style="color:#75715e"># only the remaining i.e. not matched elements are stored to the result var
-</span><span style="color:#75715e"># globing is used, not regex
-</span><span style="color:#75715e"></span>declare -a result<span style="color:#f92672">=(</span> <span style="color:#e6db74">${</span>countries[@]/*a*/<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+<span style="color:#75715e"># search and replace in an array</span>
+echo <span style="color:#e6db74">${</span>auto[@]/fiat/srot<span style="color:#e6db74">}</span>
 
-<span style="color:#75715e"># add an element to an existing array
-</span><span style="color:#75715e"></span>auto<span style="color:#f92672">=(</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;tatra&#34;</span> <span style="color:#e6db74">&#34;trabant&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#75715e"># only the remaining i.e. not matched elements are stored to the result var</span>
+<span style="color:#75715e"># globing is used, not regex</span>
+declare -a result<span style="color:#f92672">=(</span> <span style="color:#e6db74">${</span>countries[@]/*a*/<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># add an element to an existing array</span>
+auto<span style="color:#f92672">=(</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;tatra&#34;</span> <span style="color:#e6db74">&#34;trabant&#34;</span><span style="color:#f92672">)</span>
 echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span>
 
-<span style="color:#75715e"># remove an element form array
-</span><span style="color:#75715e"></span>unset auto<span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">]</span>
+<span style="color:#75715e"># remove an element form array</span>
+unset auto<span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">]</span>
 echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span>
 
-<span style="color:#75715e"># copy an array
-</span><span style="color:#75715e"></span>car<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#75715e"># copy an array</span>
+car<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
 echo <span style="color:#e6db74">${</span>car[@]<span style="color:#e6db74">}</span>
 
-<span style="color:#75715e"># delete an entire array
-</span><span style="color:#75715e"></span>unset car
+<span style="color:#75715e"># delete an entire array</span>
+unset car
 echo <span style="color:#e6db74">${</span>car[@]<span style="color:#e6db74">}</span>
 
-<span style="color:#75715e">#load content of an file input-array into an array
-</span><span style="color:#75715e"></span>filecontent<span style="color:#f92672">=(</span> <span style="color:#e6db74">`</span>cat input-array<span style="color:#e6db74">`</span> <span style="color:#f92672">)</span>
+<span style="color:#75715e">#load content of an file input-array into an array</span>
+filecontent<span style="color:#f92672">=(</span> <span style="color:#e6db74">`</span>cat input-array<span style="color:#e6db74">`</span> <span style="color:#f92672">)</span>
 echo <span style="color:#e6db74">${</span>filecontent[@]<span style="color:#e6db74">}</span>
 echo <span style="color:#e6db74">${</span>filecontent[1]<span style="color:#e6db74">}</span>
 
@@ -614,8 +614,8 @@ echo <span style="color:#e6db74">${</span>filecontent[1]<span style="color:#e6db
 
 <ul>
 <li><p>List of most common gpg commands
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># BASICS
-</span><span style="color:#75715e"></span>gpg -k
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># BASICS</span>
+gpg -k
 gpg -K
 gpg --card-status
 gpg --edit-key KEY_HASH
@@ -631,55 +631,55 @@ gpg --delete-secret-keys KEY_ID
 gpg --delete-secret-and-public-keys KEYID</code></pre></div></p></li>
 
 <li><p>when using gpg also with <strong>ssh-agent</strong>, this may be useful
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># .bashrc should contain
-</span><span style="color:#75715e"></span>GPG_TTY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># .bashrc should contain</span>
+GPG_TTY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span>
 export GPG_TTY
 
-<span style="color:#75715e"># to kill gpg-agent
-</span><span style="color:#75715e"></span>gpgconf --kill gpg-agent
+<span style="color:#75715e"># to kill gpg-agent</span>
+gpgconf --kill gpg-agent
 
-<span style="color:#75715e"># the gpg-agent is automatically started on demand by gpg, gpgsm, gpgconf or gpg-connect-agent
-</span><span style="color:#75715e"></span>gpg -K  <span style="color:#75715e"># or
-</span><span style="color:#75715e"></span>gpg --card-status
+<span style="color:#75715e"># the gpg-agent is automatically started on demand by gpg, gpgsm, gpgconf or gpg-connect-agent</span>
+gpg -K  <span style="color:#75715e"># or</span>
+gpg --card-status
 
 
-<span style="color:#75715e"># to add private key identities to the authentication agent
-</span><span style="color:#75715e"></span>ssh-add
-<span style="color:#75715e"># to list fingerprints of all identies currently repesented by the ssh agent
-</span><span style="color:#75715e"></span>ssh-add -l
-<span style="color:#75715e"># to list public keys of all identities currently represented by the ssh agent
-</span><span style="color:#75715e"></span>ssh-add -L</code></pre></div></p></li>
+<span style="color:#75715e"># to add private key identities to the authentication agent</span>
+ssh-add
+<span style="color:#75715e"># to list fingerprints of all identies currently repesented by the ssh agent</span>
+ssh-add -l
+<span style="color:#75715e"># to list public keys of all identities currently represented by the ssh agent</span>
+ssh-add -L</code></pre></div></p></li>
 
 <li><p>If you encounter following issue when refreshing gpg keys:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fero@server:~$ gpg --refresh-keys                                         
 gpg: refreshing <span style="color:#ae81ff">13</span> keys from hkps://hkps.pool.sks-keyservers.net
 gpg: keyserver refresh failed: No keyserver available  
 
-<span style="color:#75715e"># OR
-</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># OR</span>
+
 fero@server:~$ gpg --refresh-keys                                                                                     
 gpg: refreshing <span style="color:#ae81ff">13</span> keys from hkps://hkps.pool.sks-keyservers.net
 gpg: WARNING: Tor is not properly configured
 gpg: WARNING: Tor is not properly configured
 
-<span style="color:#75715e"># Then execture the following:
-</span><span style="color:#75715e"></span>gpgconf --kill gpg-agent
+<span style="color:#75715e"># Then execture the following:</span>
+gpgconf --kill gpg-agent
 sudo /etc/init.d/tor restart
 sudo killall dirmngr
 
-<span style="color:#75715e"># then start the gpg agent
-</span><span style="color:#75715e"></span>gpg --card-status
+<span style="color:#75715e"># then start the gpg agent</span>
+gpg --card-status
 
-<span style="color:#75715e"># then refresh the keys
-</span><span style="color:#75715e"></span>gpg --refresh-keys</code></pre></div></p></li>
+<span style="color:#75715e"># then refresh the keys</span>
+gpg --refresh-keys</code></pre></div></p></li>
 
 <li><p>To verify signature of a GPG key(s)
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># The key signature isn&#39;t reported as correct unless the _sig_ designator
-</span><span style="color:#75715e"># is immediatelly followed by an ! exclamation mark
-</span><span style="color:#75715e"></span>gpg --check-signatures
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># The key signature isn&#39;t reported as correct unless the _sig_ designator</span>
+<span style="color:#75715e"># is immediatelly followed by an ! exclamation mark</span>
+gpg --check-signatures
 
-<span style="color:#75715e"># note gpg --list-sig does not show ! exclamation mark
-</span><span style="color:#75715e"></span>gpg --list-sig</code></pre></div></p></li>
+<span style="color:#75715e"># note gpg --list-sig does not show ! exclamation mark</span>
+gpg --list-sig</code></pre></div></p></li>
 </ul>
 
 <h2 id="libvirt-qemu-kvm-basics">Libvirt, Qemu, KVM basics</h2>
@@ -721,31 +721,31 @@ vagrant mutate bento/ubuntu-14.04 libvirt</code></pre></div></p>
 
 <h2 id="iptables-command-examples">IPTABLES command examples</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LIST existing rules
-</span><span style="color:#75715e"></span>iptables -L -n -v
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LIST existing rules</span>
+iptables -L -n -v
 iptables -n -L -v --line-numbers
 iptables -L OUTPUT -n -v --line-numbers
 
-<span style="color:#75715e"># FIND and DELETE by the index number
-</span><span style="color:#75715e"></span>iptables -L INPUT -n --line-numbers
+<span style="color:#75715e"># FIND and DELETE by the index number</span>
+iptables -L INPUT -n --line-numbers
 iptables -D INPUT <span style="color:#ae81ff">4</span>
 <span style="color:#f92672">(</span>-D : Delete one or more rules from the selected chain<span style="color:#f92672">)</span>
 
-<span style="color:#75715e"># INSERT
-</span><span style="color:#75715e"></span>iptables -I INPUT <span style="color:#ae81ff">2</span> -s <span style="color:#ae81ff">202</span>.54.1.2 -j DROP
+<span style="color:#75715e"># INSERT</span>
+iptables -I INPUT <span style="color:#ae81ff">2</span> -s <span style="color:#ae81ff">202</span>.54.1.2 -j DROP
 
-<span style="color:#75715e"># Set the Default Firewall Policies
-</span><span style="color:#75715e"></span>iptables -P INPUT DROP
+<span style="color:#75715e"># Set the Default Firewall Policies</span>
+iptables -P INPUT DROP
 
-<span style="color:#75715e"># Only drop incomming traffic
-</span><span style="color:#75715e"></span>iptables -P INPUT DROP
+<span style="color:#75715e"># Only drop incomming traffic</span>
+iptables -P INPUT DROP
 iptables -P FORWARD DROP
 iptables -P OUTPUT ACCEPT
 iptables -A INPUT -m state --state NEW,ESTABLISHED -j ACCEPT
 iptables -L -v -n
 
-<span style="color:#75715e"># Drop Private Network Address On Public Interface
-</span><span style="color:#75715e"></span>iptables -A INPUT -i eth1 -s <span style="color:#ae81ff">192</span>.168.0.0/24 -j DROP
+<span style="color:#75715e"># Drop Private Network Address On Public Interface</span>
+iptables -A INPUT -i eth1 -s <span style="color:#ae81ff">192</span>.168.0.0/24 -j DROP
 iptables -A INPUT -i eth1 -s <span style="color:#ae81ff">10</span>.0.0.0/8 -j DROP
 
 iptables -A INPUT -p tcp --dport <span style="color:#ae81ff">80</span> -j DROP
@@ -799,11 +799,11 @@ mr remember</code></pre></div></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout Feature-1
 git checkout -b Temp-Feature-1
 git rebase -i master
-<span style="color:#75715e"># now clean up the history
-</span><span style="color:#75715e"></span>git checkout master
+<span style="color:#75715e"># now clean up the history</span>
+git checkout master
 git merge Temp-Feature-1
-<span style="color:#75715e"># then you can delete the intergrated branches
-</span><span style="color:#75715e"></span>git branch -d Temp-Feature-1
+<span style="color:#75715e"># then you can delete the intergrated branches</span>
+git branch -d Temp-Feature-1
 git branch -D Feature-1</code></pre></div></p>
 
 <h3 id="git-log">Git log</h3>
@@ -811,20 +811,20 @@ git branch -D Feature-1</code></pre></div></p>
 <p>To see more options, go to <strong>man git log</strong>.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log
-<span style="color:#75715e"># --oneline - show just hash and commit message
-</span><span style="color:#75715e"></span>git log --oneline
-<span style="color:#75715e"># --decorate - print also ref names
-</span><span style="color:#75715e"></span>git log --oneline --decorate
-<span style="color:#75715e"># --graph
-</span><span style="color:#75715e"></span>git log --graph
+<span style="color:#75715e"># --oneline - show just hash and commit message</span>
+git log --oneline
+<span style="color:#75715e"># --decorate - print also ref names</span>
+git log --oneline --decorate
+<span style="color:#75715e"># --graph</span>
+git log --graph
 git log --oneline --decorate --graph
-<span style="color:#75715e"># --simplify-by-decoration - to see only significat changes in the project.
-</span><span style="color:#75715e"># remove any commit, that wasn&#39;t tagged or branched
-</span><span style="color:#75715e"></span>git log --oneline --decorate --graph --simplify-by-decoration
-<span style="color:#75715e"># --stat - get more details about the files commited
-</span><span style="color:#75715e"></span>git log --oneline --graph --decorate --stat
-<span style="color:#75715e"># -G &lt;regexp&gt; - search for all commits and files and return ones which match the pattern
-</span><span style="color:#75715e"></span>git log -G <span style="color:#e6db74">&#39;Add .*&#39;</span> --oneline --graph --stat</code></pre></div>
+<span style="color:#75715e"># --simplify-by-decoration - to see only significat changes in the project.</span>
+<span style="color:#75715e"># remove any commit, that wasn&#39;t tagged or branched</span>
+git log --oneline --decorate --graph --simplify-by-decoration
+<span style="color:#75715e"># --stat - get more details about the files commited</span>
+git log --oneline --graph --decorate --stat
+<span style="color:#75715e"># -G &lt;regexp&gt; - search for all commits and files and return ones which match the pattern</span>
+git log -G <span style="color:#e6db74">&#39;Add .*&#39;</span> --oneline --graph --stat</code></pre></div>
 
 <ul>
 <li>to see a specific commit, use <strong>git show COMMIT_ID</strong></li>
@@ -845,28 +845,28 @@ commits separate.</p>
 
 <p><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Submodule documentation</a></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add submodule (another git repository to your project)
-</span><span style="color:#75715e"></span>git submodule add URL LOCAL_FOLDER
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add submodule (another git repository to your project)</span>
+git submodule add URL LOCAL_FOLDER
 
-<span style="color:#75715e"># .gitmodules file will be added to you repository
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e"># when you clone your main repository, execute the following
-</span><span style="color:#75715e"># to load also linked submodules
-</span><span style="color:#75715e"></span>git submodule init
+<span style="color:#75715e"># .gitmodules file will be added to you repository</span>
+
+<span style="color:#75715e"># when you clone your main repository, execute the following</span>
+<span style="color:#75715e"># to load also linked submodules</span>
+git submodule init
 git submodule update
 
-<span style="color:#75715e"># OR you can run the following
-</span><span style="color:#75715e"></span>git clone --recurse-submodules URL LOCAL_FOLDER 
+<span style="color:#75715e"># OR you can run the following</span>
+git clone --recurse-submodules URL LOCAL_FOLDER 
 
-<span style="color:#75715e"># To update a submodule, go to its folder and run
-</span><span style="color:#75715e"></span>git fetch
+<span style="color:#75715e"># To update a submodule, go to its folder and run</span>
+git fetch
 git merge
 
-<span style="color:#75715e"># To see the changes in a submodule go to a main repository folder and run
-</span><span style="color:#75715e"></span>git diff --submodule
+<span style="color:#75715e"># To see the changes in a submodule go to a main repository folder and run</span>
+git diff --submodule
 
-<span style="color:#75715e"># OR you can run
-</span><span style="color:#75715e"></span>git submodule update --remote SUBMODULE_NAME</code></pre></div>
+<span style="color:#75715e"># OR you can run</span>
+git submodule update --remote SUBMODULE_NAME</code></pre></div>
 
 <h3 id="git-hooks">Git hooks</h3>
 
@@ -879,8 +879,8 @@ See some exampls under .git/hooks</p>
 mkdir -p ~/.git-tamplates/hooks
 chmod a+x ~/.git-templates/hooks/post-commit
 
-<span style="color:#75715e"># then execute following in your repository to include global hooks
-</span><span style="color:#75715e"></span>git init</code></pre></div>
+<span style="color:#75715e"># then execute following in your repository to include global hooks</span>
+git init</code></pre></div>
 
 <h2 id="neo-vi-m-editor">(neo)VI(M) editor</h2>
 
@@ -912,29 +912,29 @@ chmod a+x ~/.git-templates/hooks/post-commit
 
 <h3 id="buffers">Buffers</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># list all opened buffers
-</span><span style="color:#75715e"></span>:ls
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># list all opened buffers</span>
+:ls
 :buffers
 :files
 
-<span style="color:#75715e"># open a new buffer
-</span><span style="color:#75715e"></span>:e &lt;filename&gt;
+<span style="color:#75715e"># open a new buffer</span>
+:e &lt;filename&gt;
 
-<span style="color:#75715e"># open existing buffer
-</span><span style="color:#75715e"></span>:b <span style="color:#f92672">[</span>N<span style="color:#f92672">]</span>
+<span style="color:#75715e"># open existing buffer</span>
+:b <span style="color:#f92672">[</span>N<span style="color:#f92672">]</span>
 :b &lt;tab completion&gt;
 
-<span style="color:#75715e"># switch to next buffer
-</span><span style="color:#75715e"></span>:bn 
+<span style="color:#75715e"># switch to next buffer</span>
+:bn 
 
-<span style="color:#75715e"># switch to previous bufffer
-</span><span style="color:#75715e"></span>:bp
+<span style="color:#75715e"># switch to previous bufffer</span>
+:bp
 
-<span style="color:#75715e"># unload current buffer. you can still use CTRL-6 to open it again
-</span><span style="color:#75715e"></span>:bd
+<span style="color:#75715e"># unload current buffer. you can still use CTRL-6 to open it again</span>
+:bd
 
-<span style="color:#75715e"># close (wipeout) the current buffer. Its entries in jumplist are deleted.
-</span><span style="color:#75715e"></span>:bw</code></pre></div>
+<span style="color:#75715e"># close (wipeout) the current buffer. Its entries in jumplist are deleted.</span>
+:bw</code></pre></div>
 
 <h3 id="macro-record-and-play-a-set-of-actions">Macro (record and play a set of actions)</h3>
 
@@ -947,15 +947,15 @@ chmod a+x ~/.git-templates/hooks/post-commit
 
 <h3 id="saving-a-file">Saving a file</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># write old-file.txt content to new-file.txt while keeping old-file.txt as opened buffer
-</span><span style="color:#75715e"></span>:w new-file.txt
-<span style="color:#75715e"># then you can press CTRL-6 to swith to buffer with a new file
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e"># write old-file.yxy content to new-file.txt, close buffer of old-file.txt, open buffer with the new-file.txt
-</span><span style="color:#75715e"></span>:sav new-file.txt
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># write old-file.txt content to new-file.txt while keeping old-file.txt as opened buffer</span>
+:w new-file.txt
+<span style="color:#75715e"># then you can press CTRL-6 to swith to buffer with a new file</span>
 
-<span style="color:#75715e"># to save the new file in the same directory as old one, you can use:
-</span><span style="color:#75715e"></span>:w %:h/new-file.txt
+<span style="color:#75715e"># write old-file.yxy content to new-file.txt, close buffer of old-file.txt, open buffer with the new-file.txt</span>
+:sav new-file.txt
+
+<span style="color:#75715e"># to save the new file in the same directory as old one, you can use:</span>
+:w %:h/new-file.txt
 :sav %:h/new-file.txt</code></pre></div>
 
 <h3 id="plugins">Plugins</h3>
@@ -1037,7 +1037,7 @@ chmod a+x ~/.git-templates/hooks/post-commit
         <div class="section" id="footer">
     <div class="container has-text-centered">
         
-        <span class="footer-text"><a href="https://github.com/hivickylai/hugo-theme-introduction" target="_blank" rel="noopener">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank" rel="noopener">Hugo</a>. Made with <i class="fa fa-heart"></i> and <i class="fa fa-coffee"></i>. <a href="https://vickylai.io" target="_blank" rel="noopener">Vicky Lai</a> 2018</span>
+        <span class="footer-text"><a href="https://github.com/hivickylai/hugo-theme-introduction" target="_blank" rel="noopener">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank" rel="noopener">Hugo</a>. Made with <i class="fa fa-heart"></i> and <i class="fa fa-coffee"></i>. <a href="https://vickylai.io" target="_blank" rel="noopener">Vicky Lai</a> 2019</span>
         
     </div>
 </div>

@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on jfblg.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Apr 2018 12:56:24 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 14 Apr 2019 15:28:40 +0200</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kvm and Qemu Basic Virtualization on Linux</title>
+      <link>/blog/kvm-and-qemu-basic-virtualization-on-linux/</link>
+      <pubDate>Sun, 14 Apr 2019 15:28:40 +0200</pubDate>
+      
+      <guid>/blog/kvm-and-qemu-basic-virtualization-on-linux/</guid>
+      <description>KVM and Qemu basic usage commands Tools listed in the name of this article provide a lot of options for running a virtual machine. The challenge is to know them when you need it (or at least to know where to find them). Let&amp;rsquo;s list few example commands. I use(d) them on Debian 9.
+KVM - Kernel Virual Machine is a modele of Linux Kernel which allows application to access a virtualization functions of the Linux kernel via /dev/kvm.</description>
+    </item>
     
     <item>
       <title>Learning Go</title>

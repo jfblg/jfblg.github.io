@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Public notebook and blog of Frantisek Janus">
+
+<base href="/">
+<title>
+
+
+     Kvm and Qemu Basic Virtualization on Linux 
+
+</title>
+<link rel="canonical" href="/blog/kvm-and-qemu-basic-virtualization-on-linux/">
+
+
+
+
+
+
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+
+
+
+    <link rel="stylesheet" href="css/light-style.css">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="img/fav.ico"
+
+>
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+<div class="section" id="top">
+
+    <div class="container hero ">
+    <h1 class="bold-title is-1">Blog</h1>
+    </div>
+
+
+<div class="section ">
+
+    <div class="container">
+    <hr>
+<nav class="nav nav-center">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu">
+      <span class="nav-item">
+        <a href="/">Main</a>
+      </span>
+      <span class="nav-item">
+        <a href="/#about">About</a> 
+      </span>
+      <span class="nav-item">
+        <a href="/blog">Back to blog</a>
+      </span> 
+      <span class="nav-item">
+        <a href="/#contact">Contact</a>
+      </span>
+    
+      <span class="nav-item">
+        <a href="/index.xml"><i class="fa fa-rss"></i></a>
+      </span>
+    
+    </div>
+</nav>
+<hr>
+    </div>
+
+    <div class="container ">
+        <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/kvm-and-qemu-basic-virtualization-on-linux/">Kvm and Qemu Basic Virtualization on Linux</a></h2>
+            <div class="post-data">
+                14 Apr 2019 |
+                3 minutes read
+            </div>
+
+            
+                <div class="blog-share">
+                Share this:
+                
+                <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Read%20Kvm%20and%20Qemu%20Basic%20Virtualization%20on%20Linux%20%2fblog%2fkvm-and-qemu-basic-virtualization-on-linux%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+                </a>
+                
+                 
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fblog%2fkvm-and-qemu-basic-virtualization-on-linux%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+                </a>
+                
+                
+                
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fblog%2fkvm-and-qemu-basic-virtualization-on-linux%2f"
+                onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+                </a>
+                
+                </div>
+            
+
+    </div>
+
+    <div class="container markdown  top-pad">
+        
+
+<h1 id="kvm-and-qemu-basic-usage-commands">KVM and Qemu basic usage commands</h1>
+
+<p>Tools listed in the name of this article provide a lot of options for running a virtual machine. The challenge is to know them when you need it (or at least to know where to find them). Let&rsquo;s list few example commands. I use(d) them on Debian 9.</p>
+
+<p>KVM - Kernel Virual Machine is a modele of Linux Kernel which allows application to access a virtualization functions of the Linux kernel via /dev/kvm.</p>
+
+<p>Qemu - Quick EMUlator is a software which utilizes KVM to run a VM.</p>
+
+<p>Libvirt - API for managing KVM/Qemu VMs (also many other hypervisorts supported, e.g. HyperV, VMware, Parallels, LXC)</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+<li><p>Make sure that a CPU supports virtualization. <strong>svm</strong> or <strong>vmx</strong> must be listed.</p>
+
+<pre><code>cat /proc/cpuinfo
+</code></pre></li>
+
+<li><p>Make sure that necessary Linux kernel modules are loaded, e.g. in case of Intel, you should see <strong>kvm_intel, kvm, irqbypass</strong></p>
+
+<pre><code>lsmod | grep kvm
+</code></pre></li>
+
+<li><p>For troubleshooting, use:</p>
+
+<pre><code>dmesg | grep kvm
+</code></pre></li>
+
+<li><p>Install necessary packets (e.g. via prefered packet manager)</p>
+
+<pre><code>qemu-system-x86
+</code></pre></li>
+
+<li><p>For Libvirt install also:</p>
+
+<pre><code>virtinst
+lib-virt-daemon-system
+libvirt-clients
+virt-viewer
+openbsd-netcat # for SSH access
+</code></pre></li>
+
+<li><p>To allow a normal user access to VM:</p>
+
+<pre><code>sudo adduser test_user libvirt
+sudo adduser test_user libvirt-qemu
+newgrp libvirt
+newgrp libvirt-qemu
+id
+groups
+</code></pre></li>
+</ul>
+
+<h2 id="verifications">Verifications</h2>
+
+<p>As root:</p>
+
+<pre><code>virsh -c qemu:///system
+</code></pre>
+
+<p>As normal user:</p>
+
+<pre><code>virsh -c qemu:///session
+</code></pre>
+
+<h2 id="live-distribution-virtualization">Live-Distribution virtualization</h2>
+
+<p>In this case, no virtual disk is needed. However you can create one as follows:</p>
+
+<ul>
+<li><p>Raw format. Drawback is that the file has a fix size.</p>
+
+<pre><code>qemu-img create virtdisk.img 1G
+</code></pre></li>
+
+<li><p>Qcow2 (qemu copy on write 2) format. Advantage - disk size grows as needed.</p>
+
+<pre><code>qemu-img create -f qcow2 virtdisk.img 1G
+</code></pre></li>
+
+<li><p>Create a VM from a ISO image:</p>
+
+<pre><code>qemu-system-x86_64 \
+-name vm-name-test \
+-enable-kvm \
+-vga vmware \
+-m 1024 \
+-smp 2 \
+-usbdevice tablet \
+-hda virtdisk.img \
+-cdrom ISO-image-file.img
+</code></pre>
+
+<p>Options: <strong>smp</strong> - number of CPUs(can be more than physical CPUs on the host), <strong>usbdevice tablet</strong> prevents that mouse will be catched by qemu, <strong>m</strong> memory in MB, <strong>hda</strong>(optional) specify a virtual image file, <strong>cdrom</strong> source image file.</p></li>
+
+<li><p>Start a VM from a Live CD/DVD</p>
+
+<pre><code>quemu-system-x86_64 \
+-m 1024 \
+-smp 1 \
+-cdrom /dev/sr0
+</code></pre>
+
+<p>Options: all mentioned in the previous example. Note that <strong>dev/sr0</strong> device file representing my DVD drive.</p></li>
+
+<li><p>Crete a VM from a ISO image with <strong>virt-install</strong></p>
+
+<pre><code>virt-install \
+--name debian9-testing \
+--memory 1024 \
+--disk /var/lib/libvirt/images/debian9.img \
+--vcpus 2 \
+--os-type linux \
+--os-variant debian9 \
+--network bridge=vibr0 \
+--graphics none \
+--console pty,target_type=serial \
+--location http://ftp.debian.org/debian/dists/stretch/main/installer-amd64/ \
+--extra-args 'console=ttyS0,115200n8 serial'
+</code></pre></li>
+</ul>
+
+<h2 id="working-with-graphical-interface">Working with graphical interface</h2>
+
+<ul>
+<li><strong>CTRL + ALT + 2</strong> - open a console in qemu monitor</li>
+<li><strong>CTRL + ALT + 1</strong> - go back to VM</li>
+<li><strong>CTRL + ALT + F</strong> - turn off full screen</li>
+</ul>
+
+    </div>
+
+    <div class="disqus">
+        
+    </div>
+
+<div class="container has-text-centered top-pad">
+<hr>
+<a href="/blog/kvm-and-qemu-basic-virtualization-on-linux/#top"><i class="fa fa-arrow-up"></i></a>
+<hr>
+</div>
+
+<div class="section" id="footer">
+    <div class="container has-text-centered">
+        
+        <span class="footer-text"><a href="https://github.com/hivickylai/hugo-theme-introduction" target="_blank" rel="noopener">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank" rel="noopener">Hugo</a>. Made with <i class="fa fa-heart"></i> and <i class="fa fa-coffee"></i>. <a href="https://vickylai.io" target="_blank" rel="noopener">Vicky Lai</a> 2019</span>
+        
+    </div>
+</div>
+
+</div>
+</div>
+
+
+<script>
+$('a[href^="\/blog\/kvm-and-qemu-basic-virtualization-on-linux\/#"]').click(function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    $('html, body').animate({
+    scrollTop: $(target).offset().top
+    }, 500);
+    return false;
+})
+</script>
+
+</body>
