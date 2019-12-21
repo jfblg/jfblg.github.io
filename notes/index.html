@@ -1,122 +1,80 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<meta name="description" content="Public notebook and blog of Frantisek Janus">
-
-<base href="/">
-<title>
-
-
-     Notes 
-
-</title>
-<link rel="canonical" href="/notes/">
-
-
-
-
-
-
-<script
-src="https://code.jquery.com/jquery-3.2.1.min.js"
-integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-crossorigin="anonymous"></script>
-
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
-
-
-
-    <link rel="stylesheet" href="css/light-style.css">
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Frantisek Janus" />
+    <meta name="description" content="Public notebook and blog of Frantisek Janus">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Notes</title>
+    <meta name="generator" content="Hugo 0.61.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
     
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
 
-
-
-
-<link rel="shortcut icon"
-
-    href="img/fav.ico"
-
->
-
-
-
-
-
-
-
-</head>
-
-
-<body>
-<div class="section" id="top">
     
+  </head>
 
-    <div class="container hero ">
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
         
-        <h1 class="bold-title is-1">Notes</h1>
+        <li><a href="/notes/">NOTES</a></li>
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/resume/">RESUME</a></li>
+        
+      
+      </ul>
     </div>
-    
-
-    
-    <div class="section ">
-
-        <div class="container">
-            
-            <hr>
-<nav class="nav nav-center">
-    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div id="nav-menu" class="nav-left nav-menu">
-      <span class="nav-item">
-        <a href="/">Main</a>
-      </span>
-      <span class="nav-item">
-        <a href="/#about">About</a> 
-      </span>
-    
-      <span class="nav-item">
-        <a href="/#contact">Contact</a>
-      </span>
-    
-      <span class="nav-item">
-        <a href="/index.xml"><i class="fa fa-rss"></i></a>
-      </span>
-    
-    </div>
+  </div>
 </nav>
-<hr>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="/notes/">Notes</a></strong>
+          </h3>
         </div>
-        
-
-        <div class="container markdown  top-pad">
+        <div class="blog-title">
+          <h4>
+          March 22, 2018
+            &nbsp;&nbsp;
             
-             
-            
-            
-
-<p>This section shows you my various notes about technical topics. I started to take notes some time ago when I could not memorize the stuff.
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>This section shows you my various notes about technical topics. I started to take notes some time ago when I could not memorize the stuff.
 In my case, it really helps and provides me a good reference. I how you find it usefull too.</p>
-
 <p>Please note, that this is a evolving page. Notes here may not be well structured and/or formulated.</p>
-
-<h2 id="gnu-linux-administration-commands-and-concepts">GNU/Linux administration commands and concepts</h2>
-
+<h2 id="gnulinux-administration-commands-and-concepts">GNU/Linux administration commands and concepts</h2>
 <p>To cancel shutdown <strong>shutdown -ci</strong> or <strong>pkill shutdown</strong></p>
-
 <h3 id="init-system">Init system</h3>
-
 <ul>
 <li>It gets all the non-kernel programs and services running</li>
 <li>Controlls which services get started by the boot</li>
@@ -125,76 +83,66 @@ In my case, it really helps and provides me a good reference. I how you find it 
 <li>located /sbin/init</li>
 <li>the most used onces are: System V Init (old), systemd (newer but controversial)</li>
 </ul>
-
 <h3 id="virtual-address-space">Virtual address space</h3>
-
 <ul>
 <li>On Linux a virtual address space consists of code, data, heap and stack</li>
 </ul>
-
 <h4 id="heap">Heap</h4>
-
 <ul>
 <li>is memory set aside for dynamic allocation</li>
 <li>an application is given a separate heap memory and it allocates the momory on need basis</li>
 <li>free heap can be allocated anytime</li>
-<li>user shoud however take care of deallocation of the heap memory if it&rsquo;s not needed</li>
+<li>user shoud however take care of deallocation of the heap memory if it's not needed</li>
 <li>to get heap memory in user space the &ldquo;malloc&rdquo; and &ldquo;calloc&rdquo; calls are used, in kernel space &ldquo;kmalloc&rdquo;, &ldquo;vmalloc&rdquo;</li>
 </ul>
-
 <h4 id="stack">Stack</h4>
-
 <ul>
 <li>memory area used by the thread of execution</li>
 <li>when the function is called, the local variable and the return addresses are store in stack</li>
 <li>the stack memory space becomes availble, when the function exits</li>
-<li>the memory allocation and deallocation is done automatically, user doesn&rsquo;t have to take of it.</li>
+<li>the memory allocation and deallocation is done automatically, user doesn't have to take of it.</li>
 </ul>
-
 <h3 id="shell-builtins">Shell-builtins</h3>
-
 <ul>
 <li>see: <strong>man bash-builins</strong></li>
 <li>some interesting ones:
-
 <ul>
 <li><strong>fc</strong> - command for editing and re-executing commands previously entered</li>
 <li><strong>pushdi</strong> - push folder path to a directory stack</li>
 <li><strong>popd</strong> - pop folder path from a directory stack</li>
 <li><strong>dirs</strong> - show directory stack (dirs -c to clear it)</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="time-zone-settings">Time-zone settings</h3>
-
 <ul>
 <li>to change them run <strong>dpkg-reconfigure tzdata</strong></li>
 </ul>
-
 <h3 id="hardware-details">Hardware details</h3>
-
 <ul>
-<li><p>i<strong>lspci</strong> - get hardware stack details (no USB HW is shown)
+<li>
+<p>i<strong>lspci</strong> - get hardware stack details (no USB HW is shown)
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lspci -nnk | grep VGA -A1
-lspci -v | grep -A7 -i <span style="color:#e6db74">&#39;audio&#39;</span></code></pre></div></p></li>
-
-<li><p><strong>lsusb</strong></p></li>
+lspci -v | grep -A7 -i <span style="color:#e6db74">&#39;audio&#39;</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>lsusb</strong></p>
+</li>
 </ul>
-
 <h3 id="file-management">File management</h3>
-
 <ul>
-<li><p><strong>lsof</strong> - list open files. Usefull in cases when you want to find out to which files a program writes to or by which program is written to a particular file
+<li>
+<p><strong>lsof</strong> - list open files. Usefull in cases when you want to find out to which files a program writes to or by which program is written to a particular file
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsof -p PID
-lsof /var/log/syslog</code></pre></div></p></li>
-
-<li><p><strong>ddi</strong> - convert and copy a file. Can be also used to write an image to a USB stick or to test disk speed
+lsof /var/log/syslog</code></pre></div></p>
+</li>
+<li>
+<p><strong>ddi</strong> - convert and copy a file. Can be also used to write an image to a USB stick or to test disk speed
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>~/testfile bs<span style="color:#f92672">=</span>1G count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> oflag<span style="color:#f92672">=</span>direct
-<span style="color:#75715e"># oflag=direct -- uses direct I/O, avoinding the buffer cache =&gt; it speeds up the process</span></code></pre></div></p></li>
+<span style="color:#75715e"># oflag=direct -- uses direct I/O, avoinding the buffer cache =&gt; it speeds up the process</span></code></pre></div></p>
+</li>
 </ul>
-
 <h3 id="permisions">Permisions</h3>
-
 <ul>
 <li><strong>groups [user]</strong> - list user group membership</li>
 <li><strong>chowni</strong></li>
@@ -204,72 +152,72 @@ lsof /var/log/syslog</code></pre></div></p></li>
 <li><strong>adduser</strong> (on Debian based systems) is wrapper for useradd and others</li>
 <li><strong>passwdi</strong> - to change password</li>
 </ul>
-
-<h3 id="glob-ing">Glob(ing)</h3>
-
+<h3 id="globing">Glob(ing)</h3>
 <ul>
-<li><p>to match a file with at least 2 characters and and extension .mp3 or .mp4 use:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">??*.mp<span style="color:#f92672">[</span><span style="color:#ae81ff">34</span><span style="color:#f92672">]</span> </code></pre></div></p></li>
-
-<li><p>to execute an arbitrary command on every file the file command finds. See more details in man page, section -exec. Example:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -iname <span style="color:#e6db74">&#34;.txt&#34;</span> -size +500M -exec ls -lh <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p></li>
+<li>
+<p>to match a file with at least 2 characters and and extension .mp3 or .mp4 use:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">??*.mp<span style="color:#f92672">[</span>34<span style="color:#f92672">]</span> </code></pre></div></p>
+</li>
+<li>
+<p>to execute an arbitrary command on every file the file command finds. See more details in man page, section -exec. Example:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -iname <span style="color:#e6db74">&#34;.txt&#34;</span> -size +500M -exec ls -lh <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p>
+</li>
 </ul>
-
 <h3 id="search">Search</h3>
-
 <ul>
 <li>Varous search commands
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get list of files and line number, where the PATTERN is found in all files contained under the PATH</span>
 grep -rnw <span style="color:#e6db74">&#39;PATH&#39;</span> -e <span style="color:#e6db74">&#39;PATTERN &#39;</span></code></pre></div></li>
 </ul>
-
 <h3 id="startup-configuration-files">Startup configuration files</h3>
-
 <ul>
 <li>usually stored under <strong>/etc/default</strong></li>
 <li>files can contain various variables and arguments which influence how a particlar program or service starts</li>
 <li>example <strong>etc/default/smokeping</strong></li>
 <li>in this regard, it is not recommended to modify init scripts stored under <strong>etc/init.d</strong></li>
 </ul>
-
 <h3 id="package-management">Package management</h3>
-
 <ul>
-<li><p>Get list of package selections, and write it to stdout. Without any other argument, all installed packages will be shown.
+<li>
+<p>Get list of package selections, and write it to stdout. Without any other argument, all installed packages will be shown.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># list of all installed packages on Debian/Ubuntu</span>
 sudo dpkg --get-selections
 
 <span style="color:#75715e"># list of all installed packages on RHEL based linux</span>
-yum list installed</code></pre></div></p></li>
-
-<li><p>Aptitude filter to show packages installed by user <strong>~i!~M</strong></p></li>
-
-<li><p>Bundle the current aptitude state i.e. also all by user installed packages: <strong>aptitude-create-state-bundle</strong></p></li>
-
-<li><p>Package verification: <strong>dpkg &ndash;list <package></strong></p>
-
+yum list installed</code></pre></div></p>
+</li>
+<li>
+<p>Aptitude filter to show packages installed by user <strong>~i!~M</strong></p>
+</li>
+<li>
+<p>Bundle the current aptitude state i.e. also all by user installed packages: <strong>aptitude-create-state-bundle</strong></p>
+</li>
+<li>
+<p>Package verification: <strong>dpkg &ndash;list <!-- raw HTML omitted --></strong></p>
 <ul>
 <li>The first column in the output of the command consist of max 3 latters, which desribe status of the package.
-
 <ul>
 <li>First - desired state (i, u, r, p , h)</li>
 <li>Second - actual status (i, n, c, u, f, h, w, t)</li>
 <li>Third - only option is &lsquo;r&rsquo; - reinstall required</li>
-</ul></li>
-</ul></li>
-
-<li><p>Package installation
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dpkg -i DEB_PACKAGE</code></pre></div></p></li>
-
-<li><p>There may be a problem with dependency though, which can be fixed with:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install -f</code></pre></div></p></li>
-
-<li><p>Package removal
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dpkg -r PACKAGE_NAME</code></pre></div></p></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li>
+<p>Package installation
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dpkg -i DEB_PACKAGE</code></pre></div></p>
+</li>
+<li>
+<p>There may be a problem with dependency though, which can be fixed with:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install -f</code></pre></div></p>
+</li>
+<li>
+<p>Package removal
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dpkg -r PACKAGE_NAME</code></pre></div></p>
+</li>
+</ul>
 <h3 id="shutdown-and-restart">Shutdown and restart</h3>
-
 <ul>
 <li>run the following commands as root
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SHUTDOWN</span>
@@ -283,95 +231,93 @@ reboot
 shutdown -r now
 init <span style="color:#ae81ff">6</span></code></pre></div></li>
 </ul>
-
 <h3 id="useful-tools">Useful tools</h3>
-
 <p>Mostly available as a debian packages</p>
-
 <h4 id="network">Network</h4>
-
 <ul>
 <li>bandwidth monitoring tools
-
 <ul>
 <li><strong>iftop</strong> - displays network interfaces bandwidth usage</li>
 <li><strong>bmon</strong> - portable bandwidth monitor and rate estimator</li>
 <li><strong>slurm</strong> - network load monitor that can display colored graphs</li>
 <li><strong>tcptrack</strong> - reveals how much bandwidth a protocol is using, src and dst ip addresses and ports</li>
 <li><strong>vnstat</strong> - keeps track of network traffic for selected interfaces. works without root permissions.</li>
-</ul></li>
+</ul>
+</li>
 <li><strong>ethtool</strong> - query or control network driver and hardware settings</li>
 <li><strong>mii-tool</strong> - view, manipulate media-independent interface status</li>
 <li><strong>ferm</strong> - fron-end for iptables on linux</li>
 </ul>
-
 <h4 id="server-administration">Server administration</h4>
-
 <ul>
 <li><strong>logcheck</strong> - regular check of logs - you filter out which are not interesting to you</li>
 <li><strong>logwatch</strong> - log reporting tool</li>
 <li><strong>dmesq</strong> - print or control the kernel ring buffer</li>
 </ul>
-
 <h4 id="others">Others</h4>
-
 <ul>
 <li><strong>gitg</strong> and <strong>gitk</strong> - GUI git tools</li>
 <li><strong>pastebinit</strong> - command-line pastebin client</li>
 <li>*<em>hunspell-</em> ** - spell check packages for clawsmail</li>
 </ul>
-
 <h3 id="miscalanious">Miscalanious</h3>
-
 <ul>
-<li><p>display line numbers of a text file
+<li>
+<p>display line numbers of a text file
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat -n      <span style="color:#75715e"># display line number for each line (also for an empty one)</span>
             <span style="color:#75715e"># alternative nl -ba</span>
-nl          <span style="color:#75715e"># display line number only for non-empty line</span></code></pre></div></p></li>
-
-<li><p>disk usage with <strong>du</strong>
+nl          <span style="color:#75715e"># display line number only for non-empty line</span></code></pre></div></p>
+</li>
+<li>
+<p>disk usage with <strong>du</strong>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du &lt;folder&gt;
 du -sh &lt;folder&gt; <span style="color:#75715e"># summary size in human readable format</span>
 du -ah &lt;folder&gt; <span style="color:#75715e"># size of each file in human readable format</span>
-du -h &lt;folder&gt; | sort -rh | head -3 <span style="color:#75715e"># to find the largest 3 files in the folder</span></code></pre></div></p></li>
-
-<li><p>to extract an tar archive to a directory use: <strong>tar -xf <file.tar> -C /target/directory</strong></p></li>
-
-<li><p>pause process and run other in the background
+du -h &lt;folder&gt; | sort -rh | head -3 <span style="color:#75715e"># to find the largest 3 files in the folder</span></code></pre></div></p>
+</li>
+<li>
+<p>to extract an tar archive to a directory use: <strong>tar -xf &lt;file.tar&gt; -C /target/directory</strong></p>
+</li>
+<li>
+<p>pause process and run other in the background
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CTRL+z  <span style="color:#75715e"># pauses an application</span>
 fg  <span style="color:#75715e"># returns to the most recent application</span>
 bg  <span style="color:#75715e"># sends a paused process to run in the background</span>
 jobs    <span style="color:#75715e"># list stopped processes</span>
 jobs -l <span style="color:#75715e"># list stopped process als with their PIDs</span>
-kill &lt;PID&gt;  <span style="color:#75715e"># kill the process</span></code></pre></div></p></li>
-
-<li><p>delete all files except some</p>
-
+kill &lt;PID&gt;  <span style="color:#75715e"># kill the process</span></code></pre></div></p>
+</li>
+<li>
+<p>delete all files except some</p>
 <ul>
 <li>activate <strong>extglob</strong> (Extended Pattern Matching): <strong>shopt -s extglob</strong></li>
 <li>use rm command: <strong>rm !(file1|file2)</strong></li>
-</ul></li>
-
-<li><p>command logging</p>
-
+</ul>
+</li>
+<li>
+<p>command logging</p>
 <ul>
-<li>to avoid recoding of a command to history, add a space char before it.</li>
-
-<li><p>temporarily disable command logging in the terminal
+<li>
+<p>to avoid recoding of a command to history, add a space char before it.</p>
+</li>
+<li>
+<p>temporarily disable command logging in the terminal
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    set +o history
     <span style="color:#75715e"># OR</span>
     shopt -uo history
-    </code></pre></div></p></li>
-
-<li><p>to enable command logging in the terminal
+    </code></pre></div></p>
+</li>
+<li>
+<p>to enable command logging in the terminal
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    set -o history
     <span style="color:#75715e"># OR</span>
     shopt -so history
-    </code></pre></div></p></li>
-</ul></li>
-
-<li><p><strong>BASH</strong> shortcuts</p>
-
+    </code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>BASH</strong> shortcuts</p>
 <ul>
 <li><strong>CTRL-w</strong> - delete the last word</li>
 <li><strong>CTRL-u</strong> - delete from cursor to the start of the line</li>
@@ -381,70 +327,86 @@ kill &lt;PID&gt;  <span style="color:#75715e"># kill the process</span></code></
 <li><strong>CTRL-e</strong> - move to the end of the line</li>
 <li><strong>ALT-f</strong> - move forward by one word</li>
 <li><strong>ALT-b</strong> - move backwads by one word</li>
-</ul></li>
-
-<li><p>to seatch your bash history use <strong>CTRL+r</strong></p>
-
+</ul>
+</li>
+<li>
+<p>to seatch your bash history use <strong>CTRL+r</strong></p>
 <ul>
 <li>to cancel the search <strong>CTRL-g</strong></li>
-<li>to accept the found command and place the cursor in the beginning: <strong>CTRL+a</strong> ,** CTRL+i**, <strong>CTRL+j</strong></li>
+<li>to accept the found command and place the cursor in the beginning: <strong>CTRL+a</strong> ,** CTRL+i**, **CTRL+j**</li>
 <li>to accept the found command and place cursor in the end <strong>CTRL+e</strong></li>
-</ul></li>
-
-<li><p><strong>$!</strong> - substitute with last argument of previous command</p></li>
-
-<li><p>for more than 1 arguments use for example: <strong>!:1-2</strong> or <strong>!:2</strong> (examples are selfexplanatory)</p></li>
-
-<li><p>Alt + .  - to enter the argument used before the last command (press more times for latest history)</p></li>
-
-<li><p><strong>fold</strong> - command to break down text at a specified width (defaul is 80)</p></li>
-
-<li><p><strong>xags</strong> - build and execute command lines from stdin. It can replace otherwise necessary for loops in the commands. Examples
+</ul>
+</li>
+<li>
+<p><strong>$!</strong> - substitute with last argument of previous command</p>
+</li>
+<li>
+<p>for more than 1 arguments use for example: <strong>!:1-2</strong> or <strong>!:2</strong> (examples are selfexplanatory)</p>
+</li>
+<li>
+<p>Alt + .  - to enter the argument used before the last command (press more times for latest history)</p>
+</li>
+<li>
+<p><strong>fold</strong> - command to break down text at a specified width (defaul is 80)</p>
+</li>
+<li>
+<p><strong>xags</strong> - build and execute command lines from stdin. It can replace otherwise necessary for loops in the commands. Examples
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Determine file type of the files with .bak extension. Note - no &#39;for loop&#39; needed</span>
 find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> | xargs file
 
 <span style="color:#75715e"># To place the argument more then once use {}</span>
-find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> -print0 | xargs -0 -I <span style="color:#f92672">{}</span> mv <span style="color:#f92672">{}</span> ~/old.files</code></pre></div></p></li>
-
-<li><p>Detect your distibution
+find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> -print0 | xargs -0 -I <span style="color:#f92672">{</span><span style="color:#f92672">}</span> mv <span style="color:#f92672">{</span><span style="color:#f92672">}</span> ~/old.files</code></pre></div></p>
+</li>
+<li>
+<p>Detect your distibution
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsb_release -i
-lsb_release -a</code></pre></div></p></li>
-
-<li><p>Uptime
+lsb_release -a</code></pre></div></p>
+</li>
+<li>
+<p>Uptime
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># shows only the uptime</span>
 uptime -p
 
 <span style="color:#75715e"># show date of last restart</span>
-uptime -s</code></pre></div></p></li>
-
-<li><p>Gunzip - .gz files
+uptime -s</code></pre></div></p>
+</li>
+<li>
+<p>Gunzip - .gz files
 See man page for more details
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># to decompress</span>
 gzip -d file.gz
 
-gunzip file.gz</code></pre></div></p></li>
-
-<li><p>Follow path name until terminal point is found
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">namei -l &lt;path-to-file&gt;</code></pre></div></p></li>
-
-<li><p>get file access control list <strong>getfacl</strong></p></li>
-
-<li><p>gather ssh public keys
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keyscan hostname</code></pre></div></p></li>
-
-<li><p>curl will generate 4 files, each for each auto-expanded URL
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -OOOO http://ludwig.server.de/ss<span style="color:#f92672">{</span>l,h<span style="color:#f92672">}</span>_fingerprints.txt<span style="color:#f92672">{</span>,.gpg<span style="color:#f92672">}</span></code></pre></div></p></li>
-
-<li><p>List SSH Keys on a server. Example:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub</code></pre></div></p></li>
-
-<li><p>SSH verify MD5 fingerprint
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -o fingerprinthash<span style="color:#f92672">=</span>md5 user@server.example</code></pre></div></p></li>
-
-<li><p>List latest modified fiels <strong>ls -ltr</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -ltr</code></pre></div></p></li>
-
-<li><p>How to format an SD-Card (or other block device) to a FAT32
+gunzip file.gz</code></pre></div></p>
+</li>
+<li>
+<p>Follow path name until terminal point is found
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">namei -l &lt;path-to-file&gt;</code></pre></div></p>
+</li>
+<li>
+<p>get file access control list <strong>getfacl</strong></p>
+</li>
+<li>
+<p>gather ssh public keys
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keyscan hostname</code></pre></div></p>
+</li>
+<li>
+<p>curl will generate 4 files, each for each auto-expanded URL
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -OOOO http://ludwig.server.de/ss<span style="color:#f92672">{</span>l,h<span style="color:#f92672">}</span>_fingerprints.txt<span style="color:#f92672">{</span>,.gpg<span style="color:#f92672">}</span></code></pre></div></p>
+</li>
+<li>
+<p>List SSH Keys on a server. Example:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub</code></pre></div></p>
+</li>
+<li>
+<p>SSH verify MD5 fingerprint
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -o fingerprinthash<span style="color:#f92672">=</span>md5 user@server.example</code></pre></div></p>
+</li>
+<li>
+<p>List latest modified fiels <strong>ls -ltr</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -ltr</code></pre></div></p>
+</li>
+<li>
+<p>How to format an SD-Card (or other block device) to a FAT32
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Note, there are also other ways how to achieve this</span>
 <span style="color:#75715e"># Used commmands: lsblk, parted, mkfs.vfat</span>
 <span style="color:#75715e"># root privileges required</span>
@@ -454,15 +416,16 @@ parted /dev/sdb
 <span style="color:#75715e"># create a new partiotion table</span>
 <span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> mklabel msdos
 <span style="color:#75715e"># create a new partition on the drive</span>
-<span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> mkpart primary fat32 1MiB <span style="color:#ae81ff">100</span>%
+<span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> mkpart primary fat32 1MiB 100%
 <span style="color:#75715e"># set the boot flag on it</span>
 <span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> set <span style="color:#ae81ff">1</span> boot on
 <span style="color:#75715e"># quit parted</span>
 <span style="color:#f92672">(</span>parted<span style="color:#f92672">)</span> quit
 <span style="color:#75715e"># format the created partion on the drive. not the drive itself!</span>
-mkfs.vfat /dev/sdb1</code></pre></div></p></li>
-
-<li><p>How to unbind USB device on Debian
+mkfs.vfat /dev/sdb1</code></pre></div></p>
+</li>
+<li>
+<p>How to unbind USB device on Debian
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># lsusb to list connected devices</span>
 cd /sys/bus/usb
 grep . devices/*/idProduct
@@ -472,41 +435,42 @@ grep . devices/*/idProduct
 echo ID &gt; drivers/usb/unbind <span style="color:#75715e"># (ID for example: 1-10.3)</span>
 
 <span style="color:#75715e">#activathe the usb device:</span>
-echo ID &gt; drivers/usb/bind</code></pre></div></p></li>
-
-<li><p>How to generate file with size of 50MB
+echo ID &gt; drivers/usb/bind</code></pre></div></p>
+</li>
+<li>
+<p>How to generate file with size of 50MB
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>output.dat bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>
 truncate -s 50m output.dat
-fallocate -l 50M output.dat</code></pre></div></p></li>
-
-<li><p>Redirect STDOUT and STDERR to syslog
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec <span style="color:#ae81ff">1</span>&gt; &gt;<span style="color:#f92672">(</span>logger <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
-exec <span style="color:#ae81ff">1</span>&gt; &gt;<span style="color:#f92672">(</span>logger -s -t <span style="color:#66d9ef">$(</span>basename $0<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
-exec <span style="color:#ae81ff">2</span>&gt; &gt;<span style="color:#f92672">(</span>logger -s -t <span style="color:#66d9ef">$(</span>basename $0<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
+fallocate -l 50M output.dat</code></pre></div></p>
+</li>
+<li>
+<p>Redirect STDOUT and STDERR to syslog
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec 1&gt; &gt;<span style="color:#f92672">(</span>logger 2&gt;&amp;1<span style="color:#f92672">)</span>
+exec 1&gt; &gt;<span style="color:#f92672">(</span>logger -s -t <span style="color:#66d9ef">$(</span>basename $0<span style="color:#66d9ef">)</span> 2&gt;&amp;1<span style="color:#f92672">)</span>
+exec 2&gt; &gt;<span style="color:#f92672">(</span>logger -s -t <span style="color:#66d9ef">$(</span>basename $0<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
 
 echo <span style="color:#e6db74">&#34;writing to stdout&#34;</span>
-echo <span style="color:#e6db74">&#34;writing to stderr&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span></code></pre></div></p></li>
-
-<li><p>Send messages to syslog - use command: <strong>logger</strong></p></li>
-
-<li><p><strong>$XDG_CONFIG_HOME</strong> - You don&rsquo;t have to define if it&rsquo;s not set. Defaults to $HOME/.config. But, if you do want to change the default in a Debian/Ubuntu system, the best place is:</p>
-
+echo <span style="color:#e6db74">&#34;writing to stderr&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span></code></pre></div></p>
+</li>
+<li>
+<p>Send messages to syslog - use command: <strong>logger</strong></p>
+</li>
+<li>
+<p><strong>$XDG_CONFIG_HOME</strong> - You don't have to define if it's not set. Defaults to $HOME/.config. But, if you do want to change the default in a Debian/Ubuntu system, the best place is:</p>
 <ul>
 <li>For a system-wide change, affecting all users: /etc/profile</li>
 <li>For your user only: ~/.profilekk</li>
-</ul></li>
-
-<li><p><strong>NMAP</strong> commands tp scan an IP range
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -sn <span style="color:#ae81ff">10</span>.0.0.0/24
-nmap -sn <span style="color:#ae81ff">10</span>.0.0.1-15</code></pre></div></p></li>
 </ul>
-
+</li>
+<li>
+<p><strong>NMAP</strong> commands tp scan an IP range
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -sn 10.0.0.0/24
+nmap -sn 10.0.0.1-15</code></pre></div></p>
+</li>
+</ul>
 <h3 id="luks">LUKS</h3>
-
 <p>Linux Unified Key Setup - the standard for linux HDD encryption.</p>
-
 <p>Note: device /dev/sda5 is used as example. The actual value may vary depending on which device repesents a LUKS encrypted volume</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># to list LUKS devices</span>
 lsblk -fs
 
@@ -530,11 +494,8 @@ cryptsetup open /dev/sda5 --test-passphrase
 
 <span style="color:#75715e"># Serial number of HDD</span>
 udevadm info --query<span style="color:#f92672">=</span>all --name<span style="color:#f92672">=</span>/dev/sda | grep ID_SERIAL</code></pre></div>
-
-<h2 id="sed-stream-editor">sed - Stream editor</h2>
-
+<h2 id="sed---stream-editor">sed - Stream editor</h2>
 <p>Some basic commands:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># replace 1st occurance in each line of foo for bar</span>
 sed <span style="color:#e6db74">&#39;s/foo/bar/&#39;</span> old-file &gt; new-file
 
@@ -552,17 +513,15 @@ sed <span style="color:#e6db74">&#39;/dragon/!s/foo/bar/g&#39;</span> old-file &
 
 <span style="color:#75715e"># delete blank lines</span>
 sed <span style="color:#e6db74">&#39;/^$/d&#39;</span> old-file &gt; new-file</code></pre></div>
-
 <h2 id="bash-scripting">BASH Scripting</h2>
-
 <ul>
 <li>basic operations with arrays in BASH
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># declaration 1</span>
-unix<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
-unix<span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;Red Hat&#34;</span>
+unix<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
+unix<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Red Hat&#34;</span>
 
 <span style="color:#75715e"># declaration 2</span>
-declare -a auto<span style="color:#f92672">=(</span>toyota skoda bmw vw fiat<span style="color:#f92672">)</span>
+declare -a auto<span style="color:#f92672">=</span><span style="color:#f92672">(</span>toyota skoda bmw vw fiat<span style="color:#f92672">)</span>
 
 <span style="color:#75715e"># print out the array</span>
 echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#75715e"># deals with the list as multiple variables</span>
@@ -582,18 +541,18 @@ echo <span style="color:#e6db74">${</span>auto[@]/fiat/srot<span style="color:#e
 
 <span style="color:#75715e"># only the remaining i.e. not matched elements are stored to the result var</span>
 <span style="color:#75715e"># globing is used, not regex</span>
-declare -a result<span style="color:#f92672">=(</span> <span style="color:#e6db74">${</span>countries[@]/*a*/<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+declare -a result<span style="color:#f92672">=</span><span style="color:#f92672">(</span> <span style="color:#e6db74">${</span>countries[@]/*a*/<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
 
 <span style="color:#75715e"># add an element to an existing array</span>
-auto<span style="color:#f92672">=(</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;tatra&#34;</span> <span style="color:#e6db74">&#34;trabant&#34;</span><span style="color:#f92672">)</span>
+auto<span style="color:#f92672">=</span><span style="color:#f92672">(</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;tatra&#34;</span> <span style="color:#e6db74">&#34;trabant&#34;</span><span style="color:#f92672">)</span>
 echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span>
 
 <span style="color:#75715e"># remove an element form array</span>
-unset auto<span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">]</span>
+unset auto<span style="color:#f92672">[</span>5<span style="color:#f92672">]</span>
 echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span>
 
 <span style="color:#75715e"># copy an array</span>
-car<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+car<span style="color:#f92672">=</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
 echo <span style="color:#e6db74">${</span>car[@]<span style="color:#e6db74">}</span>
 
 <span style="color:#75715e"># delete an entire array</span>
@@ -601,7 +560,7 @@ unset car
 echo <span style="color:#e6db74">${</span>car[@]<span style="color:#e6db74">}</span>
 
 <span style="color:#75715e">#load content of an file input-array into an array</span>
-filecontent<span style="color:#f92672">=(</span> <span style="color:#e6db74">`</span>cat input-array<span style="color:#e6db74">`</span> <span style="color:#f92672">)</span>
+filecontent<span style="color:#f92672">=</span><span style="color:#f92672">(</span> <span style="color:#e6db74">`</span>cat input-array<span style="color:#e6db74">`</span> <span style="color:#f92672">)</span>
 echo <span style="color:#e6db74">${</span>filecontent[@]<span style="color:#e6db74">}</span>
 echo <span style="color:#e6db74">${</span>filecontent[1]<span style="color:#e6db74">}</span>
 
@@ -609,11 +568,10 @@ echo <span style="color:#e6db74">${</span>filecontent[1]<span style="color:#e6db
     echo <span style="color:#e6db74">&#34;Line: &#34;</span>$line<span style="color:#e6db74">&#34;&#34;</span>
 <span style="color:#66d9ef">done</span></code></pre></div></li>
 </ul>
-
 <h2 id="openpgp-commands">OpenPGP commands:</h2>
-
 <ul>
-<li><p>List of most common gpg commands
+<li>
+<p>List of most common gpg commands
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># BASICS</span>
 gpg -k
 gpg -K
@@ -628,9 +586,10 @@ gpg -a --export KEY_ID &gt; &lt;file&gt;.asc
 gpg -a --export-secret-keys KEY_ID
 gpg -a --export-secret-subkeys KEY_ID
 gpg --delete-secret-keys KEY_ID
-gpg --delete-secret-and-public-keys KEYID</code></pre></div></p></li>
-
-<li><p>when using gpg also with <strong>ssh-agent</strong>, this may be useful
+gpg --delete-secret-and-public-keys KEYID</code></pre></div></p>
+</li>
+<li>
+<p>when using gpg also with <strong>ssh-agent</strong>, this may be useful
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># .bashrc should contain</span>
 GPG_TTY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span>
 export GPG_TTY
@@ -648,9 +607,10 @@ ssh-add
 <span style="color:#75715e"># to list fingerprints of all identies currently repesented by the ssh agent</span>
 ssh-add -l
 <span style="color:#75715e"># to list public keys of all identities currently represented by the ssh agent</span>
-ssh-add -L</code></pre></div></p></li>
-
-<li><p>If you encounter following issue when refreshing gpg keys:
+ssh-add -L</code></pre></div></p>
+</li>
+<li>
+<p>If you encounter following issue when refreshing gpg keys:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fero@server:~$ gpg --refresh-keys                                         
 gpg: refreshing <span style="color:#ae81ff">13</span> keys from hkps://hkps.pool.sks-keyservers.net
 gpg: keyserver refresh failed: No keyserver available  
@@ -671,38 +631,33 @@ sudo killall dirmngr
 gpg --card-status
 
 <span style="color:#75715e"># then refresh the keys</span>
-gpg --refresh-keys</code></pre></div></p></li>
-
-<li><p>To verify signature of a GPG key(s)
+gpg --refresh-keys</code></pre></div></p>
+</li>
+<li>
+<p>To verify signature of a GPG key(s)
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># The key signature isn&#39;t reported as correct unless the _sig_ designator</span>
 <span style="color:#75715e"># is immediatelly followed by an ! exclamation mark</span>
 gpg --check-signatures
 
 <span style="color:#75715e"># note gpg --list-sig does not show ! exclamation mark</span>
-gpg --list-sig</code></pre></div></p></li>
+gpg --list-sig</code></pre></div></p>
+</li>
 </ul>
-
 <h2 id="libvirt-qemu-kvm-basics">Libvirt, Qemu, KVM basics</h2>
-
 <p>Nice article: <a href="http://rabexc.org/posts/how-to-get-started-with-libvirt-on/">http://rabexc.org/posts/how-to-get-started-with-libvirt-on/</a></p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">virsh list --all
 virsh --connect qemu+ssh://root@example.com/system</code></pre></div>
-
-<h2 id="vagrant-setup-libvirt-provider">Vagrant setup - libvirt Provider</h2>
-
+<h2 id="vagrant-setup---libvirt-provider">Vagrant setup - libvirt Provider</h2>
 <p>Dependencies needed:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
 sudo apt-get install -y vagrant vagrant-libvirt libvirt-daemon-system qemu-kvm
 sudo apt-get install -y nfs-common nfs-kernel-server ebtables dnsmasq
 sudo apt-get install -y ansible rsync
 vagrant plugin install vagrant-libvirt</code></pre></div></p>
-
 <p>Group settings (debian is your user)
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo usermod -a -G libvirt debian
 newgrp libvirt
 /etc/init.d libvirtd restart</code></pre></div></p>
-
 <p>The current user (debian) must belong to some groups to get permission to run accelerated (assuming intel) kernel virtualization:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo usermod -a -G kvm debian
 newgrp kvm
@@ -710,17 +665,13 @@ sudo rmmod kvm_intel
 sudo rmmod kvm
 sudo modprobe kvm
 sudo modprobe kvm_intel</code></pre></div></p>
-
 <p>To convert a virtualbox image so it can be used by libvirt
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install -y vagrant-mutate
 vagrant box add --provider virtualbox bento/ubuntu-14.04
 vagrant mutate bento/ubuntu-14.04 libvirt</code></pre></div></p>
-
 <p>To make the libvirt the default provider for the current user
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;export VAGRANT_DEFAULT_PROVIDER=libvirt&#39;</span> &gt;&gt; ~/.bashrc</code></pre></div></p>
-
 <h2 id="iptables-command-examples">IPTABLES command examples</h2>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LIST existing rules</span>
 iptables -L -n -v
 iptables -n -L -v --line-numbers
@@ -732,7 +683,7 @@ iptables -D INPUT <span style="color:#ae81ff">4</span>
 <span style="color:#f92672">(</span>-D : Delete one or more rules from the selected chain<span style="color:#f92672">)</span>
 
 <span style="color:#75715e"># INSERT</span>
-iptables -I INPUT <span style="color:#ae81ff">2</span> -s <span style="color:#ae81ff">202</span>.54.1.2 -j DROP
+iptables -I INPUT <span style="color:#ae81ff">2</span> -s 202.54.1.2 -j DROP
 
 <span style="color:#75715e"># Set the Default Firewall Policies</span>
 iptables -P INPUT DROP
@@ -745,34 +696,30 @@ iptables -A INPUT -m state --state NEW,ESTABLISHED -j ACCEPT
 iptables -L -v -n
 
 <span style="color:#75715e"># Drop Private Network Address On Public Interface</span>
-iptables -A INPUT -i eth1 -s <span style="color:#ae81ff">192</span>.168.0.0/24 -j DROP
-iptables -A INPUT -i eth1 -s <span style="color:#ae81ff">10</span>.0.0.0/8 -j DROP
+iptables -A INPUT -i eth1 -s 192.168.0.0/24 -j DROP
+iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP
 
 iptables -A INPUT -p tcp --dport <span style="color:#ae81ff">80</span> -j DROP
 iptables -A INPUT -i eth1 -p tcp --dport <span style="color:#ae81ff">80</span> -j DRO
 
-iptables -A INPUT -p tcp -s <span style="color:#ae81ff">1</span>.2.3.4 --dport <span style="color:#ae81ff">80</span> -j DROP
-iptables -A INPUT -i eth1 -p tcp -s <span style="color:#ae81ff">192</span>.168.1.0/24 --dport <span style="color:#ae81ff">80</span> -j DROP
+iptables -A INPUT -p tcp -s 1.2.3.4 --dport <span style="color:#ae81ff">80</span> -j DROP
+iptables -A INPUT -i eth1 -p tcp -s 192.168.1.0/24 --dport <span style="color:#ae81ff">80</span> -j DROP
 
-iptables -A OUTPUT -p tcp -d <span style="color:#ae81ff">69</span>.171.224.0/19 -j DROP
+iptables -A OUTPUT -p tcp -d 69.171.224.0/19 -j DROP
 iptables -A OUTPUT -p tcp -d www.facebook.com -j DROP
 iptables -A OUTPUT -p tcp -d facebook.com -j DROP</code></pre></div>
-
 <h2 id="tmux-plugins">Tmux plugins</h2>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/tmux-plugins
 https://github.com/tmux-plugins/tpm</code></pre></div>
-
-<p>Interesting to me:
-- tpm
-- tmux-sensible
-- tmux-cpu
-- tmux-yank</p>
-
+<p>Interesting to me:</p>
+<ul>
+<li>tpm</li>
+<li>tmux-sensible</li>
+<li>tmux-cpu</li>
+<li>tmux-yank</li>
+</ul>
 <h2 id="myrepos-man-mr">MYREPOS (man mr)</h2>
-
 <p>configuration stored in ~/.mrconfig and can be referenced to other other .mrconfig files located in the the repository folders</p>
-
 <p>Some Commands:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mr register
 
@@ -788,13 +735,9 @@ mr clean -f
 mr offline
 mr online
 mr remember</code></pre></div></p>
-
-<h2 id="git-version-contol-system">Git - version contol system</h2>
-
+<h2 id="git---version-contol-system">Git - version contol system</h2>
 <h3 id="git-rebase">Git rebase</h3>
-
 <p><strong>Never use git rebase on public branches!</strong> Because it rewrites the commits in the past and causes conflicts if other refers to them.</p>
-
 <p>Simple workflow how to integrate an approved feature brach (Feature-1) and clean up the commits in the Feature-1.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout Feature-1
 git checkout -b Temp-Feature-1
@@ -805,11 +748,8 @@ git merge Temp-Feature-1
 <span style="color:#75715e"># then you can delete the intergrated branches</span>
 git branch -d Temp-Feature-1
 git branch -D Feature-1</code></pre></div></p>
-
 <h3 id="git-log">Git log</h3>
-
 <p>To see more options, go to <strong>man git log</strong>.</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log
 <span style="color:#75715e"># --oneline - show just hash and commit message</span>
 git log --oneline
@@ -825,26 +765,19 @@ git log --oneline --decorate --graph --simplify-by-decoration
 git log --oneline --graph --decorate --stat
 <span style="color:#75715e"># -G &lt;regexp&gt; - search for all commits and files and return ones which match the pattern</span>
 git log -G <span style="color:#e6db74">&#39;Add .*&#39;</span> --oneline --graph --stat</code></pre></div>
-
 <ul>
 <li>to see a specific commit, use <strong>git show COMMIT_ID</strong></li>
 </ul>
-
 <h3 id="git-configuration">Git configuration</h3>
-
 <ul>
 <li>If you do a typo, git will autocorrect the typo (if possible) and issue the command again in 15 seconds. To disable that, set value to 0
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global help.autocorrect <span style="color:#ae81ff">15</span></code></pre></div></li>
 </ul>
-
 <h3 id="submodules">Submodules</h3>
-
 <p>Allows to keep a Git repository as a subdirectory of another Git repository.
 This allows to clone another repository into your own repository and keep the
 commits separate.</p>
-
 <p><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Submodule documentation</a></p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add submodule (another git repository to your project)</span>
 git submodule add URL LOCAL_FOLDER
 
@@ -867,41 +800,29 @@ git diff --submodule
 
 <span style="color:#75715e"># OR you can run</span>
 git submodule update --remote SUBMODULE_NAME</code></pre></div>
-
 <h3 id="git-hooks">Git hooks</h3>
-
 <p>Hook is a custom script that automatically fires when a certain action occurs.
 See some exampls under .git/hooks</p>
-
 <p>Global template hooks can be created as follows:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global init.templatedir <span style="color:#e6db74">&#39;~/.git-tamplates&#39;</span>
 mkdir -p ~/.git-tamplates/hooks
 chmod a+x ~/.git-templates/hooks/post-commit
 
 <span style="color:#75715e"># then execute following in your repository to include global hooks</span>
 git init</code></pre></div>
-
-<h2 id="neo-vi-m-editor">(neo)VI(M) editor</h2>
-
-<p>This section contains tricks in the vi editor, which I learned or used and find it useful. I don&rsquo;t decribe things which I consider to be basics.</p>
-
+<h2 id="neovim-editor">(neo)VI(M) editor</h2>
+<p>This section contains tricks in the vi editor, which I learned or used and find it useful. I don't decribe things which I consider to be basics.</p>
 <h3 id="search-1">Search</h3>
-
 <ul>
-<li>&rsquo;/&rsquo; to enter text, &lsquo;n&rsquo; for next found, &lsquo;p&rsquo; for previously found word</li>
-<li>&rsquo;/\C<text>&rsquo; for case sensitive search</li>
-<li>&rsquo;/\c<text>&rsquo; for incase sensitive search</li>
+<li>&lsquo;/&rsquo; to enter text, &lsquo;n&rsquo; for next found, &lsquo;p&rsquo; for previously found word</li>
+<li>&lsquo;/\C<!-- raw HTML omitted -->&rsquo; for case sensitive search</li>
+<li>&lsquo;/\c<!-- raw HTML omitted -->&rsquo; for incase sensitive search</li>
 </ul>
-
 <h3 id="editing">Editing</h3>
-
 <ul>
 <li><strong>CTRL-u</strong> in the INSERT mode - remove all characters between the cursor and beginning of the line</li>
 </ul>
-
 <h3 id="moving-with-the-cursor">Moving with the cursor</h3>
-
 <ul>
 <li><strong>CTRL-e</strong> - move the screen up without moving the cursor</li>
 <li><strong>CTRL-y</strong> - move the screen down without moving the cursor</li>
@@ -909,9 +830,7 @@ git init</code></pre></div>
 <li><strong>zz</strong> - move the current line to the center of the screen</li>
 <li><strong>zb</strong> - move the current line to the bottom of the sceen</li>
 </ul>
-
 <h3 id="buffers">Buffers</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># list all opened buffers</span>
 :ls
 :buffers
@@ -935,18 +854,14 @@ git init</code></pre></div>
 
 <span style="color:#75715e"># close (wipeout) the current buffer. Its entries in jumplist are deleted.</span>
 :bw</code></pre></div>
-
 <h3 id="macro-record-and-play-a-set-of-actions">Macro (record and play a set of actions)</h3>
-
 <ul>
 <li>start recording press &lsquo;q&rsquo; followed by a small character which indicates &lsquo;register name&rsquo;</li>
 <li>do the action</li>
 <li>stop recording - press &lsquo;q&rsquo; again</li>
 <li>play the macro - press &lsquo;@&rsquo; followed by the name of register. e.g. &lsquo;a&rsquo;. To play the macro multiple times e.g. 10, press &lsquo;10@a&rsquo;</li>
 </ul>
-
 <h3 id="saving-a-file">Saving a file</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># write old-file.txt content to new-file.txt while keeping old-file.txt as opened buffer</span>
 :w new-file.txt
 <span style="color:#75715e"># then you can press CTRL-6 to swith to buffer with a new file</span>
@@ -957,42 +872,34 @@ git init</code></pre></div>
 <span style="color:#75715e"># to save the new file in the same directory as old one, you can use:</span>
 :w %:h/new-file.txt
 :sav %:h/new-file.txt</code></pre></div>
-
 <h3 id="plugins">Plugins</h3>
-
 <ul>
 <li>Plugin manager &ldquo;Plug&rdquo; managed via vim commands e.g. &ldquo;:PlugStatus&rdquo;</li>
 <li>to start vim without any plugins execute <strong>vim -u NONE [file]</strong></li>
 </ul>
-
 <h2 id="cups">CUPS</h2>
-
 <ul>
 <li>Common Unix Printing System - modular printing system for unix-like computers. A computer running CUPS is host that can accept print jobs from client computers, process them and send them to the printer.</li>
 <li>Maintained by apple</li>
 <li>CUPS service is running on the TCP port 631.</li>
-<li>it can be access also via http directly on the server. <a href="http://localhost:631">http://localhost:631</a></li>
+<li>it can be access also via http directly on the server. http://localhost:631</li>
 </ul>
-
 <h2 id="dns">DNS</h2>
-
 <p>General notes, or notes related to <strong>unbound</strong> nand <strong>BIND</strong></p>
-
 <ul>
 <li><strong>hint file</strong> -contains information about the root servers
-
 <ul>
 <li>to check what root servers are used:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    my@computer:~$ dig . ns
     
-    ; &lt;&lt;&gt;&gt; DiG <span style="color:#ae81ff">9</span>.10.3-P4-Debian &lt;&lt;&gt;&gt; . ns
+    ; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Debian &lt;&lt;&gt;&gt; . ns
     ;; global options: +cmd
     ;; Got answer:
     ;; -&gt;&gt;HEADER<span style="color:#e6db74">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span style="color:#ae81ff">1575</span>
-    ;; flags: qr rd ra ad; QUERY: <span style="color:#ae81ff">1</span>, ANSWER: <span style="color:#ae81ff">13</span>, AUTHORITY: <span style="color:#ae81ff">0</span>, ADDITIONAL: <span style="color:#ae81ff">1</span>
+    ;; flags: qr rd ra ad; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: <span style="color:#ae81ff">1</span>
     
     ;; OPT PSEUDOSECTION:
-    ; EDNS: version: <span style="color:#ae81ff">0</span>, flags:; udp: <span style="color:#ae81ff">4096</span>
+    ; EDNS: version: 0, flags:; udp: <span style="color:#ae81ff">4096</span>
     ;; QUESTION SECTION:
     ;.                              IN      NS
     
@@ -1012,51 +919,48 @@ git init</code></pre></div>
     .                       <span style="color:#ae81ff">518384</span>  IN      NS      m.root-servers.net.
     
     ;; Query time: <span style="color:#ae81ff">1</span> msec
-    ;; SERVER: <span style="color:#ae81ff">10</span>.18.21.1#53<span style="color:#f92672">(</span><span style="color:#ae81ff">10</span>.18.21.1<span style="color:#f92672">)</span>
-    ;; WHEN: Thu Mar <span style="color:#ae81ff">29</span> <span style="color:#ae81ff">11</span>:12:09 CEST <span style="color:#ae81ff">2018</span>
+    ;; SERVER: 10.18.21.1#53<span style="color:#f92672">(</span>10.18.21.1<span style="color:#f92672">)</span>
+    ;; WHEN: Thu Mar <span style="color:#ae81ff">29</span> 11:12:09 CEST <span style="color:#ae81ff">2018</span>
     ;; MSG SIZE  rcvd: <span style="color:#ae81ff">239</span>
     </code></pre></div></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
         </div>
-        
-
-        <div class="disqus">
-            
-        </div>
-
-        <div class="container has-text-centered top-pad">
-            <hr>
-            <a href="/notes/#top">
-                <i class="fa fa-arrow-up"></i>
-            </a>
-            <hr>
-        </div>
-
-        <div class="section" id="footer">
-    <div class="container has-text-centered">
-        
-        <span class="footer-text"><a href="https://github.com/hivickylai/hugo-theme-introduction" target="_blank" rel="noopener">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank" rel="noopener">Hugo</a>. Made with <i class="fa fa-heart"></i> and <i class="fa fa-coffee"></i>. <a href="https://vickylai.io" target="_blank" rel="noopener">Vicky Lai</a> 2019</span>
-        
+      </div>
+      
     </div>
-</div>
 
-    </div>
     
-</div>
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; Frantisek Janus. Powered by <a href="https://gohugo.io/">Hugo</a> and
+        <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a></p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<script>
-    $('a[href^="\/notes\/#"]').click(function (e) {
-        e.preventDefault();
-        var target = this.hash;
-        $('html, body').animate({
-            scrollTop: $(target).offset().top
-        }, 500);
-        return false;
-    })
-</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/docs.min.js"></script>
+<script src="/js/main.js"></script>
 
-</body>
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

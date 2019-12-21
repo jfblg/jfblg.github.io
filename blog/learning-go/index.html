@@ -1,190 +1,120 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<meta name="description" content="Public notebook and blog of Frantisek Janus">
-
-<base href="/">
-<title>
-
-
-     Learning Go 
-
-</title>
-<link rel="canonical" href="/blog/learning-go/">
-
-
-
-
-
-
-<script
-src="https://code.jquery.com/jquery-3.2.1.min.js"
-integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-crossorigin="anonymous"></script>
-
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
-
-
-
-    <link rel="stylesheet" href="css/light-style.css">
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Frantisek Janus" />
+    <meta name="description" content="Public notebook and blog of Frantisek Janus">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Learning Go</title>
+    <meta name="generator" content="Hugo 0.61.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
     
-
-
-
-
-<link rel="shortcut icon"
-
-    href="img/fav.ico"
-
->
-
-
-
-
-
-
-
-</head>
-
-<body>
-
-<div class="section" id="top">
-
-    <div class="container hero ">
-    <h1 class="bold-title is-1">Blog</h1>
-    </div>
-
-
-<div class="section ">
-
-    <div class="container">
-    <hr>
-<nav class="nav nav-center">
-    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div id="nav-menu" class="nav-left nav-menu">
-      <span class="nav-item">
-        <a href="/">Main</a>
-      </span>
-      <span class="nav-item">
-        <a href="/#about">About</a> 
-      </span>
-      <span class="nav-item">
-        <a href="/blog">Back to blog</a>
-      </span> 
-      <span class="nav-item">
-        <a href="/#contact">Contact</a>
-      </span>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
     
-      <span class="nav-item">
-        <a href="/index.xml"><i class="fa fa-rss"></i></a>
-      </span>
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
     
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-</nav>
-<hr>
-    </div>
-
-    <div class="container ">
-        <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/learning-go/">Learning Go</a></h2>
-            <div class="post-data">
-                21 Apr 2018 |
-                14 minutes read
-            </div>
-
-            
-                <div class="blog-share">
-                Share this:
-                
-                <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Read%20Learning%20Go%20%2fblog%2flearning-go%2f"
-                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                <i class="fa fa-twitter"></i>
-                <span class="hidden">Twitter</span>
-                </a>
-                
-                 
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fblog%2flearning-go%2f"
-                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                <i class="fa fa-facebook"></i>
-                <span class="hidden">Facebook</span>
-                </a>
-                
-                
-                
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fblog%2flearning-go%2f"
-                onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                <i class="fa fa-google-plus"></i>
-                <span class="hidden">Google+</span>
-                </a>
-                
-                </div>
-            
-
-    </div>
-
-    <div class="container markdown  top-pad">
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
         
+        <li><a href="/notes/">NOTES</a></li>
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/resume/">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<h1 id="learning-go-notes">Learning Go - Notes</h1>
-
-<p>Notes which I took during my learning. It&rsquo;d be great if they would also help you.</p>
-
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="/blog/learning-go/">Learning Go</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          April 21, 2018
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">golang</span>
+            
+            <span class="label label-success">development</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <h1 id="learning-go---notes">Learning Go - Notes</h1>
+<p>Notes which I took during my learning. It'd be great if they would also help you.</p>
 <p>Go is statically written (type of every variable must be defined), pass by value (whenever you pass an argument into a function, Go creates a copy of each argument, and these copies are used inside of the function) programming language.</p>
-
 <h2 id="go-workspace-and-basics">Go workspace and basics</h2>
-
 <ul>
 <li><a href="https://golang.org/doc/code.html">MUST READ DOCUMENT</a></li>
 </ul>
-
 <h2 id="syntax">Syntax</h2>
-
 <h3 id="variable-declaration">Variable declaration</h3>
-
 <ul>
-<li><p>if you define a variable within the if statement(condition) it is valid only there. You will not get an error for double declaration in the following example:
+<li>
+<p>if you define a variable within the if statement(condition) it is valid only there. You will not get an error for double declaration in the following example:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">y</span>); <span style="color:#a6e22e">y</span> &gt; <span style="color:#ae81ff">1</span> {
 	<span style="color:#75715e">//...
 </span><span style="color:#75715e"></span>}
 
 <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">z</span>); <span style="color:#a6e22e">y</span> &gt; <span style="color:#ae81ff">1</span> {
 	<span style="color:#75715e">//...
-</span><span style="color:#75715e"></span>}</code></pre></div></p></li>
-
-<li><p>as a convenience, it is allowed to redeclare <em>err</em> as follows:
+</span><span style="color:#75715e"></span>}</code></pre></div></p>
+</li>
+<li>
+<p>as a convenience, it is allowed to redeclare <em>err</em> as follows:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">len1</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;String1&#34;</span>)
-<span style="color:#a6e22e">len2</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;String2&#34;</span>)</code></pre></div></p></li>
-
-<li><p>anonymous structures - in some cases, it may be not necessary to name the structures. you don&rsquo;t have to:
+<span style="color:#a6e22e">len2</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;String2&#34;</span>)</code></pre></div></p>
+</li>
+<li>
+<p>anonymous structures - in some cases, it may be not necessary to name the structures. you don't have to:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">car</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">struct</span> {
 	<span style="color:#a6e22e">manufacturer</span> <span style="color:#66d9ef">string</span>
 	<span style="color:#a6e22e">year</span> <span style="color:#66d9ef">int</span>
-}{<span style="color:#e6db74">&#34;Toyota&#34;</span>, <span style="color:#ae81ff">2018</span>}</code></pre></div></p></li>
+}{<span style="color:#e6db74">&#34;Toyota&#34;</span>, <span style="color:#ae81ff">2018</span>}</code></pre></div></p>
+</li>
 </ul>
-
 <h3 id="named-methods">Named methods</h3>
-
 <ul>
 <li>when the method is treated as value. See example:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">method</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">mypackage</span>.<span style="color:#a6e22e">NewInstance</span>
 <span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">method</span>()</code></pre></div></li>
 <li>this approach may be useful in case you have handles of functions which may be long. With named methods you can hide those long handles.</li>
 </ul>
-
 <h3 id="for-loop">for loop</h3>
-
 <ul>
 <li>for loop can be labeled and with <strong>break</strong> or <strong>continue</strong> you can jump out to that loop. Especially useful if you use embended for loops.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">MyForLoop</span>:
@@ -196,16 +126,12 @@ crossorigin="anonymous"></script>
 	}
 }</code></pre></div></li>
 </ul>
-
 <h3 id="switch-statement">Switch statement</h3>
-
 <ul>
 <li>switch statement can be also labeled - similar to the for loop</li>
 <li><strong>fallthrough</strong> - if used, the matched case section does not end the switch. It continues to the next case.</li>
 </ul>
-
-<h3 id="variadic-arguments">Variadic arguments &ldquo;&hellip;&rdquo;</h3>
-
+<h3 id="variadic-arguments-">Variadic arguments &ldquo;&hellip;&rdquo;</h3>
 <ul>
 <li>In a function defintion it pass arguments that you pass a function into one slice of that type. This way, you can pass as many arguments as you want.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// A parameter
@@ -214,25 +140,20 @@ crossorigin="anonymous"></script>
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> []<span style="color:#66d9ef">interface</span>{}
 
 <span style="color:#75715e">// the DIFFERENCE is how you pass the arguments to a function:
-</span><span style="color:#75715e">// 1. Give each elemement of a slice separately
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 1. Give each elemement of a slice separately
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;x&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>, <span style="color:#e6db74">&#34;z&#34;</span>)
 <span style="color:#75715e">// 2. or as a single slice, in which case you will hato to suffix the slice value with three dots
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">interface</span>{<span style="color:#e6db74">&#34;x&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>, <span style="color:#e6db74">&#34;z&#34;</span>}
 <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">...</span>)</code></pre></div></li>
 </ul>
-
 <h2 id="build-in-types">Build-in Types</h2>
-
 <h3 id="arrays">Arrays</h3>
-
 <ul>
 <li>array has a fixed size</li>
 <li>when you pass an array to a function, the array is coppied</li>
 <li>because of a fixed size of an array, it is more practical to use slices</li>
 </ul>
-
 <h3 id="slices">Slices</h3>
-
 <ul>
 <li>slice consits of a pointer into some underlying array, length (number of elements that are in that slice, capacity (max ammount of space that could be used to add to the slice)</li>
 <li>slice is a window to an array. It is like an offset from the beginning and number of elements of an array.</li>
@@ -243,82 +164,68 @@ crossorigin="anonymous"></script>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myslice</span> = []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>}
 <span style="color:#a6e22e">myslice</span> = append(<span style="color:#a6e22e">myslice</span>[:<span style="color:#ae81ff">2</span>], <span style="color:#a6e22e">myslice</span>[<span style="color:#ae81ff">3</span>:]<span style="color:#f92672">...</span>)</code></pre></div></li>
 </ul>
-
 <h3 id="maps">Maps</h3>
-
 <ul>
 <li>in other languages a.k.a dictionaries, hash tables</li>
 <li>if you access an element in a map that does not exist, you get zero of the defined value type</li>
 <li>if you itterate over a map using range, the keys are not sorted and order is not fixed</li>
 <li>it is safe to delete an item from a map that is actually not there. golang runtime will not complain about that</li>
 </ul>
-
 <h3 id="structs">Structs</h3>
-
 <ul>
-<li><p>A used defined type which represents a collection of fields. It may be used to group the data into a single unit.
+<li>
+<p>A used defined type which represents a collection of fields. It may be used to group the data into a single unit.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Address</span> <span style="color:#66d9ef">struct</span> {  
     <span style="color:#a6e22e">street</span>, <span style="color:#a6e22e">town</span>    <span style="color:#66d9ef">string</span>
     <span style="color:#a6e22e">streetnum</span>       <span style="color:#66d9ef">int</span>
-}</code></pre></div></p></li>
-
-<li><p>Anymous structures}
+}</code></pre></div></p>
+</li>
+<li>
+<p>Anymous structures}
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Address</span> <span style="color:#66d9ef">struct</span> {  
     <span style="color:#a6e22e">street</span>, <span style="color:#a6e22e">town</span>    <span style="color:#66d9ef">string</span>
     <span style="color:#a6e22e">streetnum</span>       <span style="color:#66d9ef">int</span>
-}</code></pre></div></p></li>
+}</code></pre></div></p>
+</li>
 </ul>
-
 <h3 id="maps-vs-struct-comparison">MAPS vs. STRUCT comparison</h3>
-
 <h4 id="map-properties">Map properties</h4>
-
 <ul>
 <li>all keys must be the same type</li>
 <li>all values must be the same type</li>
 <li>keys are indexed - we can iterate over them</li>
 <li>used to represent a collection of related properties</li>
-<li>don&rsquo;t need to know all the keys at the compile time</li>
+<li>don't need to know all the keys at the compile time</li>
 <li>reference type</li>
 </ul>
-
 <h4 id="struct-properties">Struct properties</h4>
-
 <ul>
 <li>values can be of different types</li>
-<li>keys don&rsquo;t support indexing</li>
+<li>keys don't support indexing</li>
 <li>compiler needs to know all the different fields at the compile time</li>
 <li>used to represent something with a lot of different properties</li>
 <li>value type</li>
 </ul>
-
 <h3 id="bytes">Bytes</h3>
-
 <ul>
 <li>a lot of io functions use byte slices for reading and writing a data</li>
 </ul>
-
 <h3 id="errors">Errors</h3>
-
 <ul>
 <li>there are no exceptions in Go (e.g. compared to Python)</li>
 <li>by convention, errors are returned from the function and the calling function has to handle the error</li>
 <li>when writing a function, always return an error value. Do not return just nil of some other type to indicate that error occured.</li>
 <li>panic and recover are used rarely, this practise is not recommended as it introduces non idiomatic go fashion</li>
 <li>custom errors can be created with following packages: format, errors
-
 <ul>
-<li>note: if you use fmt.Errorf(), you don&rsquo;t nead to import &ldquo;errors&rdquo; package - nice.</li>
-</ul></li>
+<li>note: if you use fmt.Errorf(), you don't nead to import &ldquo;errors&rdquo; package - nice.</li>
 </ul>
-
+</li>
+</ul>
 <h3 id="value-types-vs-reference-types">Value types vs. Reference types</h3>
-
-<p>It is crutial to understand the difference between those 2 types. For an example, let&rsquo;s take a slice which belongs to the group of reference types.
-When we crete a slice, Go will automatically create 2 data structures: 1. an array 2. a structure that records the length of the slice, the capacity of the slice and a reference to the underlying array. With &lsquo;reference types&rsquo; in Go, we don&rsquo;t have to worry about pointer if we pass a value of a reference type to a function and modify the original vlaue inside the function, because &ldquo;the copy of a pointer&rdquo; to the same underlying (value type) data structure is passed. Remember, Go is a &ldquo;pass by value&rdquo; language.</p>
-
+<p>It is crutial to understand the difference between those 2 types. For an example, let's take a slice which belongs to the group of reference types.
+When we crete a slice, Go will automatically create 2 data structures: 1. an array 2. a structure that records the length of the slice, the capacity of the slice and a reference to the underlying array. With &lsquo;reference types&rsquo; in Go, we don't have to worry about pointer if we pass a value of a reference type to a function and modify the original vlaue inside the function, because &ldquo;the copy of a pointer&rdquo; to the same underlying (value type) data structure is passed. Remember, Go is a &ldquo;pass by value&rdquo; language.</p>
 <p><strong>Value types</strong> - use pointers to change these things in a function</p>
-
 <ul>
 <li>int</li>
 <li>float</li>
@@ -326,9 +233,7 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <li>bool</li>
 <li>struct</li>
 </ul>
-
-<p><strong>Reference types</strong> - don&rsquo;t worry about pointer with these</p>
-
+<p><strong>Reference types</strong> - don't worry about pointer with these</p>
 <ul>
 <li>slices</li>
 <li>maps</li>
@@ -336,65 +241,74 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <li>pointers</li>
 <li>functions</li>
 </ul>
-
 <h3 id="pointers">Pointers</h3>
-
 <ul>
 <li>holds the memory address of some value</li>
 <li>some basic operations:
-
 <ul>
 <li>&amp; - turn a value into a pointer</li>
-<li>* - turn a pointer into a value</li>
-</ul></li>
+<li>
+<ul>
+<li>
+<ul>
+<li>turn a pointer into a value</li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">variable</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;some text&#34;</span>
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">*&amp;</span><span style="color:#a6e22e">variable</span>) <span style="color:#f92672">//</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">variable</span>)</code></pre></div>
-
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">*</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">variable</span>) <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">variable</span>)</code></pre></div>
 <h2 id="user-defined-types">User defined types</h2>
-
 <ul>
 <li>methods (functions) can be attached to a type - it is close to OOP</li>
 <li>a method contain a section called <strong>receiver</strong> in its declaration ((r MyType) in the next example):
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#a6e22e">MyType</span>) <span style="color:#a6e22e">Do</span>() {
 }</code></pre></div></li>
 </ul>
-
 <h2 id="interfaces">Interfaces</h2>
-
 <ul>
-<li>Interfaces define behavior without defining types itself</li>
-<li>Interface forces a type to have specific methods defined in order to use functions of the interface</li>
-<li>Also <strong>empty interface</strong> may exist. It does not have any method and it satisfies everything. It provides an unknown type that is determined at runtime. Because Go is a statically written language, the empty interface may be used to overcome the situation when you don&rsquo;t care about the type.
-
+<li>
+<p>Interfaces define behavior without defining types itself</p>
+</li>
+<li>
+<p>Interface forces a type to have specific methods defined in order to use functions of the interface</p>
+</li>
+<li>
+<p>Also <strong>empty interface</strong> may exist. It does not have any method and it satisfies everything. It provides an unknown type that is determined at runtime. Because Go is a statically written language, the empty interface may be used to overcome the situation when you don't care about the type.</p>
 <ul>
 <li>definition: <em>interface{}</em></li>
 <li>avoid using empty interfaces if you can or do a type assertion</li>
-</ul></li>
-<li>To verify if certain type implements some interface you can insert the following test code:
+</ul>
+</li>
+<li>
+<p>To verify if certain type implements some interface you can insert the following test code:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// verification if type myType implements fmt.Stringer interface
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Stringer</span> = <span style="color:#a6e22e">myType</span></code></pre></div></li>
-<li>interfaces may be also useful for mocking types in a test suite</li>
-
-<li><p>some common interfaces used in Go:</p>
-
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Stringer</span> = <span style="color:#a6e22e">myType</span></code></pre></div></p>
+</li>
+<li>
+<p>interfaces may be also useful for mocking types in a test suite</p>
+</li>
+<li>
+<p>some common interfaces used in Go:</p>
 <ul>
 <li>Stringer interface
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Stringer</span> <span style="color:#66d9ef">interface</span> {
             <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span>
     }
-    </code></pre></div>
-<br /></li>
-</ul></li>
-
-<li><p>in you define your own type struct, it may be useful to create also methods which satisfies some common interfaces</p></li>
-
-<li><p>interface names can be used instead of argument types in function signature</p></li>
+    </code></pre></div></li>
 </ul>
-
+</li>
+<li>
+<p>in you define your own type struct, it may be useful to create also methods which satisfies some common interfaces</p>
+</li>
+<li>
+<p>interface names can be used instead of argument types in function signature</p>
+</li>
+</ul>
 <h2 id="type-assertion-and-type-switch">Type assertion and type switch</h2>
-
 <ul>
 <li>to determine a type of a passed variable. Handy in combination with <strong>switch</strong> statement as follows:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">i</span>.(<span style="color:#66d9ef">type</span>) {
@@ -403,9 +317,7 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <span style="color:#a6e22e">dafault</span>:
 }</code></pre></div></li>
 </ul>
-
 <h2 id="stanard-tools">Stanard tools</h2>
-
 <ul>
 <li>go install</li>
 <li>go build</li>
@@ -426,35 +338,35 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <span style="color:#75715e">// what files the package consits of
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">f</span> <span style="color:#e6db74">&#34;{{ .GoFiles }}&#34;</span> <span style="color:#a6e22e">yourpackage</span></code></pre></div></li>
 </ul>
-
 <h2 id="unit-testing">Unit testing</h2>
-
 <ul>
-<li>go has built-in test suite for running tests on packages</li>
-
-<li><p>unit test file must follow the naming convenction:</p>
-
+<li>
+<p>go has built-in test suite for running tests on packages</p>
+</li>
+<li>
+<p>unit test file must follow the naming convenction:</p>
 <ul>
 <li>test file has name as the tested file apended with &ldquo;_test.go&rdquo;</li>
 <li>test file is also located in the same directory as tested file</li>
 <li>test file has the same package name as the tested file</li>
 <li>test file imports standard library package &ldquo;testing&rdquo; - see documantation: godoc testing</li>
-<li>test file contains functions named Test<name of teste function> with signature func (t *testing.T).</li>
-</ul></li>
-
-<li><p>to run the test run &ldquo;go test package_name&rdquo;</p></li>
-
-<li><p>to print and error in a TestXXX function you can use:</p>
-
+<li>test file contains functions named Test<!-- raw HTML omitted --> with signature func (t *testing.T).</li>
+</ul>
+</li>
+<li>
+<p>to run the test run &ldquo;go test package_name&rdquo;</p>
+</li>
+<li>
+<p>to print and error in a TestXXX function you can use:</p>
 <ul>
 <li>t.Errorf() - prints out the message and test continues</li>
 <li>t.Fatalf() - prints out the message and terminates the test immediatelly</li>
-</ul></li>
-
-<li><p>test coverage</p>
-
+</ul>
+</li>
+<li>
+<p>test coverage</p>
 <ul>
-<li>for basic overview run &ldquo;go test -cover <package name>&ldquo;</li>
+<li>for basic overview run &ldquo;go test -cover <!-- raw HTML omitted -->&rdquo;</li>
 <li>for detailed overview, generate the cover profile and display it either in the shell or via a web browser as follows:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">coverprofile</span>=<span style="color:#a6e22e">coverage</span>.<span style="color:#a6e22e">out</span> &lt;<span style="color:#f92672">package</span> <span style="color:#a6e22e">name</span>&gt;
     
@@ -463,25 +375,19 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
         <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">tool</span> <span style="color:#a6e22e">cover</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">html</span>=<span style="color:#a6e22e">coverage</span>.<span style="color:#a6e22e">out</span>
     
     </code></pre></div></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="standard-library-packages">Standard library packages</h2>
-
 <p>Each standard library package is well documented. Recommended to read the documentation. Each package provides certain set of functions.</p>
-
 <h3 id="bytes-package">bytes package</h3>
-
 <ul>
 <li>Package bytes implements functions for the manipulation of byte slices. It is analogous to the facilities of the strings package.</li>
 </ul>
-
-<h3 id="fmt-format-package">fmt - Format package</h3>
-
+<h3 id="fmt---format-package">fmt - Format package</h3>
 <ul>
 <li>see documentation of &ldquo;fmt&rdquo; package - it contains detailed description about formated I/O</li>
 <li>some examples:
-
 <ul>
 <li>%d - int value</li>
 <li>%v - any value</li>
@@ -493,103 +399,85 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <li>%q - double-quated string safely escaped with GO syntax</li>
 <li>%x - hex string of the value</li>
 <li>% x - separated hex string of the value</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="errors-package">errors package</h3>
-
 <ul>
-<li><p>various ways how to generate an error
+<li>
+<p>various ways how to generate an error
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>
 <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;Exception occured&#34;</span>)
 
 <span style="color:#75715e">// or
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Exception occured&#34;</span>)</code></pre></div></p></li>
-
-<li><p>it is a good practice to define errors in var statement and refer to them in the rest of the programm
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Exception occured&#34;</span>)</code></pre></div></p>
+</li>
+<li>
+<p>it is a good practice to define errors in var statement and refer to them in the rest of the programm
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> (
     <span style="color:#a6e22e">ErrLoading</span> = <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;Could not load the file&#34;</span>)
 )
 <span style="color:#75715e">//...
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ErrLoading</span>
 <span style="color:#75715e">//....
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">ErrLoading</span> {}</code></pre></div></p></li>
-
-<li><p>error is basically just an interface with an Error() string {} function. i.e. anything that has an Error() function fullfills the Error interface i.e. is an error</p></li>
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">ErrLoading</span> {}</code></pre></div></p>
+</li>
+<li>
+<p>error is basically just an interface with an Error() string {} function. i.e. anything that has an Error() function fullfills the Error interface i.e. is an error</p>
+</li>
 </ul>
-
 <h3 id="io-package">io package</h3>
-
 <ul>
 <li>low level i/o operations</li>
 </ul>
-
-<h3 id="io-ioutil-package">io/ioutil package</h3>
-
+<h3 id="ioioutil-package">io/ioutil package</h3>
 <h3 id="bufio-package">bufio package</h3>
-
 <ul>
 <li>allows higher level operations than io e.g. reading lines instead of individual bytes</li>
 <li>interesting functions:
-
 <ul>
 <li>NewScanner - for reading lines</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="os-package">os package</h3>
-
-<h3 id="net-http">net/http</h3>
-
-<h3 id="encoding-json">encoding/json</h3>
-
+<h3 id="nethttp">net/http</h3>
+<h3 id="encodingjson">encoding/json</h3>
 <ul>
 <li>NewEncoder(w io.Writer) *Encoder - NewEncoder returns a new encoder that writes to w.</li>
 <li>NewDecoder(r io.Reader) *Decoder - NewDecoder returns a new decoder that reads from r.</li>
 </ul>
-
 <h3 id="strings-package">Strings package</h3>
-
 <ul>
 <li>used for string manipulation</li>
 </ul>
-
 <h3 id="strconv-package">strconv package</h3>
-
 <ul>
 <li>Package strconv implements conversions to and from string representations of basic data types.</li>
 <li>some functions:
-
 <ul>
 <li>Atoi(s string) (int, error)</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="sync-package">sync package</h3>
-
 <ul>
 <li>Functions for parallel access to the same memory. Tha sync package provides a mutual exclusion lock - Mutex</li>
 <li>RWMutex - only one can write to a resource, multiple read access allowed</li>
 <li>WaitGroup - is a way how to wait for a collection of goroutines to finish.</li>
 </ul>
-
 <h3 id="log-package">log package</h3>
-
 <ul>
-<li>log.Fatalf(&ldquo;&rdquo;) - is implicitly followed by the os.Exit(1)</li>
+<li>log.Fatalf(&quot;&quot;) - is implicitly followed by the os.Exit(1)</li>
 <li>log.setFlag() - sets the output flags for the standard logger</li>
 <li>log/syslog package - interface to system log service - can send the messages to the syslog daemon using UNIX domain socket, UDP or TCP</li>
 </ul>
-
 <h3 id="flag-package">flag package</h3>
-
 <ul>
 <li>implements command line parsing</li>
 <li>for direct access to the aguments - flag.Arg(0)</li>
 </ul>
-
 <h3 id="time-package">time package</h3>
-
 <ul>
 <li>handles all operations regarding time i.e. measuring and displaying the time</li>
 <li>startTime := time.Now()</li>
@@ -599,40 +487,49 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <li>func Parse(layout, value string) (Time, error) - parses string to a time.Time</li>
 <li>use defined duration constants from the time package e.g. &lsquo;var out = 1 * time.Second&rsquo;</li>
 </ul>
-
 <h3 id="regexp-package">regexp package</h3>
-
 <ul>
 <li>package for regular expression</li>
 <li>Tip: in order to match against the regular expression, you must compile it. You can use regexp.Compile(), but func MustCompile(str string) *Regexp is more handy as it reduces the code.</li>
 </ul>
-
 <h2 id="side-notes">Side notes</h2>
-
 <ul>
-<li>Executable commands must always use <strong>package main</strong></li>
-<li><a href="https://godoc.org/golang.org/x/tools">Go.Tools</a> repository contains source code of several usefull Go tool, including godoc. You can install them as follows
+<li>
+<p>Executable commands must always use <strong>package main</strong></p>
+</li>
+<li>
+<p><a href="https://godoc.org/golang.org/x/tools">Go.Tools</a> repository contains source code of several usefull Go tool, including godoc. You can install them as follows
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go get golang.org/x/tools/cmd/...
 
 <span style="color:#75715e"># to install godoc specifically:</span>
-$ go get golang.org/x/tools/cmd/godoc</code></pre></div></li>
-<li>in Go it is not idiomatic to have getter functions</li>
-<li>there can be multiple types specified - there is no limit on that</li>
-<li>io Reader and Writer interface are used a lot by various packages
+$ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
+</li>
+<li>
+<p>in Go it is not idiomatic to have getter functions</p>
+</li>
+<li>
+<p>there can be multiple types specified - there is no limit on that</p>
+</li>
+<li>
+<p>io Reader and Writer interface are used a lot by various packages
 -Read(b []byte) (n int, err error)
--Write(b []byte) (n int, err error)</li>
-
-<li><p>to ignore the imported package, you can prepend it with underscore &ldquo;_&ldquo;. Generally it is a bad practise, but may be handy during development
+-Write(b []byte) (n int, err error)</p>
+</li>
+<li>
+<p>to ignore the imported package, you can prepend it with underscore &ldquo;_&quot;. Generally it is a bad practise, but may be handy during development
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
     <span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
     <span style="color:#e6db74">&#34;net/http&#34;</span>
-)</code></pre></div></p></li>
-
-<li><p>go sometimes can&rsquo;t convert the type automatically. E.g.: int to string. (in this case use strconv package)</p></li>
-
-<li><p>there are certain types in go that must be initialized. E.g. map does not have a zero value, it must be initialized. - use <em>make()</em> to do it.</p></li>
-
-<li><p>struct embedding - when you include some other type inside your custom struct - this allows you to use methods of the imported type directly on your struct. Often used for example with Mutex
+)</code></pre></div></p>
+</li>
+<li>
+<p>go sometimes can't convert the type automatically. E.g.: int to string. (in this case use strconv package)</p>
+</li>
+<li>
+<p>there are certain types in go that must be initialized. E.g. map does not have a zero value, it must be initialized. - use <em>make()</em> to do it.</p>
+</li>
+<li>
+<p>struct embedding - when you include some other type inside your custom struct - this allows you to use methods of the imported type directly on your struct. Often used for example with Mutex
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">myCache</span> <span style="color:#66d9ef">struct</span>{
     <span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">Mutex</span>
     <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>
@@ -641,20 +538,22 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></li>
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">name</span> = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">sting</span>)
 <span style="color:#75715e">//...
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">Lock</span>()
-<span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">Unlock</span>()</code></pre></div></p></li>
-
-<li><p>Should &ldquo;sync&rdquo; package or goroutines with channels be used for access to a protected resource?</p>
-
+<span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">Unlock</span>()</code></pre></div></p>
+</li>
+<li>
+<p>Should &ldquo;sync&rdquo; package or goroutines with channels be used for access to a protected resource?</p>
 <ul>
 <li>rule of thumb may be: If there is no logic when accessing a protected resource (e.g. if statements) use sync package. If there is anything complicated, which may duplicate the code as well, goroutines is a better choice.</li>
-</ul></li>
-
-<li><p>it is possible to exectute a C code with a go and link it together with go to in a runtime - see <strong>cgo package</strong></p></li>
-
-<li><p>multiple <strong>defer</strong> statements - their execution order is strictly backwords (the last defer command goes first)</p></li>
-
-<li><p>defer - the righ side is always a function call gets evaluated in 2 different ways:</p>
-
+</ul>
+</li>
+<li>
+<p>it is possible to exectute a C code with a go and link it together with go to in a runtime - see <strong>cgo package</strong></p>
+</li>
+<li>
+<p>multiple <strong>defer</strong> statements - their execution order is strictly backwords (the last defer command goes first)</p>
+</li>
+<li>
+<p>defer - the righ side is always a function call gets evaluated in 2 different ways:</p>
 <ul>
 <li>the arguments gets evaluated when the defer statement appears!!!</li>
 <li>the function gets evaluated when the function executes
@@ -681,91 +580,92 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></li>
     <span style="color:#a6e22e">Second</span> <span style="color:#a6e22e">Expected</span>
     <span style="color:#a6e22e">First</span> <span style="color:#a6e22e">Pitfall</span>!!!
     </code></pre></div></li>
-</ul></li>
-
-<li><p>to discover possible race conditions run &ldquo;go run -race <go_file>&ldquo;</p></li>
-
-<li><p>version of the program can be changed during its build with &ldquo;-ldflags&rdquo;. Example:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">ldflags</span>=<span style="color:#e6db74">&#34;-X name.Version 1.5.0&#34;</span> &lt;<span style="color:#a6e22e">program</span><span style="color:#f92672">-</span><span style="color:#a6e22e">name</span>.<span style="color:#66d9ef">go</span>&gt;</code></pre></div></p></li>
-
-<li><p>when doing comparison of values, they must be of exacly same type i.e. you can&rsquo;t compare int with int8</p></li>
-
-<li><p>interfaces can be compared too</p></li>
-
-<li><p>comparison is not defined on slices</p></li>
-
-<li><p>in Go it is possible to have a &ldquo;method values&rdquo; i.e. pass the whole method as a value</p></li>
-
-<li><p>in Go it is idiomatic if you use low level of indentation. Do not use embended if statements. Also, if it&rsquo;s possible, use the &lsquo;switch&rsquo; statement instead of &lsquo;if-else&rsquo;.</p></li>
 </ul>
-
+</li>
+<li>
+<p>to discover possible race conditions run &ldquo;go run -race &lt;go_file&gt;&rdquo;</p>
+</li>
+<li>
+<p>version of the program can be changed during its build with &ldquo;-ldflags&rdquo;. Example:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">ldflags</span>=<span style="color:#e6db74">&#34;-X name.Version 1.5.0&#34;</span> &lt;<span style="color:#a6e22e">program</span><span style="color:#f92672">-</span><span style="color:#a6e22e">name</span>.<span style="color:#66d9ef">go</span>&gt;</code></pre></div></p>
+</li>
+<li>
+<p>when doing comparison of values, they must be of exacly same type i.e. you can't compare int with int8</p>
+</li>
+<li>
+<p>interfaces can be compared too</p>
+</li>
+<li>
+<p>comparison is not defined on slices</p>
+</li>
+<li>
+<p>in Go it is possible to have a &ldquo;method values&rdquo; i.e. pass the whole method as a value</p>
+</li>
+<li>
+<p>in Go it is idiomatic if you use low level of indentation. Do not use embended if statements. Also, if it's possible, use the &lsquo;switch&rsquo; statement instead of &lsquo;if-else&rsquo;.</p>
+</li>
+</ul>
 <h2 id="concurency">Concurency</h2>
-
 <p>Data race - two concurrent processes are attempting to access the same area of memory and the way they are accessing the memory is not atomic.</p>
-
 <p>Critical selection - section of code that needs exlusive access to a shared resource.</p>
-
 <p>Deadlock - situation when in a program all concurent process are waiting on one another. The program will never recover without outside intervention.</p>
-
 <p>Livelocks - programs that are actively performing concurrent operations, but these operations do nothing to move the state of the program forward.</p>
-
 <p>Starvation - any situation where a concurent process cannot get all the resources it needs to perform the work.</p>
-
 <p>Concurency is a property of the code; parallelism is a property of the running program.</p>
-
 <p>CSP - Communicating Sequential Processes.</p>
-
 <h3 id="goroutines">Goroutines</h3>
-
-<p>Go has added another abstraction layer below OS threads - the <strong>goroutine</strong>. In addtion it introduces a primitive <strong>channel</strong> which allow communication between the goroutines.
-- goroutines are lightweight and we normally don&rsquo;t have to worry about creating one.
-- goroutine is one of the most basic units of organization in a Go program
-- every Go program has at least on goroutine - the main goroutine
-- <strong>go</strong> keyword starts a goroutine
-- Channel - fundental communication mechanism between goroutines
-- channels are inherently composable with other channels
-- channels can be buffered &ldquo;ch := make(chan int, <strong>100</strong>)&rdquo; - this example allocates a channel with capacity of 100 ints.
-- <strong>select</strong> keyword is used to listen on multiple channels and take actions when something is received from some channel. Syntactically similar to <strong>switch</strong> statement.</p>
-
-<p>Go&rsquo;s runtime observes the runtime behavior of the goroutine and automatically suspends them when they block and resumes them when they become unblocked.</p>
-
-<p>Join points are what guarantee our program&rsquo;s correctness and remove the race condition. In order to create a join point you have to synchronize the main goroutine and the other goroutine.- this can be achieved with e.g. sync.WaitGroup</p>
-
+<p>Go has added another abstraction layer below OS threads - the <strong>goroutine</strong>. In addtion it introduces a primitive <strong>channel</strong> which allow communication between the goroutines.</p>
+<ul>
+<li>goroutines are lightweight and we normally don't have to worry about creating one.</li>
+<li>goroutine is one of the most basic units of organization in a Go program</li>
+<li>every Go program has at least on goroutine - the main goroutine</li>
+<li><strong>go</strong> keyword starts a goroutine</li>
+<li>Channel - fundental communication mechanism between goroutines</li>
+<li>channels are inherently composable with other channels</li>
+<li>channels can be buffered &ldquo;ch := make(chan int, <strong>100</strong>)&rdquo; - this example allocates a channel with capacity of 100 ints.</li>
+<li><strong>select</strong> keyword is used to listen on multiple channels and take actions when something is received from some channel. Syntactically similar to <strong>switch</strong> statement.</li>
+</ul>
+<p>Go's runtime observes the runtime behavior of the goroutine and automatically suspends them when they block and resumes them when they become unblocked.</p>
+<p>Join points are what guarantee our program's correctness and remove the race condition. In order to create a join point you have to synchronize the main goroutine and the other goroutine.- this can be achieved with e.g. sync.WaitGroup</p>
 <p>Offtopic: Closures close around the lexical scope they are created in, thereby capturing variables.</p>
 
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+      
     </div>
 
-    <div class="disqus">
-        
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; Frantisek Janus. Powered by <a href="https://gohugo.io/">Hugo</a> and
+        <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a></p>
     </div>
-
-<div class="container has-text-centered top-pad">
-<hr>
-<a href="/blog/learning-go/#top"><i class="fa fa-arrow-up"></i></a>
-<hr>
-</div>
-
-<div class="section" id="footer">
-    <div class="container has-text-centered">
-        
-        <span class="footer-text"><a href="https://github.com/hivickylai/hugo-theme-introduction" target="_blank" rel="noopener">Introduction</a> theme for <a href="http://gohugo.io/" target="_blank" rel="noopener">Hugo</a>. Made with <i class="fa fa-heart"></i> and <i class="fa fa-coffee"></i>. <a href="https://vickylai.io" target="_blank" rel="noopener">Vicky Lai</a> 2019</span>
-        
-    </div>
-</div>
-
-</div>
-</div>
+  </div>
+</footer>
+<div class="footer"></div>
 
 
-<script>
-$('a[href^="\/blog\/learning-go\/#"]').click(function(e) {
-    e.preventDefault();
-    var target = this.hash;
-    $('html, body').animate({
-    scrollTop: $(target).offset().top
-    }, 500);
-    return false;
-})
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/docs.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script src="/js/ie10-viewport-bug-workaround.js"></script><!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>

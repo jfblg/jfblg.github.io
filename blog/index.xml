@@ -1,24 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on jfblg.com</title>
     <link>/blog/</link>
     <description>Recent content in Blogs on jfblg.com</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 14 Apr 2019 15:28:40 +0200</lastBuildDate>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 21 Aug 2019 20:51:07 +0200</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Kvm and Qemu Basic Virtualization on Linux</title>
-      <link>/blog/kvm-and-qemu-basic-virtualization-on-linux/</link>
-      <pubDate>Sun, 14 Apr 2019 15:28:40 +0200</pubDate>
+      <title>Prevent Grep From Showing Up</title>
+      <link>/blog/prevent-grep-from-showing-up/</link>
+      <pubDate>Wed, 21 Aug 2019 20:51:07 +0200</pubDate>
       
-      <guid>/blog/kvm-and-qemu-basic-virtualization-on-linux/</guid>
-      <description>KVM and Qemu basic usage commands Tools listed in the name of this article provide a lot of options for running a virtual machine. The challenge is to know them when you need it (or at least to know where to find them). Let&amp;rsquo;s list few example commands. I use(d) them on Debian 9.
-KVM - Kernel Virual Machine is a modele of Linux Kernel which allows application to access a virtualization functions of the Linux kernel via /dev/kvm.</description>
+      <guid>/blog/prevent-grep-from-showing-up/</guid>
+      <description>Prevent grep from showing up in &amp;lsquo;ps&amp;rsquo; output You don&#39;t want the grep process itself to show up in the list of process (ps) when filtering with the grep.
+In the example below, the second line should not appear.
+$ ps -few | grep nvim vagrant 12337 11456 0 14:55 pts/6 00:00:00 nvim vagrant 12340 4979 0 14:55 pts/3 00:00:00 grep --color=auto nvim How to to achieve it? You can use &amp;lsquo;-v&amp;rsquo; or &amp;lsquo;&amp;ndash;invert-match&amp;rsquo; switch of grep as follows:</description>
     </item>
     
     <item>
@@ -27,20 +28,9 @@ KVM - Kernel Virual Machine is a modele of Linux Kernel which allows application
       <pubDate>Sat, 21 Apr 2018 12:56:24 +0200</pubDate>
       
       <guid>/blog/learning-go/</guid>
-      <description>Learning Go - Notes Notes which I took during my learning. It&amp;rsquo;d be great if they would also help you.
+      <description>Learning Go - Notes Notes which I took during my learning. It&#39;d be great if they would also help you.
 Go is statically written (type of every variable must be defined), pass by value (whenever you pass an argument into a function, Go creates a copy of each argument, and these copies are used inside of the function) programming language.
-Go workspace and basics  MUST READ DOCUMENT  Syntax Variable declaration  if you define a variable within the if statement(condition) it is valid only there.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/blog/linux-filesystem/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/linux-filesystem/</guid>
-      <description>Draft Linux filesystem notes Most filesystem implementations define 7 types of files: - Regular files - Directories - Character device files - Block device file - Local domain socket - Named pipes (FIFOs) - Symbolic links
-Use file command to determine a file type.
-mount - maps a directory withing the existing file tree, called the mount point, to the root of newly attached filesystem umount - to detach a filesystem.</description>
+Go workspace and basics  MUST READ DOCUMENT  Syntax Variable declaration   if you define a variable within the if statement(condition) it is valid only there.</description>
     </item>
     
   </channel>
