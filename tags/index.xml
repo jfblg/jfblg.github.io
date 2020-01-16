@@ -39,6 +39,24 @@
     </item>
     
     <item>
+      <title>git</title>
+      <link>/tags/git/</link>
+      <pubDate>Mon, 18 Nov 2019 13:58:34 +0100</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VCS</title>
+      <link>/tags/vcs/</link>
+      <pubDate>Mon, 18 Nov 2019 13:58:34 +0100</pubDate>
+      
+      <guid>/tags/vcs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>golang</title>
       <link>/tags/golang/</link>
       <pubDate>Sat, 21 Apr 2018 12:56:24 +0200</pubDate>

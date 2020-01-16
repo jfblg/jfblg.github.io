@@ -30,6 +30,16 @@
     </item>
     
     <item>
+      <title>Git Commands - My Cheatsheet</title>
+      <link>/blog/git-commands-my-cheatsheet/</link>
+      <pubDate>Mon, 18 Nov 2019 13:58:34 +0100</pubDate>
+      
+      <guid>/blog/git-commands-my-cheatsheet/</guid>
+      <description>Git Commands - My Cheatsheet I am using git almost every time a I work on a computer. Somehow I find the CLI interface the quickest, especially in combination with aliases provided by oh-my-zsh git plugin. This blog post provides however full commands, they are here mainly for my reference as I don&amp;rsquo;t use very often majority of them.
+Clone  Clone a content of a repository into a directory (Note, if the directory does not exist yet, it will be automatically created)  git clone URL bar Remotes  List all remotes of the branch  git remote -v  Add a new remote called myremote  git remote add myremote URL git fetch myremote Branches  Create a new branch which is a copy of the current one  git checkout -b &amp;lt;name-of-new-branch&amp;gt;  if a remote &amp;lsquo;myremote&amp;rsquo; has a special branch, use &amp;ndash;track to configure sync with the this remote branch  git checkout -b &amp;lt;name-of-new-branch&amp;gt; -- track myremote/&amp;lt;remote-branch&amp;gt;  Switch to another existing branch  git checkout &amp;lt;name-of-another-branch&amp;gt;  Switch to another branch, which has not been yet used locally  git fetch git checkout -b &amp;lt;branch-name&amp;gt; &amp;lt;remote&amp;gt;/&amp;lt;branch-name&amp;gt; # or shorthand: git checkout -t &amp;lt;remote&amp;gt;/&amp;lt;branch-name&amp;gt; Staging  Stage a file  git add &amp;lt;file-name&amp;gt;  Stage all files in the current directory recursively  git add .</description>
+    </item>
+    
+    <item>
       <title>Prevent Grep From Showing Up</title>
       <link>/blog/prevent-grep-from-showing-up/</link>
       <pubDate>Wed, 21 Aug 2019 20:51:07 +0200</pubDate>

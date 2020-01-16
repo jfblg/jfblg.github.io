@@ -43,6 +43,21 @@
   </url>
   
   <url>
+    <loc>/tags/git/</loc>
+    <lastmod>2019-11-18T13:58:34+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/git-commands-my-cheatsheet/</loc>
+    <lastmod>2019-11-18T13:58:34+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vcs/</loc>
+    <lastmod>2019-11-18T13:58:34+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/prevent-grep-from-showing-up/</loc>
     <lastmod>2019-08-21T20:51:07+02:00</lastmod>
   </url>

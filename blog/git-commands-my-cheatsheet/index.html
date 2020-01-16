@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Frantisek Janus" />
+    <meta name="description" content="Public notebook and blog of Frantisek Janus">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Git Commands - My Cheatsheet</title>
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/notes/">NOTES</a></li>
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/resume/">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="/blog/git-commands-my-cheatsheet/">Git Commands - My Cheatsheet</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          November 18, 2019
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">git</span>
+            
+            <span class="label label-success">VCS</span>
+            
+            <span class="label label-success">development</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <h1 id="git-commands---my-cheatsheet">Git Commands - My Cheatsheet</h1>
+<p>I am using git almost every time a I work on a computer. Somehow I find the CLI interface the quickest, especially in combination with aliases provided by <strong>oh-my-zsh</strong> <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git">git plugin</a>. This blog post provides however full commands, they are here mainly for my reference as I don&rsquo;t use very often majority of them.</p>
+<h3 id="clone">Clone</h3>
+<ul>
+<li>Clone a content of a repository into a directory (Note, if the directory does not exist yet, it will be automatically created)</li>
+</ul>
+<pre><code>git clone URL bar
+</code></pre><h3 id="remotes">Remotes</h3>
+<ul>
+<li>List all remotes of the branch</li>
+</ul>
+<pre><code>git remote -v
+</code></pre><ul>
+<li>Add a new remote called myremote</li>
+</ul>
+<pre><code>git remote add myremote URL
+git fetch myremote
+</code></pre><h3 id="branches">Branches</h3>
+<ul>
+<li>Create a new branch which is a copy of the current one</li>
+</ul>
+<pre><code>git checkout -b &lt;name-of-new-branch&gt;
+</code></pre><ul>
+<li>if a remote &lsquo;myremote&rsquo; has a special branch, use &ndash;track to configure sync with the this remote branch</li>
+</ul>
+<pre><code>git checkout -b &lt;name-of-new-branch&gt; -- track myremote/&lt;remote-branch&gt;
+</code></pre><ul>
+<li>Switch to another existing branch</li>
+</ul>
+<pre><code>git checkout &lt;name-of-another-branch&gt;
+</code></pre><ul>
+<li>Switch to another branch, which has not been yet used locally</li>
+</ul>
+<pre><code>git fetch
+git checkout -b &lt;branch-name&gt; &lt;remote&gt;/&lt;branch-name&gt;
+# or shorthand:
+git checkout -t &lt;remote&gt;/&lt;branch-name&gt;
+</code></pre><h3 id="staging">Staging</h3>
+<ul>
+<li>Stage a file</li>
+</ul>
+<pre><code>git add &lt;file-name&gt;
+</code></pre><ul>
+<li>Stage all files in the current directory recursively</li>
+</ul>
+<pre><code>git add .
+</code></pre><ul>
+<li>Interactive staging - select files in an interactive menu</li>
+</ul>
+<pre><code>git add -i
+</code></pre><ul>
+<li>Stage only parts of the file</li>
+</ul>
+<pre><code>git add -p
+# OR
+git add --patch
+</code></pre><h3 id="unstaging">Unstaging</h3>
+<ul>
+<li>Unstage a file</li>
+</ul>
+<pre><code>git reset HEAD &lt;file-to-unstage&gt;
+</code></pre><ul>
+<li>Unstage all files</li>
+</ul>
+<pre><code>git reset HEAD .
+</code></pre><ul>
+<li>Partially unstage file</li>
+</ul>
+<pre><code>git reset --patch
+</code></pre><h3 id="commit">Commit</h3>
+<ul>
+<li>Commit staged file with a commit message</li>
+</ul>
+<pre><code>git commit -m &quot;commit message&quot;
+</code></pre><ul>
+<li>Commit changes to all tracked files (those already added to the repository) and deletions</li>
+</ul>
+<pre><code>git commit -am &quot;commit message&quot;
+</code></pre><ul>
+<li>Amend - combine a staged chaneges with the previous commit. The previous commit will be replaced with the new one. Use only on local branch.</li>
+</ul>
+<pre><code>git commit --amend -m &quot;commit message&quot;
+# commit a changes withot modifying a commit message
+git commit --amend --no-edit&quot;
+</code></pre><h3 id="fetch">Fetch</h3>
+<ul>
+<li>Fetch the changes of remote(s)</li>
+</ul>
+<pre><code>git fetch origin
+
+# from multimple remotes
+git fetch --multiple origin myremote
+</code></pre><h3 id="merge">Merge</h3>
+<ul>
+<li>Merge remote changes to your local current branch</li>
+</ul>
+<pre><code>git fetch origin
+git merge origin/feature-branch
+</code></pre><p>Note: It creates a &lsquo;merge commits&rsquo; - which just show that the changes were merged into the branch. Consider <strong>rebase</strong>.</p>
+<h3 id="pull">Pull</h3>
+<ul>
+<li>Do fetch a merge in a one step</li>
+</ul>
+<pre><code>git pull origin/feature-branch
+</code></pre><h3 id="delete-branches">Delete branches</h3>
+<ul>
+<li>&lsquo;soft&rsquo; delete of branch - will delete only if branch has been already merged to another one</li>
+</ul>
+<pre><code>git branch -d &lt;name-of-branch-to-delete&gt;
+</code></pre><ul>
+<li>&lsquo;force&rsquo; delete of branch</li>
+</ul>
+<pre><code>git branch -D &lt;name-of-branch-to-delete&gt;
+</code></pre><ul>
+<li>Helper: find out which branches have been already merged</li>
+</ul>
+<pre><code>git branch --merged
+</code></pre><ul>
+<li>Helper: see all branches also on remote:</li>
+</ul>
+<pre><code>git branch -v -a
+</code></pre><ul>
+<li>Delete remove branch on remote called origin</li>
+</ul>
+<pre><code>git push origin :&lt;remove-branch-name&gt;
+</code></pre><h3 id="rebase">Rebase</h3>
+<p>Rebase rewrites history!</p>
+<ul>
+<li>Stack up your local commits on top of commits that ready in the remove branch</li>
+</ul>
+<pre><code>git fetch origin
+git rebase origin/feature-branch-x
+
+# if you are localy on the feature-branch-x:
+git rebase feature-branch-x
+</code></pre><ul>
+<li>Fetch and stack your commits on top in a one step:</li>
+</ul>
+<pre><code>git pull --rebase
+</code></pre><ul>
+<li>Interactive rebase - Rewrite previous commit messages / &lsquo;squash&rsquo; one or more recent commits into one</li>
+</ul>
+<pre><code>git rebase -i HEAD~2
+</code></pre><p>Note: 2 - means that 2 previous commits can be edited. After a command a configured text editor will start. Follow the instructions there</p>
+<ul>
+<li>Rebase to a HASH
+//TODO: add notes</li>
+</ul>
+<h3 id="submodule">Submodule</h3>
+<p>Approach which allow to have an embendned repository (e.g. dependency of the main project) inside the main repository. There can be more than 1 external repositories/submodules. Submodule contains a reference to a commit of the embended repository. Details about submodules are store in the file <strong>.gitmodules</strong>.</p>
+<ul>
+<li>Add repository inside a parent repository</li>
+</ul>
+<pre><code>git submodule add &lt;url-to-remote-repository&gt;
+# then create commit in the main repository about added submodule
+git add .
+git commit -m &quot;add submodule ...&quot;
+</code></pre><ul>
+<li>Update the main repository with latest commits of submodules (recursively) and also automatically initialize the submodule without using <em>submodule init</em> (initializing = copy submodule names and urls from .gitmodules to .git/config)</li>
+</ul>
+<pre><code>git submodule update --init --recursive
+</code></pre><h3 id="stash">Stash</h3>
+<ul>
+<li>Clean up your not-yet commited changes to a side / buffer</li>
+</ul>
+<pre><code>git stash
+</code></pre><p>Note:</p>
+<ul>
+<li>
+<p>Now you can checkout to another branch or create a new one and apply those &lsquo;buffered&rsquo; changes there as follows</p>
+</li>
+<li>
+<p>you can have more than one stashes</p>
+</li>
+<li>
+<p>Bring back the stashed changes from the most recent stash to the WIP</p>
+</li>
+</ul>
+<pre><code>git stash pop
+</code></pre><ul>
+<li>Show all stashes</li>
+</ul>
+<pre><code>git stash list
+</code></pre><ul>
+<li>Apply older stash to WIP directory</li>
+</ul>
+<pre><code>git stash apply stash@{1}
+</code></pre><h3 id="clean">Clean</h3>
+<ul>
+<li>Delete all untracked files and directories from the repository</li>
+</ul>
+<pre><code>git clean -d -f
+</code></pre><ul>
+<li>Delete interactively - select those which should be deleted</li>
+</ul>
+<pre><code>git clean -d -f -i
+</code></pre><h3 id="revert-changes">Revert changes</h3>
+<ul>
+<li>revert changes on a single file. (change the working copy of undo.txt file the state where HEAD points)</li>
+</ul>
+<pre><code>git checkout HEAD -- undo.txt
+</code></pre><h3 id="diff">Diff</h3>
+<ul>
+<li>Compare working tree with HEAD(last commit)</li>
+</ul>
+<pre><code>git diff &lt;you can specify file&gt;
+</code></pre><ul>
+<li>Compare staged files with HEAD(last commit)</li>
+</ul>
+<pre><code>git diff --cached &lt;you can specify file&gt;
+</code></pre><ul>
+<li>Compare specific file between last commit and another commit</li>
+</ul>
+<pre><code>git diff HEAD &lt;HASH of another commit&gt; &lt;file-to-compare&gt;
+</code></pre><ul>
+<li>Compare branches</li>
+</ul>
+<pre><code>git diff &lt;branch-a&gt; &lt;branch-b&gt;
+# or
+git diff &lt;branch-a&gt;..&lt;branch-b&gt;
+</code></pre><ul>
+<li>Compare another branch with the common ancestor of current branch</li>
+</ul>
+<pre><code>git diff &lt;current-branch&gt;...&lt;another-branch&gt;
+</code></pre><ul>
+<li>Compare single file between between branches - 3 dot operator</li>
+</ul>
+<pre><code>git diff &lt;branch&gt;:&lt;dir&gt;/&lt;filename&gt; &lt;branch&gt;:&lt;div&gt;/&lt;filename&gt;
+</code></pre><h3 id="crlf--lf-compatibility">CRLF / LF compatibility</h3>
+<ul>
+<li>Checkout as CRLF, commit as LF</li>
+</ul>
+<pre><code>git config --global core.autocrlf true
+</code></pre><h3 id="untrack-a-file">Untrack a file</h3>
+<p>Keep the file in the repository, but ignore the future changes</p>
+<pre><code>git update-index --assume-unchanged &lt;file&gt;
+</code></pre><p>Remove a file or directory from the index. (File is not deleted from the working directory)</p>
+<pre><code>git rm --cached &lt;file&gt;
+git rm --cached -r &lt;directory&gt;
+</code></pre><h3 id="useful-aliases">Useful aliases</h3>
+<ul>
+<li>Configure a global alias</li>
+</ul>
+<pre><code>git config --global alias.&lt;alias name&gt; 'git command'
+</code></pre><ul>
+<li>Checkout</li>
+</ul>
+<pre><code>git config --global alias.co 'checkout'
+</code></pre><ul>
+<li>Unstage</li>
+</ul>
+<pre><code>git config -global alias.unstage 'reset HEAD'
+</code></pre><h3 id="useful">Useful</h3>
+<ul>
+<li>Show ordered summary of commiters based on number of their commits</li>
+</ul>
+<pre><code>git shortlog -sne
+</code></pre><h3 id="default-editor-settings">Default editor settings</h3>
+<ul>
+<li>Set vim as a default edigor for git only</li>
+</ul>
+<pre><code>git config --global core.editor &quot;vim&quot;
+export GIT_EDITOR=vim
+</code></pre><ul>
+<li>On Debian based systems - system wide editor setting</li>
+</ul>
+<pre><code>sudo update-alternatives --config editor
+</code></pre>
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 16, 2020
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/learning-pytest-part-1/">Learning Pytest -  part 1</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        April 21, 2018
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/learning-go/">Learning Go</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; Frantisek Janus. Powered by <a href="https://gohugo.io/">Hugo</a> and
+        <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a></p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/docs.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

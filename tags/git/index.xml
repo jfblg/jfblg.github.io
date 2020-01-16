@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>development on jfblg.com</title>
-    <link>/tags/development/</link>
-    <description>Recent content in development on jfblg.com</description>
+    <title>git on jfblg.com</title>
+    <link>/tags/git/</link>
+    <description>Recent content in git on jfblg.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 16 Jan 2020 11:42:12 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 18 Nov 2019 13:58:34 +0100</lastBuildDate>
     
-	<atom:link href="/tags/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Learning Pytest -  part 1</title>
-      <link>/blog/learning-pytest-part-1/</link>
-      <pubDate>Thu, 16 Jan 2020 11:42:12 +0100</pubDate>
-      
-      <guid>/blog/learning-pytest-part-1/</guid>
-      <description>Pytest Intro Not even a year ago I started on a position, where I also work on software and system testing. There is a lot to comprehend and a lot to learn. Besides specific topic and tasks I&amp;rsquo;d like to also extend my general knowledge. This is why I started to read and implement the examples/exercises from the book Python Testing with pytest written by Brian Okken. This blog post will probably evolve and I&amp;rsquo;d like to have here my notes taken from this book.</description>
-    </item>
     
     <item>
       <title>Git Commands - My Cheatsheet</title>
@@ -28,17 +19,6 @@
       <guid>/blog/git-commands-my-cheatsheet/</guid>
       <description>Git Commands - My Cheatsheet I am using git almost every time a I work on a computer. Somehow I find the CLI interface the quickest, especially in combination with aliases provided by oh-my-zsh git plugin. This blog post provides however full commands, they are here mainly for my reference as I don&amp;rsquo;t use very often majority of them.
 Clone  Clone a content of a repository into a directory (Note, if the directory does not exist yet, it will be automatically created)  git clone URL bar Remotes  List all remotes of the branch  git remote -v  Add a new remote called myremote  git remote add myremote URL git fetch myremote Branches  Create a new branch which is a copy of the current one  git checkout -b &amp;lt;name-of-new-branch&amp;gt;  if a remote &amp;lsquo;myremote&amp;rsquo; has a special branch, use &amp;ndash;track to configure sync with the this remote branch  git checkout -b &amp;lt;name-of-new-branch&amp;gt; -- track myremote/&amp;lt;remote-branch&amp;gt;  Switch to another existing branch  git checkout &amp;lt;name-of-another-branch&amp;gt;  Switch to another branch, which has not been yet used locally  git fetch git checkout -b &amp;lt;branch-name&amp;gt; &amp;lt;remote&amp;gt;/&amp;lt;branch-name&amp;gt; # or shorthand: git checkout -t &amp;lt;remote&amp;gt;/&amp;lt;branch-name&amp;gt; Staging  Stage a file  git add &amp;lt;file-name&amp;gt;  Stage all files in the current directory recursively  git add .</description>
-    </item>
-    
-    <item>
-      <title>Learning Go</title>
-      <link>/blog/learning-go/</link>
-      <pubDate>Sat, 21 Apr 2018 12:56:24 +0200</pubDate>
-      
-      <guid>/blog/learning-go/</guid>
-      <description>Learning Go - Notes Notes which I took during my learning. It&amp;rsquo;d be great if they would also help you.
-Go is statically written (type of every variable must be defined), pass by value (whenever you pass an argument into a function, Go creates a copy of each argument, and these copies are used inside of the function) programming language.
-Go workspace and basics  MUST READ DOCUMENT  Syntax Variable declaration   if you define a variable within the if statement(condition) it is valid only there.</description>
     </item>
     
   </channel>
