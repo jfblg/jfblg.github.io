@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Frantisek Janus" />
+    <meta name="description" content="Public notebook and blog of Frantisek Janus">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Learning Pytest -  part 1</title>
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/notes/">NOTES</a></li>
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/resume/">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="/blog/learning-pytest-part-1/">Learning Pytest -  part 1</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          January 16, 2020
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">python</span>
+            
+            <span class="label label-success">TDD</span>
+            
+            <span class="label label-success">development</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <h1 id="pytest">Pytest</h1>
+<h2 id="intro">Intro</h2>
+<p>Not even a year ago I started on a position, where I also work on software and system testing. There is a lot to comprehend and a lot to learn. Besides specific topic and tasks I&rsquo;d like to also extend my general knowledge. This is why I started to read and implement the examples/exercises from the book <strong>Python Testing with pytest</strong> written by <strong>Brian Okken</strong>. This blog post will probably evolve and I&rsquo;d like to have here my notes taken from this book.</p>
+<h2 id="useful-terms">Useful terms</h2>
+<p>Some for me new terms or terms which are well explained found in the book</p>
+<ul>
+<li>
+<p><strong>Subcutaneous test</strong> - test that doesn&rsquo;t run agains final end-user interface, but against the interface just below the surface (e.g. REST API)</p>
+</li>
+<li>
+<p><strong>Smoke test</strong> - by convention not all-inclusive, but select of tests that can be run quickly and give a decent idea about the health of all parts of the system.</p>
+</li>
+<li>
+<p><strong>Fixtures</strong> - common term for &ldquo;setup&rdquo; and &ldquo;teardown&rdquo; functions that run before and after test functions</p>
+</li>
+<li>
+<p><strong>hook function</strong> - a way to insert code into part of the pytest exection process to alter how pytest works. (can be specified in conftest.py file)</p>
+</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<h3 id="pytest-definition">Pytest definition</h3>
+<p>Pytest is a robust Python testing tool. Main benefits:</p>
+<ul>
+<li>powerful features as &lsquo;assert&rsquo; rewriting</li>
+<li>3rd party plugin model</li>
+<li>fixture model (unmatched in any other testing framework)</li>
+<li>can be used to run tests written for <strong>unittest</strong> or <strong>nose</strong></li>
+<li>is installed separatelly from Python version i.e. can be used to test Python2 or Python3</li>
+</ul>
+<p>Pytest is executed as a command line tool. Implemented tests are automatically found e.g. in the current directory.</p>
+<p>Homepage of pytest: <a href="https://docs.pytest.org/">https://docs.pytest.org/</a></p>
+<p>Pytest is distributed via PyPI</p>
+<h3 id="installation">Installation</h3>
+<pre><code>pip3 install -U virtualenv
+python3 -m virtualenv venv
+source venv/bin/activate
+pip install pytest
+</code></pre><p>put the script lcoation to your PATH for convenient execution.</p>
+<h3 id="test-execution">Test execution</h3>
+<pre><code>pytest --help
+pytest
+pytest -v
+</code></pre><p>Run just one test file</p>
+<pre><code>pytest test_1.py
+</code></pre><p>Run just one test method fro a test file</p>
+<pre><code>pytest test_1.py::test_if_it_works
+</code></pre><h4 id="useful-pytest-options">Useful pytest options</h4>
+<pre><code>-k EXPRESSION only run tests/classes which match the given 
+substring expression.
+Example: -k 'test_method or test_other' matches
+all test functions and classes whose name
+contains 'test_method' or 'test_other'.
+
+-m MARKEXPR only run tests matching given mark expression.
+example: -m 'mark1 and not mark2'.
+
+-x, --exitfirst exit instantly on first error or failed test.
+
+--maxfail=num exit after first num failures or errors.
+
+--capture=method per-test capturing method: one of fd|sys|no.
+
+-s shortcut for --capture=no.
+
+--lf, --last-failed rerun only the tests that failed last time
+(or all if none failed)
+
+--ff, --failed-first run all tests but run the last failures first.
+
+-v, --verbose increase verbosity.
+
+-q, --quiet decrease verbosity.
+
+-l, --showlocals show locals in tracebacks (disabled by default).
+
+--tb=style traceback print mode (auto/long/short/line/native/no).
+
+--durations=N show N slowest setup/test durations (N=0 for all).
+
+--collect-only only collect tests, don't execute them.
+</code></pre><h4 id="real-examples">Real examples</h4>
+<p>Combination of filter without any test execution</p>
+<pre><code>pytest -k &quot;asdict or defaults&quot; --collect-only
+</code></pre><p>Marking of a tests - for grouping multiple tests e.g. in different files</p>
+<pre><code>@pytest.mark.run_this_first
+def test_member_function():
+...
+pytest -m run_this_first
+</code></pre><p>Turn off stack trace of failed tests</p>
+<pre><code>pytest --tb=bo
+</code></pre><p><strong>Naming convetion</strong> of test code so that it is discoverable by a test frameworks</p>
+<ul>
+<li>test file should be named as <code>test_&lt;whatever&gt;.py</code> or <code>&lt;something&gt;_test.py</code></li>
+<li>methods should be named <code>test_&lt;something&gt;()</code></li>
+<li>test classes should be named <code>Test&lt;Something&gt;</code></li>
+</ul>
+<h3 id="pytest-configuration">Pytest configuration</h3>
+<p><strong>pytest.ini</strong> is an optional configuration file for pytest. Should be at most one in a project.</p>
+<p><strong>conftest.py</strong> is an optional local plugin that contain hook functions and fixtures.</p>
+<h3 id="test-if-exception-is-raised">Test if Exception is raised</h3>
+<p>Use ***pytest.raises(EXCEPTION NAME)</p>
+<pre><code>with pytest.raises(TypeError):
+    your_function.add('something')
+</code></pre><p>Test will pass if exception TypeError is raised.</p>
+<p>The Exception message can be verified too:</p>
+<pre><code>with pytest.raises(ValueError) as excinfo:
+    tasks.start_db('some/path', 'mysql')
+exception_msg = excinfo.value.args[0]
+assert exception_msg == &quot;db_type must be a 'mongodb' or 'tiny'&quot;
+</code></pre><h3 id="test-markers">Test markers</h3>
+<ul>
+<li>a test can have more than <strong>1 marker</strong></li>
+<li>the same marker can be on multiple tests</li>
+<li>there are standard and custom markers (defined by developer). The custom should be registered in pytest.ini file</li>
+</ul>
+<pre><code>[pytest]
+markers =
+    smoke: marks tests which are part of a smoke test
+</code></pre><ul>
+<li>marking expression allows also logical combination and negation of marking expressions (and, or, not)</li>
+</ul>
+<pre><code>pytest -m 'smoke and integration not dev'
+</code></pre><h3 id="tesk-skipping">Tesk skipping</h3>
+<p>To skip a test you need to use a decorator. &lsquo;reason&rsquo; specification is optional.</p>
+<pre><code>@pytest.mark.skip(reason=&quot;currently not working&quot;)
+def test_func():
+....
+</code></pre><p>Conditional skip with &lsquo;skipif&rsquo;.</p>
+<pre><code>@pytest.mark.skipif(yourtool.__version__ &lt; '0.9')
+def test_func():
+...
+</code></pre><p>To see the skip reason strings in the output of pytest, use option <code>-rs</code>.</p>
+<pre><code>pytest -rs test_func.py
+</code></pre><h3 id="test-expect-to-fail">Test expect to fail</h3>
+<p>Sometimes you intentionally expect a test to <strong>fail</strong>. Use <code>xfail()</code> marker:</p>
+<pre><code>@pytest.mark.xfail()
+def test_func_to_fail():
+...
+</code></pre><p>In the output of pytest</p>
+<ul>
+<li><strong>x</strong> - xfail - expected to fail</li>
+<li><strong>X</strong> - xpass - expected to fail, but passed</li>
+</ul>
+<p>Pytest can be configured in <strong>pytest.ini</strong> to mark xpass tests as FAIL:</p>
+<pre><code>[pytest]
+xfail_strict=true
+</code></pre><h3 id="test-parametrization">Test parametrization</h3>
+<p>Use the following decorator to specify a parameter used by a test function.</p>
+<pre><code>@pytest.mark.parametrize('task',
+                        [Task('t1', done=True),
+                        Task('t2', 'fero'),
+                        Task('t3', 'Fero', False),
+                        Task('t4', 'FFFF', True)])
+def test_task_2(task):
+</code></pre><h2 id="fixtures">Fixtures</h2>
+<h3 id="built-in-fixtures">Built-in fixtures</h3>
+<p>They come pre-packaged with the pytest and are extentions to the core functionality of pytest.</p>
+<ul>
+<li>
+<p><strong>tmpdir</strong> - generates a temporary dir path which can be used by test. It is not a string, it&rsquo;s an object that represents a directory. it implements <strong>str</strong> - i.e. use str(tmpdir) to get the string value. A directory is removed when the test is finished. Scope: function</p>
+</li>
+<li>
+<p><strong>tmpdir_factory</strong> - use when you want to setup a directory for many tests. Scope: session</p>
+<p>Note: It is possible to specify custom temporary base directory used by the 2 fixtures above:</p>
+<pre><code>pytest --basetemp=another_path
+</code></pre></li>
+<li>
+<p><strong>pytestconfig</strong> - you can adjust how pytest run through options, plugins, conf files which you launched - it is a shortcut for <strong>request.config</strong>, also refered as <strong>pytest config object</strong>. It is possible to create your custom options. Also you can access the values of entered options,switches when the pytest was started. Example:</p>
+<pre><code>def test_pytestconfig(pytestconfig):
+    print('args :', pytestconfig.args)
+    print('inifile :', pytestconfig.inifile)
+    print('rootdir :', pytestconfig.rootdir)
+    print('invocation_dir :', pytestconfig.invocation_dir)
+    # ... see documentation for more options
+</code></pre></li>
+<li>
+<p><strong>cache</strong> - used to obtain values of fields stored in the &ldquo;cache&rdquo; dir. Pytest store the test results also to the cache. This can useful for example <strong>to compare</strong> current test execution with the previous ones. E.g. you can implement a test to fail, if the current execution takes 10x more time than previous one. <code>cache</code> fixture has <strong>function</strong> scope.</p>
+</li>
+<li>
+<p><strong>capsys</strong> - 2 functionalities</p>
+<ol>
+<li>allows to retrieve STDOUT and STDERR from some code</li>
+</ol>
+<pre><code>out, err = capsys.readouterr()
+</code></pre><ol start="2">
+<li>can disable output capture i.e. the message will be written to STDOUT even if you don&rsquo;t use the <code>-s</code> option of pytest</li>
+</ol>
+<pre><code>with capsys.disabled():
+    print(&quot;this message is always printed&quot;)
+print(&quot;This message is pritend only when -s option is used&quot;)
+</code></pre></li>
+<li>
+<p><strong>monkeypatch</strong> - technique to dynamicaly modify a module or class during the runtime (nothing to do with pytest actually). With monkeypatch fixtured you can modify module or class in the context of a single test. Functions available in the monkeypatch fixture:</p>
+<ul>
+<li>[ADD]</li>
+</ul>
+</li>
+<li>
+<p><strong>recwarn</strong> - used to examine warning generated by code under test.</p>
+</li>
+</ul>
+<h4 id="custom-fixtures">Custom fixtures</h4>
+<ul>
+<li>
+<p>put them to <strong>conftest.py</strong> to share them across multiple test files</p>
+</li>
+<li>
+<p><strong>conftest.py</strong> file can be in multiple dirs. In this case, the lower-level file will be used when pytest is executed.</p>
+</li>
+<li>
+<p>IMPORTANT: do not import conftest.py from anywhere! By pytest it is considered to be <strong>local plugin</strong></p>
+</li>
+<li>
+<p>once you define your fixuture, to use it, specify it&rsquo;s name as argument of the test function</p>
+<p>Definition of the fixture</p>
+<pre><code>@pytest.fixture
+def app_db(tmpdir):
+    &quot;&quot;&quot;Connect to db before the tests, disconnect afterwards.&quot;&quot;&quot;
+    # Start DB
+    tasks.start_db(str(tmpdir))
+
+    yield # this is where all test functions are executed
+
+    # Teardown DB
+    tasks.stop_db()
+</code></pre><p>Usege of the fixture</p>
+<pre><code>def test_add_returns_valid_id(app_db):
+...
+</code></pre></li>
+<li>
+<p><code>--setup-show</code> switch of the pytest shows which fixtures were used during the execution.</p>
+</li>
+<li>
+<p>fixtures can be used to <strong>store data</strong> for testing.</p>
+</li>
+<li>
+<p>fixtures are not mean to contain <strong>assert</strong> statement. If used, it results in ERROR</p>
+</li>
+<li>
+<p>a fixture can utilize other existing fixtures, even multiple ones at the same time.</p>
+</li>
+<li>
+<p>use <strong>scope</strong> optional parameter to specify the scope of the fixture. Valid values are</p>
+<ul>
+<li>function - default - run before and after each test</li>
+<li>class - run once per test class</li>
+<li>module - run once per module.</li>
+<li>session - run once per session - for all tests the fixture is run only once.</li>
+</ul>
+</li>
+<li>
+<p>A function scope fixture can also depend on class, module, and session scope fixtures, but you can’t go in the reverse order.</p>
+</li>
+<li>
+<p>use <strong>autouse=True</strong> fixture parameter to always run the fixture - i.e. even if the test does not call it directly. Opt for a named fixtures instead of autouse, unless you have a valid reason not to.</p>
+<pre><code>@pytest.fixture(autouse=True, scope='class')
+def ficture_name():
+...
+</code></pre></li>
+<li>
+<p>by default a <strong>fixture name</strong> is the same as <strong>function name</strong> implementing the fixture. It be also <strong>renamed</strong> using an optional parameter <strong>name</strong>.</p>
+<pre><code>@pytest.fixture(name='abc')
+def initialize_the_db():
+....
+</code></pre></li>
+<li>
+<p><code>pytest --fixtures</code> lists all fixtures available - useful to find out the real names of &lsquo;renamed&rsquo; fixtures</p>
+</li>
+<li>
+<p>fixtures can be also <strong>parametrized</strong> - every test function that uses parametrized fixture will be called multiple times.</p>
+</li>
+</ul>
+<h3 id="plugins">Plugins</h3>
+<ul>
+<li>Plugins exenteds functionality of pytest</li>
+<li>You can use (i.e. also install) 3rd party plugins available online or develop your own</li>
+<li>See URL: <a href="https://docs.pytest.org/en/latest/plugins.html">https://docs.pytest.org/en/latest/plugins.html</a></li>
+<li>Pytest packages are distributed as Python packages, mainly via PyPI. Their name either begin with &ldquo;pytest-&rdquo; or end whith &ldquo;-pytest&rdquo;</li>
+</ul>
+<h4 id="hook-fucntions">Hook fucntions</h4>
+<ul>
+<li>Provide another way to control pytest.</li>
+<li>See URL: <a href="http://doc.pytest.org/en/latest/_modules/_pytest/hookspec.html">http://doc.pytest.org/en/latest/_modules/_pytest/hookspec.html</a></li>
+</ul>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        April 21, 2018
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/learning-go/">Learning Go</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; Frantisek Janus. Powered by <a href="https://gohugo.io/">Hugo</a> and
+        <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a></p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/docs.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script src="/js/ie10-viewport-bug-workaround.js"></script><!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>

@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on jfblg.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 21 Aug 2019 20:51:07 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 11:42:12 +0100</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Pytest -  part 1</title>
+      <link>/blog/learning-pytest-part-1/</link>
+      <pubDate>Thu, 16 Jan 2020 11:42:12 +0100</pubDate>
+      
+      <guid>/blog/learning-pytest-part-1/</guid>
+      <description>Pytest Intro Not even a year ago I started on a position, where I also work on software and system testing. There is a lot to comprehend and a lot to learn. Besides specific topic and tasks I&amp;rsquo;d like to also extend my general knowledge. This is why I started to read and implement the examples/exercises from the book Python Testing with pytest written by Brian Okken. This blog post will probably evolve and I&amp;rsquo;d like to have here my notes taken from this book.</description>
+    </item>
     
     <item>
       <title>Prevent Grep From Showing Up</title>
@@ -17,7 +26,7 @@
       <pubDate>Wed, 21 Aug 2019 20:51:07 +0200</pubDate>
       
       <guid>/blog/prevent-grep-from-showing-up/</guid>
-      <description>Prevent grep from showing up in &amp;lsquo;ps&amp;rsquo; output You don&#39;t want the grep process itself to show up in the list of process (ps) when filtering with the grep.
+      <description>Prevent grep from showing up in &amp;lsquo;ps&amp;rsquo; output You don&amp;rsquo;t want the grep process itself to show up in the list of process (ps) when filtering with the grep.
 In the example below, the second line should not appear.
 $ ps -few | grep nvim vagrant 12337 11456 0 14:55 pts/6 00:00:00 nvim vagrant 12340 4979 0 14:55 pts/3 00:00:00 grep --color=auto nvim How to to achieve it? You can use &amp;lsquo;-v&amp;rsquo; or &amp;lsquo;&amp;ndash;invert-match&amp;rsquo; switch of grep as follows:</description>
     </item>
@@ -28,7 +37,7 @@ $ ps -few | grep nvim vagrant 12337 11456 0 14:55 pts/6 00:00:00 nvim vagrant 12
       <pubDate>Sat, 21 Apr 2018 12:56:24 +0200</pubDate>
       
       <guid>/blog/learning-go/</guid>
-      <description>Learning Go - Notes Notes which I took during my learning. It&#39;d be great if they would also help you.
+      <description>Learning Go - Notes Notes which I took during my learning. It&amp;rsquo;d be great if they would also help you.
 Go is statically written (type of every variable must be defined), pass by value (whenever you pass an argument into a function, Go creates a copy of each argument, and these copies are used inside of the function) programming language.
 Go workspace and basics  MUST READ DOCUMENT  Syntax Variable declaration   if you define a variable within the if statement(condition) it is valid only there.</description>
     </item>

@@ -6,10 +6,19 @@
     <description>Recent content on jfblg.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 20 Dec 2019 08:58:24 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 11:42:12 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Pytest -  part 1</title>
+      <link>/blog/learning-pytest-part-1/</link>
+      <pubDate>Thu, 16 Jan 2020 11:42:12 +0100</pubDate>
+      
+      <guid>/blog/learning-pytest-part-1/</guid>
+      <description>Pytest Intro Not even a year ago I started on a position, where I also work on software and system testing. There is a lot to comprehend and a lot to learn. Besides specific topic and tasks I&amp;rsquo;d like to also extend my general knowledge. This is why I started to read and implement the examples/exercises from the book Python Testing with pytest written by Brian Okken. This blog post will probably evolve and I&amp;rsquo;d like to have here my notes taken from this book.</description>
+    </item>
     
     <item>
       <title>Resume</title>
@@ -17,7 +26,7 @@
       <pubDate>Fri, 20 Dec 2019 08:58:24 +0100</pubDate>
       
       <guid>/resume/</guid>
-      <description>My professional skills  Software tester - developlemnt of unit and automated integration tests Desing, implementation and maintenance of services and computer networks Linux developer and user IT security priciples aware in area of software development and service operation Good communication skills in written and spoken form Languages: English (fluent), German (fluent), Swiss German (good comprehension), Slovak (native)  My technology exprience Programing languages  Python - experienced Java - experienced Bash - experienced golang - basics Ruby - basics  Programing frameworks and technologies  Apache Kafka Java Spring Cloud Stream Java Spring Boot JUnit Selenium test automation Python Flask and Django framework  Computer networks  Understanding of various carrier network setups Routing OSPF, BGP Switching on ethernet Network configuration and troubleshooting on various vendors and on Linux  Miscalanous  Development of configuration management using Ansible Software packaging using Docker Deployemnt of of an application on Kubernetes cluster Development of automation pipelines on Jenkins and Gitlab CI Monitoring setup with Prometheus, Icinga, Smokeping Git - daily driver, often using the CLI commands regular expressions GPG *also with smartcards&amp;rdquo; setup HDD encryption with LUKS setup LIR technical administration experience IDE: Pycharm Editor: vim, neovim  Work experience Test automation engineer at Swisscom in Zürich, Switzerland March 2019 - present  Development of automated integration tests for software components and network appliance Development of unit tests for software components Development of a microservice application on Apache Kafka Streams  DevOps engineer at Swisscom in Zürich, Switzerland September 2018 - February 2019  Operation of a cloud service for data storage Development of a configuration management with Ansible  System DevOps engineer at Securosys SA in Zürich, Switzerland September 2017 - March 2018  Development of infrastructure for a HSM as a service Infrastructure design, implementation, operation and setup of monitoring tools Work mainly with FOSS tools  Network manager at Bühler group in Uzwil, Switzerland September 2014 - August 2017  Change and incident management in global network infrastructure with more than 3k active network devices and 10k users Making work easier to manage by developing Python scripts, Ansible playbooks and deployment pipelines on GitLab Vendors: Cisco, Riverbed, Microsoft  Implementation project manager at HP Enterprise services in Bratislava, Slovakia July 2011 - June 2014  Responsible for implementation of various network changes for enterprise customers Vendors: Cisco, HP, F5, Checkpoint  Network support specialist at Soitron for EU commission secure network sTesta in Bratislava, Slovakia March 2008 - June 2011  Firewall management Juniper ISG &amp;amp; SSG BGP implementation engineer Network issue troubleshooter 1st and 2nd level support  Education Master&#39;s degree - Faculty of Informatics and Information Technologies, Slovak University of Technology in Bratislava, Slovakia (2008 - 2011) Bacherlor degree - Faculty of Informatics and Information Technologies, Slovak University of Technology in Bratislava, Slovakia (2005 - 2008) Certificates  LPIC-1 Linux administration Cisco CCNP, CCDP, CCNA DC ITIL foundation in IT service management German language - level C1 Göthe Institut  </description>
+      <description>My professional skills  Software tester - developlemnt of unit and automated integration tests Desing, implementation and maintenance of services and computer networks Linux developer and user IT security priciples aware in area of software development and service operation Good communication skills in written and spoken form Languages: English (fluent), German (fluent), Swiss German (good comprehension), Slovak (native)  My technology exprience Programing languages  Python - experienced Java - experienced Bash - experienced golang - basics Ruby - basics  Programing frameworks and technologies  Apache Kafka Java Spring Cloud Stream Java Spring Boot JUnit Selenium test automation Python Flask and Django framework  Computer networks  Understanding of various carrier network setups Routing OSPF, BGP Switching on ethernet Network configuration and troubleshooting on various vendors and on Linux  Miscalanous  Development of configuration management using Ansible Software packaging using Docker Deployemnt of of an application on Kubernetes cluster Development of automation pipelines on Jenkins and Gitlab CI Monitoring setup with Prometheus, Icinga, Smokeping Git - daily driver, often using the CLI commands regular expressions GPG *also with smartcards&amp;rdquo; setup HDD encryption with LUKS setup LIR technical administration experience IDE: Pycharm Editor: vim, neovim  Work experience Test automation engineer at Swisscom in Zürich, Switzerland March 2019 - present  Development of automated integration tests for software components and network appliance Development of unit tests for software components Development of a microservice application on Apache Kafka Streams  DevOps engineer at Swisscom in Zürich, Switzerland September 2018 - February 2019  Operation of a cloud service for data storage Development of a configuration management with Ansible  System DevOps engineer at Securosys SA in Zürich, Switzerland September 2017 - March 2018  Development of infrastructure for a HSM as a service Infrastructure design, implementation, operation and setup of monitoring tools Work mainly with FOSS tools  Network manager at Bühler group in Uzwil, Switzerland September 2014 - August 2017  Change and incident management in global network infrastructure with more than 3k active network devices and 10k users Making work easier to manage by developing Python scripts, Ansible playbooks and deployment pipelines on GitLab Vendors: Cisco, Riverbed, Microsoft  Implementation project manager at HP Enterprise services in Bratislava, Slovakia July 2011 - June 2014  Responsible for implementation of various network changes for enterprise customers Vendors: Cisco, HP, F5, Checkpoint  Network support specialist at Soitron for EU commission secure network sTesta in Bratislava, Slovakia March 2008 - June 2011  Firewall management Juniper ISG &amp;amp; SSG BGP implementation engineer Network issue troubleshooter 1st and 2nd level support  Education Master&amp;rsquo;s degree - Faculty of Informatics and Information Technologies, Slovak University of Technology in Bratislava, Slovakia (2008 - 2011) Bacherlor degree - Faculty of Informatics and Information Technologies, Slovak University of Technology in Bratislava, Slovakia (2005 - 2008) Certificates  LPIC-1 Linux administration Cisco CCNP, CCDP, CCNA DC ITIL foundation in IT service management German language - level C1 Göthe Institut  </description>
     </item>
     
     <item>
@@ -26,7 +35,7 @@
       <pubDate>Wed, 21 Aug 2019 20:51:07 +0200</pubDate>
       
       <guid>/blog/prevent-grep-from-showing-up/</guid>
-      <description>Prevent grep from showing up in &amp;lsquo;ps&amp;rsquo; output You don&#39;t want the grep process itself to show up in the list of process (ps) when filtering with the grep.
+      <description>Prevent grep from showing up in &amp;lsquo;ps&amp;rsquo; output You don&amp;rsquo;t want the grep process itself to show up in the list of process (ps) when filtering with the grep.
 In the example below, the second line should not appear.
 $ ps -few | grep nvim vagrant 12337 11456 0 14:55 pts/6 00:00:00 nvim vagrant 12340 4979 0 14:55 pts/3 00:00:00 grep --color=auto nvim How to to achieve it? You can use &amp;lsquo;-v&amp;rsquo; or &amp;lsquo;&amp;ndash;invert-match&amp;rsquo; switch of grep as follows:</description>
     </item>
@@ -37,7 +46,7 @@ $ ps -few | grep nvim vagrant 12337 11456 0 14:55 pts/6 00:00:00 nvim vagrant 12
       <pubDate>Sat, 21 Apr 2018 12:56:24 +0200</pubDate>
       
       <guid>/blog/learning-go/</guid>
-      <description>Learning Go - Notes Notes which I took during my learning. It&#39;d be great if they would also help you.
+      <description>Learning Go - Notes Notes which I took during my learning. It&amp;rsquo;d be great if they would also help you.
 Go is statically written (type of every variable must be defined), pass by value (whenever you pass an argument into a function, Go creates a copy of each argument, and these copies are used inside of the function) programming language.
 Go workspace and basics  MUST READ DOCUMENT  Syntax Variable declaration   if you define a variable within the if statement(condition) it is valid only there.</description>
     </item>
@@ -72,7 +81,7 @@ My key can be downloaded from the keyserver-pool or from the local copy.</descri
       <pubDate>Wed, 21 Mar 2018 14:58:48 +0100</pubDate>
       
       <guid>/about/</guid>
-      <description>This is a personal page of Frantisek Janus. I&#39;m IT professional living in Zürich area. The content of this page is focused on technical topics, mainly from my work or about topics which interests me.
+      <description>This is a personal page of Frantisek Janus. I&amp;rsquo;m IT professional living in Zürich area. The content of this page is focused on technical topics, mainly from my work or about topics which interests me.
 You can find 2 main content sections here: 1. Notes - intended to be one long document with my quick notes. 2. Blog - posts where I would like to go a little deeper or to be more verbose.</description>
     </item>
     

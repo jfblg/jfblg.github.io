@@ -6,7 +6,7 @@
     <description>Recent content in Tags on jfblg.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 21 Apr 2018 12:56:24 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 11:42:12 +0100</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,27 @@
     <item>
       <title>development</title>
       <link>/tags/development/</link>
-      <pubDate>Sat, 21 Apr 2018 12:56:24 +0200</pubDate>
+      <pubDate>Thu, 16 Jan 2020 11:42:12 +0100</pubDate>
       
       <guid>/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Thu, 16 Jan 2020 11:42:12 +0100</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TDD</title>
+      <link>/tags/tdd/</link>
+      <pubDate>Thu, 16 Jan 2020 11:42:12 +0100</pubDate>
+      
+      <guid>/tags/tdd/</guid>
       <description></description>
     </item>
     

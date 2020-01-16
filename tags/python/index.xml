@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>development on jfblg.com</title>
-    <link>/tags/development/</link>
-    <description>Recent content in development on jfblg.com</description>
+    <title>python on jfblg.com</title>
+    <link>/tags/python/</link>
+    <description>Recent content in python on jfblg.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 16 Jan 2020 11:42:12 +0100</lastBuildDate>
     
-	<atom:link href="/tags/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,17 +18,6 @@
       
       <guid>/blog/learning-pytest-part-1/</guid>
       <description>Pytest Intro Not even a year ago I started on a position, where I also work on software and system testing. There is a lot to comprehend and a lot to learn. Besides specific topic and tasks I&amp;rsquo;d like to also extend my general knowledge. This is why I started to read and implement the examples/exercises from the book Python Testing with pytest written by Brian Okken. This blog post will probably evolve and I&amp;rsquo;d like to have here my notes taken from this book.</description>
-    </item>
-    
-    <item>
-      <title>Learning Go</title>
-      <link>/blog/learning-go/</link>
-      <pubDate>Sat, 21 Apr 2018 12:56:24 +0200</pubDate>
-      
-      <guid>/blog/learning-go/</guid>
-      <description>Learning Go - Notes Notes which I took during my learning. It&amp;rsquo;d be great if they would also help you.
-Go is statically written (type of every variable must be defined), pass by value (whenever you pass an argument into a function, Go creates a copy of each argument, and these copies are used inside of the function) programming language.
-Go workspace and basics  MUST READ DOCUMENT  Syntax Variable declaration   if you define a variable within the if statement(condition) it is valid only there.</description>
     </item>
     
   </channel>

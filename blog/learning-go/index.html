@@ -8,7 +8,7 @@
     <meta name="description" content="Public notebook and blog of Frantisek Janus">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
     <title>Learning Go</title>
-    <meta name="generator" content="Hugo 0.61.0" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
     
@@ -75,7 +75,7 @@
           <div class="panel-body">
             <div class="blogpost">
               <h1 id="learning-go---notes">Learning Go - Notes</h1>
-<p>Notes which I took during my learning. It'd be great if they would also help you.</p>
+<p>Notes which I took during my learning. It&rsquo;d be great if they would also help you.</p>
 <p>Go is statically written (type of every variable must be defined), pass by value (whenever you pass an argument into a function, Go creates a copy of each argument, and these copies are used inside of the function) programming language.</p>
 <h2 id="go-workspace-and-basics">Go workspace and basics</h2>
 <ul>
@@ -100,7 +100,7 @@
 <span style="color:#a6e22e">len2</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;String2&#34;</span>)</code></pre></div></p>
 </li>
 <li>
-<p>anonymous structures - in some cases, it may be not necessary to name the structures. you don't have to:
+<p>anonymous structures - in some cases, it may be not necessary to name the structures. you don&rsquo;t have to:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">car</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">struct</span> {
 	<span style="color:#a6e22e">manufacturer</span> <span style="color:#66d9ef">string</span>
 	<span style="color:#a6e22e">year</span> <span style="color:#66d9ef">int</span>
@@ -195,13 +195,13 @@
 <li>all values must be the same type</li>
 <li>keys are indexed - we can iterate over them</li>
 <li>used to represent a collection of related properties</li>
-<li>don't need to know all the keys at the compile time</li>
+<li>don&rsquo;t need to know all the keys at the compile time</li>
 <li>reference type</li>
 </ul>
 <h4 id="struct-properties">Struct properties</h4>
 <ul>
 <li>values can be of different types</li>
-<li>keys don't support indexing</li>
+<li>keys don&rsquo;t support indexing</li>
 <li>compiler needs to know all the different fields at the compile time</li>
 <li>used to represent something with a lot of different properties</li>
 <li>value type</li>
@@ -218,13 +218,13 @@
 <li>panic and recover are used rarely, this practise is not recommended as it introduces non idiomatic go fashion</li>
 <li>custom errors can be created with following packages: format, errors
 <ul>
-<li>note: if you use fmt.Errorf(), you don't nead to import &ldquo;errors&rdquo; package - nice.</li>
+<li>note: if you use fmt.Errorf(), you don&rsquo;t nead to import &ldquo;errors&rdquo; package - nice.</li>
 </ul>
 </li>
 </ul>
 <h3 id="value-types-vs-reference-types">Value types vs. Reference types</h3>
-<p>It is crutial to understand the difference between those 2 types. For an example, let's take a slice which belongs to the group of reference types.
-When we crete a slice, Go will automatically create 2 data structures: 1. an array 2. a structure that records the length of the slice, the capacity of the slice and a reference to the underlying array. With &lsquo;reference types&rsquo; in Go, we don't have to worry about pointer if we pass a value of a reference type to a function and modify the original vlaue inside the function, because &ldquo;the copy of a pointer&rdquo; to the same underlying (value type) data structure is passed. Remember, Go is a &ldquo;pass by value&rdquo; language.</p>
+<p>It is crutial to understand the difference between those 2 types. For an example, let&rsquo;s take a slice which belongs to the group of reference types.
+When we crete a slice, Go will automatically create 2 data structures: 1. an array 2. a structure that records the length of the slice, the capacity of the slice and a reference to the underlying array. With &lsquo;reference types&rsquo; in Go, we don&rsquo;t have to worry about pointer if we pass a value of a reference type to a function and modify the original vlaue inside the function, because &ldquo;the copy of a pointer&rdquo; to the same underlying (value type) data structure is passed. Remember, Go is a &ldquo;pass by value&rdquo; language.</p>
 <p><strong>Value types</strong> - use pointers to change these things in a function</p>
 <ul>
 <li>int</li>
@@ -233,7 +233,7 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <li>bool</li>
 <li>struct</li>
 </ul>
-<p><strong>Reference types</strong> - don't worry about pointer with these</p>
+<p><strong>Reference types</strong> - don&rsquo;t worry about pointer with these</p>
 <ul>
 <li>slices</li>
 <li>maps</li>
@@ -277,7 +277,7 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <p>Interface forces a type to have specific methods defined in order to use functions of the interface</p>
 </li>
 <li>
-<p>Also <strong>empty interface</strong> may exist. It does not have any method and it satisfies everything. It provides an unknown type that is determined at runtime. Because Go is a statically written language, the empty interface may be used to overcome the situation when you don't care about the type.</p>
+<p>Also <strong>empty interface</strong> may exist. It does not have any method and it satisfies everything. It provides an unknown type that is determined at runtime. Because Go is a statically written language, the empty interface may be used to overcome the situation when you don&rsquo;t care about the type.</p>
 <ul>
 <li>definition: <em>interface{}</em></li>
 <li>avoid using empty interfaces if you can or do a type assertion</li>
@@ -523,7 +523,7 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
 )</code></pre></div></p>
 </li>
 <li>
-<p>go sometimes can't convert the type automatically. E.g.: int to string. (in this case use strconv package)</p>
+<p>go sometimes can&rsquo;t convert the type automatically. E.g.: int to string. (in this case use strconv package)</p>
 </li>
 <li>
 <p>there are certain types in go that must be initialized. E.g. map does not have a zero value, it must be initialized. - use <em>make()</em> to do it.</p>
@@ -590,7 +590,7 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">ldflags</span>=<span style="color:#e6db74">&#34;-X name.Version 1.5.0&#34;</span> &lt;<span style="color:#a6e22e">program</span><span style="color:#f92672">-</span><span style="color:#a6e22e">name</span>.<span style="color:#66d9ef">go</span>&gt;</code></pre></div></p>
 </li>
 <li>
-<p>when doing comparison of values, they must be of exacly same type i.e. you can't compare int with int8</p>
+<p>when doing comparison of values, they must be of exacly same type i.e. you can&rsquo;t compare int with int8</p>
 </li>
 <li>
 <p>interfaces can be compared too</p>
@@ -602,7 +602,7 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
 <p>in Go it is possible to have a &ldquo;method values&rdquo; i.e. pass the whole method as a value</p>
 </li>
 <li>
-<p>in Go it is idiomatic if you use low level of indentation. Do not use embended if statements. Also, if it's possible, use the &lsquo;switch&rsquo; statement instead of &lsquo;if-else&rsquo;.</p>
+<p>in Go it is idiomatic if you use low level of indentation. Do not use embended if statements. Also, if it&rsquo;s possible, use the &lsquo;switch&rsquo; statement instead of &lsquo;if-else&rsquo;.</p>
 </li>
 </ul>
 <h2 id="concurency">Concurency</h2>
@@ -616,7 +616,7 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
 <h3 id="goroutines">Goroutines</h3>
 <p>Go has added another abstraction layer below OS threads - the <strong>goroutine</strong>. In addtion it introduces a primitive <strong>channel</strong> which allow communication between the goroutines.</p>
 <ul>
-<li>goroutines are lightweight and we normally don't have to worry about creating one.</li>
+<li>goroutines are lightweight and we normally don&rsquo;t have to worry about creating one.</li>
 <li>goroutine is one of the most basic units of organization in a Go program</li>
 <li>every Go program has at least on goroutine - the main goroutine</li>
 <li><strong>go</strong> keyword starts a goroutine</li>
@@ -625,13 +625,26 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
 <li>channels can be buffered &ldquo;ch := make(chan int, <strong>100</strong>)&rdquo; - this example allocates a channel with capacity of 100 ints.</li>
 <li><strong>select</strong> keyword is used to listen on multiple channels and take actions when something is received from some channel. Syntactically similar to <strong>switch</strong> statement.</li>
 </ul>
-<p>Go's runtime observes the runtime behavior of the goroutine and automatically suspends them when they block and resumes them when they become unblocked.</p>
-<p>Join points are what guarantee our program's correctness and remove the race condition. In order to create a join point you have to synchronize the main goroutine and the other goroutine.- this can be achieved with e.g. sync.WaitGroup</p>
+<p>Go&rsquo;s runtime observes the runtime behavior of the goroutine and automatically suspends them when they block and resumes them when they become unblocked.</p>
+<p>Join points are what guarantee our program&rsquo;s correctness and remove the race condition. In order to create a join point you have to synchronize the main goroutine and the other goroutine.- this can be achieved with e.g. sync.WaitGroup</p>
 <p>Offtopic: Closures close around the lexical scope they are created in, thereby capturing variables.</p>
 
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 16, 2020
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/learning-pytest-part-1/">Learning Pytest -  part 1</a></strong>
+                      </h6>
+                    </div>
+                  </div>
                 
               </div>
             </div>
