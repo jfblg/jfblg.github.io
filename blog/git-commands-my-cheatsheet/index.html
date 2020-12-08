@@ -8,7 +8,7 @@
     <meta name="description" content="Public notebook and blog of Frantisek Janus">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
     <title>Git Commands - My Cheatsheet</title>
-    <meta name="generator" content="Hugo 0.63.0-DEV" />
+    <meta name="generator" content="Hugo 0.79.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -197,9 +197,9 @@ git merge origin/feature-branch
 </ul>
 <pre><code>git branch -v -a
 </code></pre><ul>
-<li>Delete remove branch on remote called origin</li>
+<li>Delete branch on remote called origin</li>
 </ul>
-<pre><code>git push origin :&lt;remove-branch-name&gt;
+<pre><code>git push origin :&lt;branch-name&gt;
 </code></pre><h3 id="rebase">Rebase</h3>
 <p>Rebase rewrites history!</p>
 <ul>
@@ -276,6 +276,14 @@ git commit -m &quot;add submodule ...&quot;
 <li>revert changes on a single file. (change the working copy of undo.txt file the state where HEAD points)</li>
 </ul>
 <pre><code>git checkout HEAD -- undo.txt
+</code></pre><ul>
+<li>revert to already commited changes and create a new commit with the reverted changes - usefull to track the reverts</li>
+</ul>
+<pre><code># revert the changes done by the last commit in HEAD and create a new commit with the reverted changes
+git revert HEAD
+
+# revert the changes done by the third last commit in HEAD and create a new commit with the reverted changes
+git revert HEAD~2
 </code></pre><h3 id="diff">Diff</h3>
 <ul>
 <li>Compare working tree with HEAD(last commit)</li>

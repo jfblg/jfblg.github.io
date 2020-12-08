@@ -8,7 +8,7 @@
     <meta name="description" content="Public notebook and blog of Frantisek Janus">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
     <title>Notes</title>
-    <meta name="generator" content="Hugo 0.63.0-DEV" />
+    <meta name="generator" content="Hugo 0.79.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -160,7 +160,7 @@ lsof /var/log/syslog</code></pre></div></p>
 </li>
 <li>
 <p>to execute an arbitrary command on every file the file command finds. See more details in man page, section -exec. Example:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -iname <span style="color:#e6db74">&#34;.txt&#34;</span> -size +500M -exec ls -lh <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -iname <span style="color:#e6db74">&#34;.txt&#34;</span> -size +500M -exec ls -lh <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p>
 </li>
 </ul>
 <h3 id="search">Search</h3>
@@ -355,7 +355,7 @@ kill &lt;PID&gt;  <span style="color:#75715e"># kill the process</span></code></
 find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> | xargs file
 
 <span style="color:#75715e"># To place the argument more then once use {}</span>
-find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> -print0 | xargs -0 -I <span style="color:#f92672">{</span><span style="color:#f92672">}</span> mv <span style="color:#f92672">{</span><span style="color:#f92672">}</span> ~/old.files</code></pre></div></p>
+find . -iname <span style="color:#e6db74">&#34;*.bak&#34;</span> -print0 | xargs -0 -I <span style="color:#f92672">{}</span> mv <span style="color:#f92672">{}</span> ~/old.files</code></pre></div></p>
 </li>
 <li>
 <p>Detect your distibution
@@ -517,11 +517,11 @@ sed <span style="color:#e6db74">&#39;/^$/d&#39;</span> old-file &gt; new-file</c
 <ul>
 <li>basic operations with arrays in BASH
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># declaration 1</span>
-unix<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
-unix<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Red Hat&#34;</span>
+unix<span style="color:#f92672">[</span>1<span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
+unix<span style="color:#f92672">[</span>2<span style="color:#f92672">]=</span><span style="color:#e6db74">&#34;Red Hat&#34;</span>
 
 <span style="color:#75715e"># declaration 2</span>
-declare -a auto<span style="color:#f92672">=</span><span style="color:#f92672">(</span>toyota skoda bmw vw fiat<span style="color:#f92672">)</span>
+declare -a auto<span style="color:#f92672">=(</span>toyota skoda bmw vw fiat<span style="color:#f92672">)</span>
 
 <span style="color:#75715e"># print out the array</span>
 echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#75715e"># deals with the list as multiple variables</span>
@@ -541,10 +541,10 @@ echo <span style="color:#e6db74">${</span>auto[@]/fiat/srot<span style="color:#e
 
 <span style="color:#75715e"># only the remaining i.e. not matched elements are stored to the result var</span>
 <span style="color:#75715e"># globing is used, not regex</span>
-declare -a result<span style="color:#f92672">=</span><span style="color:#f92672">(</span> <span style="color:#e6db74">${</span>countries[@]/*a*/<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+declare -a result<span style="color:#f92672">=(</span> <span style="color:#e6db74">${</span>countries[@]/*a*/<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
 
 <span style="color:#75715e"># add an element to an existing array</span>
-auto<span style="color:#f92672">=</span><span style="color:#f92672">(</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;tatra&#34;</span> <span style="color:#e6db74">&#34;trabant&#34;</span><span style="color:#f92672">)</span>
+auto<span style="color:#f92672">=(</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;tatra&#34;</span> <span style="color:#e6db74">&#34;trabant&#34;</span><span style="color:#f92672">)</span>
 echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span>
 
 <span style="color:#75715e"># remove an element form array</span>
@@ -552,7 +552,7 @@ unset auto<span style="color:#f92672">[</span>5<span style="color:#f92672">]</sp
 echo <span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span>
 
 <span style="color:#75715e"># copy an array</span>
-car<span style="color:#f92672">=</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+car<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>auto[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
 echo <span style="color:#e6db74">${</span>car[@]<span style="color:#e6db74">}</span>
 
 <span style="color:#75715e"># delete an entire array</span>
@@ -560,7 +560,7 @@ unset car
 echo <span style="color:#e6db74">${</span>car[@]<span style="color:#e6db74">}</span>
 
 <span style="color:#75715e">#load content of an file input-array into an array</span>
-filecontent<span style="color:#f92672">=</span><span style="color:#f92672">(</span> <span style="color:#e6db74">`</span>cat input-array<span style="color:#e6db74">`</span> <span style="color:#f92672">)</span>
+filecontent<span style="color:#f92672">=(</span> <span style="color:#e6db74">`</span>cat input-array<span style="color:#e6db74">`</span> <span style="color:#f92672">)</span>
 echo <span style="color:#e6db74">${</span>filecontent[@]<span style="color:#e6db74">}</span>
 echo <span style="color:#e6db74">${</span>filecontent[1]<span style="color:#e6db74">}</span>
 

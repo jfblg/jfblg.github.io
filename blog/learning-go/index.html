@@ -8,7 +8,7 @@
     <meta name="description" content="Public notebook and blog of Frantisek Janus">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
     <title>Learning Go</title>
-    <meta name="generator" content="Hugo 0.63.0-DEV" />
+    <meta name="generator" content="Hugo 0.79.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
     
@@ -92,26 +92,30 @@
 
 <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">z</span>); <span style="color:#a6e22e">y</span> &gt; <span style="color:#ae81ff">1</span> {
 	<span style="color:#75715e">//...
-</span><span style="color:#75715e"></span>}</code></pre></div></p>
+</span><span style="color:#75715e"></span>}
+</code></pre></div></p>
 </li>
 <li>
 <p>as a convenience, it is allowed to redeclare <em>err</em> as follows:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">len1</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;String1&#34;</span>)
-<span style="color:#a6e22e">len2</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;String2&#34;</span>)</code></pre></div></p>
+<span style="color:#a6e22e">len2</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;String2&#34;</span>)
+</code></pre></div></p>
 </li>
 <li>
 <p>anonymous structures - in some cases, it may be not necessary to name the structures. you don&rsquo;t have to:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">car</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">struct</span> {
 	<span style="color:#a6e22e">manufacturer</span> <span style="color:#66d9ef">string</span>
 	<span style="color:#a6e22e">year</span> <span style="color:#66d9ef">int</span>
-}{<span style="color:#e6db74">&#34;Toyota&#34;</span>, <span style="color:#ae81ff">2018</span>}</code></pre></div></p>
+}{<span style="color:#e6db74">&#34;Toyota&#34;</span>, <span style="color:#ae81ff">2018</span>}
+</code></pre></div></p>
 </li>
 </ul>
 <h3 id="named-methods">Named methods</h3>
 <ul>
 <li>when the method is treated as value. See example:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">method</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">mypackage</span>.<span style="color:#a6e22e">NewInstance</span>
-<span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">method</span>()</code></pre></div></li>
+<span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">method</span>()
+</code></pre></div></li>
 <li>this approach may be useful in case you have handles of functions which may be long. With named methods you can hide those long handles.</li>
 </ul>
 <h3 id="for-loop">for loop</h3>
@@ -124,7 +128,8 @@
 			<span style="color:#66d9ef">break</span> <span style="color:#a6e22e">MyForLoop</span>
 		}
 	}
-}</code></pre></div></li>
+}
+</code></pre></div></li>
 </ul>
 <h3 id="switch-statement">Switch statement</h3>
 <ul>
@@ -140,11 +145,12 @@
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> []<span style="color:#66d9ef">interface</span>{}
 
 <span style="color:#75715e">// the DIFFERENCE is how you pass the arguments to a function:
-</span><span style="color:#75715e"></span><span style="color:#75715e">// 1. Give each elemement of a slice separately
+</span><span style="color:#75715e">// 1. Give each elemement of a slice separately
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;x&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>, <span style="color:#e6db74">&#34;z&#34;</span>)
 <span style="color:#75715e">// 2. or as a single slice, in which case you will hato to suffix the slice value with three dots
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">interface</span>{<span style="color:#e6db74">&#34;x&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>, <span style="color:#e6db74">&#34;z&#34;</span>}
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">...</span>)</code></pre></div></li>
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">...</span>)
+</code></pre></div></li>
 </ul>
 <h2 id="build-in-types">Build-in Types</h2>
 <h3 id="arrays">Arrays</h3>
@@ -162,7 +168,8 @@
 <li>slice can not be compared.</li>
 <li>if you want to remove something from the middle of slice, you have to essentially create a new one and copy values to it. Example
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myslice</span> = []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>}
-<span style="color:#a6e22e">myslice</span> = append(<span style="color:#a6e22e">myslice</span>[:<span style="color:#ae81ff">2</span>], <span style="color:#a6e22e">myslice</span>[<span style="color:#ae81ff">3</span>:]<span style="color:#f92672">...</span>)</code></pre></div></li>
+<span style="color:#a6e22e">myslice</span> = append(<span style="color:#a6e22e">myslice</span>[:<span style="color:#ae81ff">2</span>], <span style="color:#a6e22e">myslice</span>[<span style="color:#ae81ff">3</span>:]<span style="color:#f92672">...</span>)
+</code></pre></div></li>
 </ul>
 <h3 id="maps">Maps</h3>
 <ul>
@@ -178,14 +185,16 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Address</span> <span style="color:#66d9ef">struct</span> {  
     <span style="color:#a6e22e">street</span>, <span style="color:#a6e22e">town</span>    <span style="color:#66d9ef">string</span>
     <span style="color:#a6e22e">streetnum</span>       <span style="color:#66d9ef">int</span>
-}</code></pre></div></p>
+}
+</code></pre></div></p>
 </li>
 <li>
 <p>Anymous structures}
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Address</span> <span style="color:#66d9ef">struct</span> {  
     <span style="color:#a6e22e">street</span>, <span style="color:#a6e22e">town</span>    <span style="color:#66d9ef">string</span>
     <span style="color:#a6e22e">streetnum</span>       <span style="color:#66d9ef">int</span>
-}</code></pre></div></p>
+}
+</code></pre></div></p>
 </li>
 </ul>
 <h3 id="maps-vs-struct-comparison">MAPS vs. STRUCT comparison</h3>
@@ -260,13 +269,15 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 </li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">variable</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;some text&#34;</span>
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">*</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">variable</span>) <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">variable</span>)</code></pre></div>
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">*&amp;</span><span style="color:#a6e22e">variable</span>) <span style="color:#75715e">// == fmt.Println(variable)
+</span></code></pre></div>
 <h2 id="user-defined-types">User defined types</h2>
 <ul>
 <li>methods (functions) can be attached to a type - it is close to OOP</li>
 <li>a method contain a section called <strong>receiver</strong> in its declaration ((r MyType) in the next example):
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#a6e22e">MyType</span>) <span style="color:#a6e22e">Do</span>() {
-}</code></pre></div></li>
+}
+</code></pre></div></li>
 </ul>
 <h2 id="interfaces">Interfaces</h2>
 <ul>
@@ -286,7 +297,8 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <li>
 <p>To verify if certain type implements some interface you can insert the following test code:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// verification if type myType implements fmt.Stringer interface
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Stringer</span> = <span style="color:#a6e22e">myType</span></code></pre></div></p>
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Stringer</span> = <span style="color:#a6e22e">myType</span>
+</code></pre></div></p>
 </li>
 <li>
 <p>interfaces may be also useful for mocking types in a test suite</p>
@@ -298,7 +310,8 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Stringer</span> <span style="color:#66d9ef">interface</span> {
             <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span>
     }
-    </code></pre></div></li>
+    
+</code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -315,7 +328,8 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">string</span>:
 <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">uint32</span>:
 <span style="color:#a6e22e">dafault</span>:
-}</code></pre></div></li>
+}
+</code></pre></div></li>
 </ul>
 <h2 id="stanard-tools">Stanard tools</h2>
 <ul>
@@ -336,7 +350,8 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">f</span> <span style="color:#e6db74">&#34;{{ .Dir }}&#34;</span> <span style="color:#a6e22e">yourpackage</span>
 
 <span style="color:#75715e">// what files the package consits of
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">f</span> <span style="color:#e6db74">&#34;{{ .GoFiles }}&#34;</span> <span style="color:#a6e22e">yourpackage</span></code></pre></div></li>
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">f</span> <span style="color:#e6db74">&#34;{{ .GoFiles }}&#34;</span> <span style="color:#a6e22e">yourpackage</span>
+</code></pre></div></li>
 </ul>
 <h2 id="unit-testing">Unit testing</h2>
 <ul>
@@ -374,7 +389,8 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
     
         <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">tool</span> <span style="color:#a6e22e">cover</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">html</span>=<span style="color:#a6e22e">coverage</span>.<span style="color:#a6e22e">out</span>
     
-    </code></pre></div></li>
+    
+</code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -410,7 +426,8 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;Exception occured&#34;</span>)
 
 <span style="color:#75715e">// or
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Exception occured&#34;</span>)</code></pre></div></p>
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Exception occured&#34;</span>)
+</code></pre></div></p>
 </li>
 <li>
 <p>it is a good practice to define errors in var statement and refer to them in the rest of the programm
@@ -420,7 +437,8 @@ When we crete a slice, Go will automatically create 2 data structures: 1. an arr
 <span style="color:#75715e">//...
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">ErrLoading</span>
 <span style="color:#75715e">//....
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">ErrLoading</span> {}</code></pre></div></p>
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">ErrLoading</span> {}
+</code></pre></div></p>
 </li>
 <li>
 <p>error is basically just an interface with an Error() string {} function. i.e. anything that has an Error() function fullfills the Error interface i.e. is an error</p>
@@ -516,11 +534,12 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
 -Write(b []byte) (n int, err error)</p>
 </li>
 <li>
-<p>to ignore the imported package, you can prepend it with underscore &ldquo;_&quot;. Generally it is a bad practise, but may be handy during development
+<p>to ignore the imported package, you can prepend it with underscore &ldquo;_&rdquo;. Generally it is a bad practise, but may be handy during development
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
     <span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
     <span style="color:#e6db74">&#34;net/http&#34;</span>
-)</code></pre></div></p>
+)
+</code></pre></div></p>
 </li>
 <li>
 <p>go sometimes can&rsquo;t convert the type automatically. E.g.: int to string. (in this case use strconv package)</p>
@@ -538,7 +557,8 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">name</span> = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">sting</span>)
 <span style="color:#75715e">//...
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">Lock</span>()
-<span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">Unlock</span>()</code></pre></div></p>
+<span style="color:#a6e22e">someCache</span>.<span style="color:#a6e22e">Unlock</span>()
+</code></pre></div></p>
 </li>
 <li>
 <p>Should &ldquo;sync&rdquo; package or goroutines with channels be used for access to a protected resource?</p>
@@ -574,12 +594,14 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
     <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
         <span style="color:#a6e22e">example</span>()
     }
-    </code></pre></div></li>
+    
+</code></pre></div></li>
 <li>output:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#a6e22e">Third</span> <span style="color:#a6e22e">Expected</span>
     <span style="color:#a6e22e">Second</span> <span style="color:#a6e22e">Expected</span>
     <span style="color:#a6e22e">First</span> <span style="color:#a6e22e">Pitfall</span>!!!
-    </code></pre></div></li>
+    
+</code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -587,7 +609,8 @@ $ go get golang.org/x/tools/cmd/godoc</code></pre></div></p>
 </li>
 <li>
 <p>version of the program can be changed during its build with &ldquo;-ldflags&rdquo;. Example:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">ldflags</span>=<span style="color:#e6db74">&#34;-X name.Version 1.5.0&#34;</span> &lt;<span style="color:#a6e22e">program</span><span style="color:#f92672">-</span><span style="color:#a6e22e">name</span>.<span style="color:#66d9ef">go</span>&gt;</code></pre></div></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">ldflags</span>=<span style="color:#e6db74">&#34;-X name.Version 1.5.0&#34;</span> &lt;<span style="color:#a6e22e">program</span><span style="color:#f92672">-</span><span style="color:#a6e22e">name</span>.<span style="color:#66d9ef">go</span>&gt;
+</code></pre></div></p>
 </li>
 <li>
 <p>when doing comparison of values, they must be of exacly same type i.e. you can&rsquo;t compare int with int8</p>
