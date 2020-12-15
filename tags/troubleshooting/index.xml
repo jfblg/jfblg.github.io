@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>troubleshooting on jfblg.com</title>
+    <link>/tags/troubleshooting/</link>
+    <description>Recent content in troubleshooting on jfblg.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 15 Dec 2020 15:19:23 +0100</lastBuildDate><atom:link href="/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enable SSH key based authentication on Synology NAS</title>
+      <link>/blog/ssh-key-based-auth-on-synology/</link>
+      <pubDate>Tue, 15 Dec 2020 15:19:23 +0100</pubDate>
+      
+      <guid>/blog/ssh-key-based-auth-on-synology/</guid>
+      <description>Introduction In this post I&amp;rsquo;d like to describe how I solved a little issue I had with my Synology NAS. Synology NAS run a Linux based system, AFAIK it&amp;rsquo;s IIRC which is a customized Debian fork. To copy files from/to NAS I also use SFTP, SCP or SSHFS, both based on OpenSSH. To eliminate the need to enter my password and to improve security I always prefer to use SSH key based authentication in combination with an SSH agent.</description>
+    </item>
+    
+  </channel>
+</rss>
